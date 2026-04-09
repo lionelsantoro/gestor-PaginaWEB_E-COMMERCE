@@ -6,6 +6,8 @@
 </head> 
 <body>
 
+    @include('navbar')
+
     <div class="container mt-5">
         <div class="alert alert-success" role="alert">
             <p>BIENVENIDO</p>
