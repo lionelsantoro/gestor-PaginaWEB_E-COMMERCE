@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}"> 
     </head> 
     
-    <body>
+    <body class="d-flex flex-column min-vh-100">
 
         @include('menu')
 
