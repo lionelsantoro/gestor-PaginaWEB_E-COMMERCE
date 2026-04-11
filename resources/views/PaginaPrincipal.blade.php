@@ -7,7 +7,7 @@
 </head> 
 <body>
     
-    @include('navbar')
+    @include('menu')
 
     <div class="container mt-4"> 
         <div class="card">

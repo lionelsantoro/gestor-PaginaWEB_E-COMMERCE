@@ -6,7 +6,7 @@
 </head> 
 <body>
 
-    @include('navbar')
+    @include('menu')
 
     <div class="container mt-5">
         <div class="alert alert-success" role="alert">

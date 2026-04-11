@@ -6,7 +6,7 @@
 </head> 
 <body>
 
-    @include('navbar')
+    @include('menu')
 
 <div class="accordion" id="accordionPanelsStayOpenExample">
   <div class="accordion-item">
