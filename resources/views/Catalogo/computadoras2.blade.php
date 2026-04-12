@@ -249,7 +249,7 @@
 
     <div class="col">
       <div class="card h-100">
-        <img src="/Imagenes Computadoras/FOTO29.jpg" class="card-img-top" alt="MSI MODERN 14" style="height: 250px; object-fit: contain;">
+        <img src="/Imagenes Computadoras/FOTO29.jpeg" class="card-img-top" alt="MSI MODERN 14" style="height: 250px; object-fit: contain;">
         <div class="card-body">
           <h5 class="card-title"><strong>MSI MODERN 14</strong></h5>
           <p class="fs-4 fw-bold mb-3">PRECIO: $900.000</p>
