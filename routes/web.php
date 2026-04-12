@@ -34,6 +34,11 @@ Route::get('/catalogo/computadoras', function () {
     return view('catalogo.computadoras');
 });
 
+
+Route::get('/catalogo/computadoras/2', function () {
+    return view('catalogo.computadoras2');
+});
+
 Route::get('/catalogo/electrodomesticos', function () {
     return view('catalogo.electrodomesticos');
 });
