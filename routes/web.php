@@ -26,6 +26,10 @@ Route::get('/catalogo/telefonos', function () {
     return view('catalogo.telefonos'); 
 });
 
+Route::get('/catalogo/telefonos/2', function () {
+    return view('catalogo.telefonos2'); 
+});
+
 Route::get('/catalogo/computadoras', function () {
     return view('catalogo.computadoras');
 });
