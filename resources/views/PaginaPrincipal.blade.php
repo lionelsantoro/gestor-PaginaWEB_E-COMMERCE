@@ -11,13 +11,20 @@
     
         @include('menu')
 
-        <div class="container mt-4"> 
-            <div class="card">
-                <div class="card-body">
-                    <h1 class="card-title">BIENVENIDO</h1>
-                    <p>Contenido de tu página aquí...</p>
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <img src="/Imagenes inicio/foto1.png" class="d-block w-100" alt="...">
                 </div>
+                
+                <div class="carousel-item">
+                    <img src="/Imagenes inicio/foto2.png" class="d-block w-100" alt="...">
+                </div>
+            
             </div>
+
         </div>
 
         @include('piedepagina')
