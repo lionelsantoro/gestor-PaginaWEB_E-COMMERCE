@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactoController;
-
+use App\Http\Controllers\LoginController; 
 
 Route::get('/', function () {
     return view('PaginaPrincipal');
@@ -20,7 +20,7 @@ Route::get('/informacion-de-contacto', function () {
     return view('InformacionDeContacto');
 });
 
- Route::post('/informacion-de-contacto', [ContactoController::class, 'procesar']);
+Route::post('/informacion-de-contacto', [ContactoController::class, 'procesar']);
 
 Route::get('/terminos-y-usos', function () {
     return view('Terminos_Y_Usos');
@@ -38,7 +38,6 @@ Route::get('/catalogo/computadoras', function () {
     return view('catalogo.computadoras');
 });
 
-
 Route::get('/catalogo/computadoras/2', function () {
     return view('catalogo.computadoras2');
 });
@@ -47,4 +46,11 @@ Route::get('/catalogo/electrodomesticos', function () {
     return view('catalogo.electrodomesticos');
 });
 
-  Route::post('/InformacionDeContacto', [ContactoController::class, 'procesar']);
+Route::post('/InformacionDeContacto', [ContactoController::class, 'procesar']);
+
+
+Route::get('/login', function () {
+    return view('Login');
+});
+
+Route::post('/login', [App\Http\Controllers\LoginController::class, 'procesar']);

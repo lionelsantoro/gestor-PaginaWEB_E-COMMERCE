@@ -16,7 +16,7 @@
             <a class="nav-link" href="/comercializacion">Comercialización</a>
             <a class="nav-link" href="/terminos-y-usos" >Términos y Usos</a> | 
             <a class="nav-link" href="/informacion-de-contacto" >Contacto</a>
+            <a class="nav-link" href="/login" >login</a>
         </div>
     </div>
 </nav>
-
