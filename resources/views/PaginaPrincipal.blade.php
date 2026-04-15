@@ -11,7 +11,7 @@
     
         @include('menu')
 
-        <div class="container my-8">
+        <div class="container my-2">
 
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
 
