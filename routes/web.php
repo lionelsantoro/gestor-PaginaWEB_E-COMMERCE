@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\LoginController; 
+use App\Http\Controllers\RegistroController;
+
 
 Route::get('/', function () {
     return view('PaginaPrincipal');
@@ -54,3 +56,10 @@ Route::get('/login', function () {
 });
 
 Route::post('/login', [App\Http\Controllers\LoginController::class, 'procesar']);
+
+
+Route::get('/registro', function () {
+    return view('registro'); // Asegurate de que tu archivo se llame registro.blade.php
+});
+
+Route::post('/registro', [App\Http\Controllers\RegistroController::class, 'procesar']);
