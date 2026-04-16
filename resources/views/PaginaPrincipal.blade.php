@@ -5,6 +5,18 @@
         <meta charset="UTF-8">
         <title>Página Principal</title>
         <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}"> 
+
+        <style>
+           .btn-categoria {
+                border: 2px solid transparent; /* Borde transparente por defecto */
+                border-radius: 16px; /* Cuadrado redondeado */
+                padding: 15px 10px; /* Espacio interior para que el borde respire */
+                transition: border-color 0.3s ease; /* Animación suave */
+            }
+            .btn-categoria:hover {
+                border-color: #000 !important; /* Aparece el borde negro que envuelve todo */
+            }
+        </style>
     </head> 
 
     <body class="d-flex flex-column min-vh-100">
@@ -25,6 +37,46 @@
                         <img src="/Imagenes inicio/foto6.png" class="d-block w-100" alt="Banner 3">
                     </div>
                 </div>
+            </div>
+
+            <div class="row justify-content-center text-center my-5">
+                
+                <div class="col-6 col-md-3 mb-3">
+                    <a href="/catalogo/telefonos" class="btn-categoria text-decoration-none text-dark d-flex flex-column align-items-center">
+                        <div class="circulo-categoria bg-white rounded-circle shadow-sm mb-2 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                            <span class="text-muted small">Img</span>
+                        </div>
+                        <span class="fw-medium">Teléfonos</span>
+                    </a>
+                </div>
+
+                <div class="col-6 col-md-3 mb-3">
+                    <a href="/catalogo/computadoras" class="btn-categoria text-decoration-none text-dark d-flex flex-column align-items-center">
+                        <div class="circulo-categoria bg-white rounded-circle shadow-sm mb-2 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                            <span class="text-muted small">Img</span>
+                        </div>
+                        <span class="fw-medium">Computadoras</span>
+                    </a>
+                </div>
+
+                <div class="col-6 col-md-3 mb-3">
+                    <a href="#" class="btn-categoria text-decoration-none text-dark d-flex flex-column align-items-center">
+                        <div class="circulo-categoria bg-white rounded-circle shadow-sm mb-2 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                            <span class="text-muted small">Img</span>
+                        </div>
+                        <span class="fw-medium">Lavarropas</span>
+                    </a>
+                </div>
+
+                <div class="col-6 col-md-3 mb-3">
+                    <a href="#" class="btn-categoria text-decoration-none text-dark d-flex flex-column align-items-center">
+                        <div class="circulo-categoria bg-white rounded-circle shadow-sm mb-2 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                            <span class="text-muted small">Img</span>
+                        </div>
+                        <span class="fw-medium">Heladeras</span>
+                    </a>
+                </div>
+
             </div>
 
             <div class="bg-ofertas p-4 mt-5 relative">
