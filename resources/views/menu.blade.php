@@ -2,6 +2,7 @@
     <div class="container">
         <a class="navbar-brand" href="/">Frávega</a>
         <div class="navbar-nav">
+            <a class="nav-link" href="/">Inicio</a>
             <div class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Catálogo
