@@ -54,9 +54,9 @@
                             </h2>
                             <div id="collapseQuiero1" class="accordion-collapse collapse" data-bs-parent="#accordionQuieroComprar">
                                 <div class="accordion-body text-muted">
-                                    <p>A continuación te dejamos los pasos para comprar en <a href="#" class="text-decoration-none">fravega.com</a>. No es necesario que te registres.</p>
+                                    <p>A continuación te dejamos los pasos para comprar en <a href="/" class="text-decoration-none">fravega.com</a>. No es necesario que te registres.</p>
                                     <ol>
-                                        <li class="mb-2">Una vez que estés en <a href="#" class="text-decoration-none">fravega.com</a>, buscá el producto que querés comprar en el buscador o seleccioná la categoría que prefieras desde el menú principal.</li>
+                                        <li class="mb-2">Una vez que estés en <a href="/" class="text-decoration-none">fravega.com</a>, buscá el producto que querés comprar en el buscador o seleccioná la categoría que prefieras desde el menú principal.</li>
                                         <li class="mb-2">Seleccioná el producto y hacé click en el botón <strong>COMPRAR</strong>.</li>
                                         <li class="mb-2">En <strong>Mi carrito</strong>, podrás ver los productos elegidos y agregar una Garantía para tu compra (si el producto lo permite).<br>Si tenés un código de descuento, podrás ingresarlo en este paso.</li>
                                         <li class="mb-2">Clickeá el botón <strong>FINALIZAR COMPRA</strong> para continuar.</li>
@@ -77,7 +77,7 @@
                             </h2>
                             <div id="collapseQuiero2" class="accordion-collapse collapse" data-bs-parent="#accordionQuieroComprar">
                                 <div class="accordion-body text-muted">
-                                    <p>Si querés comprar a través de <a href="#" class="text-decoration-none">Fravega.com</a> pero retirar en una sucursal, podés consultar si hay stock siguiendo estos pasos:</p>
+                                    <p>Si querés comprar a través de <a href="/" class="text-decoration-none">Fravega.com</a> pero retirar en una sucursal, podés consultar si hay stock siguiendo estos pasos:</p>
                                     <ol>
                                         <li class="mb-2">Seleccioná el producto que querés comprar.</li>
                                         <li class="mb-2">Debajo de los medios de pago y opciones de financiación, hacé click en Ver sucursales.</li>
@@ -95,7 +95,7 @@
                             </h2>
                             <div id="collapseQuiero3" class="accordion-collapse collapse" data-bs-parent="#accordionQuieroComprar">
                                 <div class="accordion-body text-muted">
-                                    <p>En <a href="#" class="text-decoration-none">Fravega.com</a> te garantizamos la seguridad de todas tus compras online, manteniendo tus datos bajo la más estricta confidencialidad. Toda la información personal ingresada es cifrada, y no puede ser leída ni utilizada por terceros.</p>
+                                    <p>En <a href="/" class="text-decoration-none">Fravega.com</a> te garantizamos la seguridad de todas tus compras online, manteniendo tus datos bajo la más estricta confidencialidad. Toda la información personal ingresada es cifrada, y no puede ser leída ni utilizada por terceros.</p>
                                     <p class="mb-0">Para más información ver <a href="/terminos-y-usos" class="text-decoration-none">Términos y Condiciones</a>.</p>
                                 </div>
                             </div>
@@ -113,7 +113,7 @@
                             </h2>
                             <div id="collapsePago1" class="accordion-collapse collapse" data-bs-parent="#accordionPago">
                                 <div class="accordion-body text-muted">
-                                    <p class="fw-bold mb-2 text-dark">Si comprás en <a href="#" class="text-decoration-none">Fravega.com</a></p>
+                                    <p class="fw-bold mb-2 text-dark">Si comprás en <a href="/" class="text-decoration-none">Fravega.com</a></p>
                                     <ul>
                                         <li>Tarjeta de crédito</li>
                                         <li>Tarjeta de débito</li>
@@ -126,7 +126,6 @@
                                         <li>Tarjeta de crédito</li>
                                         <li>Tarjeta de débito</li>
                                         <li>Efectivo</li>
-                                        <li><a href="#" class="text-decoration-none">Frávega Créditos</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -450,7 +449,7 @@
                                     </ol>
                             
                                     <p class="fw-bold mb-1 text-dark">Si compraste en una sucursal</p>
-                                    <p class="mb-4">Completá <a href="#" class="text-decoration-none">este formulario</a> para que nos contactemos con vos.</p>
+                                    <p class="mb-4">Completá <a href="/" class="text-decoration-none">este formulario</a> para que nos contactemos con vos.</p>
                             
                                     <p class="fw-bold mb-1 text-dark">Si compraste en Mercado Libre</p>
                                     <p class="mb-0">Podrás solicitar el cambio o devolución de un producto ingresando a Mercado Libre.</p>
@@ -467,7 +466,7 @@
                                 <div class="accordion-body text-muted">
                                     <h5 class="fw-bold text-dark mb-4">¿Cómo cancelo una compra pendiente de entrega?</h5>
                                     
-                                    <p class="fw-bold mb-2 text-dark">Si compraste en <a href="#" class="text-decoration-none">Fravega.com</a> o por teléfono</p>
+                                    <p class="fw-bold mb-2 text-dark">Si compraste en <a href="/" class="text-decoration-none">Fravega.com</a> o por teléfono</p>
                                     <ol class="mb-4">
                                         <li class="mb-1">Ingresá a <strong>Mi cuenta</strong>.</li>
                                         <li class="mb-1">Elegí la opción <strong>Mis compras</strong> e iniciá sesión con tus datos.</li>
