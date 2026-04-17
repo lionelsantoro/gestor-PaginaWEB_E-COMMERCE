@@ -122,6 +122,20 @@
                 </div>
             </div>
 
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/Imagenes inicio/foto1.png" class="d-block w-100" alt="Banner 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/Imagenes inicio/foto2.png" class="d-block w-100" alt="Banner 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/Imagenes inicio/foto3.png" class="d-block w-100" alt="Banner 3">
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         @include('piedepagina')
