@@ -44,8 +44,8 @@ Route::get('/catalogo/computadoras/2', function () {
     return view('catalogo.computadoras2');
 });
 
-Route::get('/catalogo/electrodomesticos', function () {
-    return view('catalogo.electrodomesticos');
+Route::get('/catalogo/lavarropas', function () {
+    return view('catalogo.lavarropas');
 });
 
 Route::post('/InformacionDeContacto', [ContactoController::class, 'procesar']);
