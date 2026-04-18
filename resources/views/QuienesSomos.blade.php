@@ -15,7 +15,6 @@
             <section class="container my-5">
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-10 col-lg-8">
-                        <p class="text-muted small mb-2 text-uppercase fw-semibold">fravega</p>
                         <h1 class="fw-bold mb-4 display-5">Quiénes somos</h1>
                         
                         <p class="lead fw-bold mb-4">
