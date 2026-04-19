@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
 
     <style>
+        /**rosado: #B52CD0 */
         .btn-categoria {
             border: 2px solid transparent;
             /* Borde transparente por defecto */
@@ -17,7 +18,6 @@
             transition: border-color 0.3s ease;
             /* Animación suave */
         }
-
         .btn-categoria:hover {
             border-color: #7828D8 !important;
             /* Aparece el borde negro que envuelve todo */
