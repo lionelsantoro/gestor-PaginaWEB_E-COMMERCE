@@ -48,6 +48,10 @@ Route::get('/catalogo/lavarropas', function () {
     return view('catalogo.lavarropas');
 });
 
+Route::get('/catalogo/lavarropas/2', function () {
+    return view('catalogo.lavarropas2');
+});
+
 Route::post('/InformacionDeContacto', [ContactoController::class, 'procesar']);
 
 
