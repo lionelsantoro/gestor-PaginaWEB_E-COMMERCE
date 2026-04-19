@@ -91,7 +91,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes heladeras/foto5.jpg" class="card-img-top" alt="HELADERA GAFA HGF358AW"
+          <img src="/imagenes heladeras/foto5.webp" class="card-img-top" alt="HELADERA GAFA HGF358AW"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>HELADERA GAFA HGF358AW</strong></h5>
@@ -110,7 +110,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes heladeras/foto6.jpg" class="card-img-top" alt="HELADERA PHILCO PHCT290"
+          <img src="/imagenes heladeras/foto6.webp" class="card-img-top" alt="HELADERA PHILCO PHCT290"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>HELADERA PHILCO PHCT290</strong></h5>
@@ -148,7 +148,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes heladeras/foto8.jfif" class="card-img-top" alt="HELADERA PATRICK HPK141"
+          <img src="/imagenes heladeras/foto8.webp" class="card-img-top" alt="HELADERA PATRICK HPK141"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>HELADERA PATRICK HPK141</strong></h5>
@@ -186,7 +186,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes heladeras/foto10.jpg" class="card-img-top" alt="HELADERA ELECTROLUX DF46"
+          <img src="/imagenes heladeras/foto10.webp" class="card-img-top" alt="HELADERA ELECTROLUX DF46"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>HELADERA ELECTROLUX DF46</strong></h5>
@@ -243,7 +243,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes heladeras/foto13.jfif" class="card-img-top" alt="HELADERA COLUMBIA CHV3200"
+          <img src="/imagenes heladeras/foto13.webp" class="card-img-top" alt="HELADERA COLUMBIA CHV3200"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>HELADERA COLUMBIA CHV3200</strong></h5>
