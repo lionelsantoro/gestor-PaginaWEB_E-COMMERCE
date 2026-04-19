@@ -37,7 +37,7 @@
           <img src="/imagenes lavarropas/foto2.webp" class="card-img-top" alt="LAVARROPAS SAMSUNG INVERTER ECOBUBBLE"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
-            <h5 class="card-title fs-4"><strong>LAVARROPAS SAMSUNG INVERTER ECOBUBBLE</strong></h5>
+            <h5 class="card-title fs-4"><strong>LAVARROPAS DREAN CONCEPT NEO FUZZY</strong></h5>
             <p class="fs-5 fw-bold mb-3">PRECIO: $1.250.000</p>
             <p class="card-text">
               <strong>Capacidad de lavado:</strong> 9.5 kg<br>
@@ -91,7 +91,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes lavarropas/foto5.jpg" class="card-img-top" alt="LAVARROPAS PHILCO AUTOMÁTICO"
+          <img src="/imagenes lavarropas/foto5.webp" class="card-img-top" alt="LAVARROPAS PHILCO AUTOMÁTICO"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>LAVARROPAS PHILCO AUTOMÁTICO</strong></h5>
@@ -110,7 +110,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes lavarropas/foto6.jpg" class="card-img-top" alt="LAVARROPAS MIDEA ECO INVERTER"
+          <img src="/imagenes lavarropas/foto6.webp" class="card-img-top" alt="LAVARROPAS MIDEA ECO INVERTER"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>LAVARROPAS MIDEA ECO INVERTER</strong></h5>
@@ -148,7 +148,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes lavarropas/foto8.jfif" class="card-img-top" alt="LAVARROPAS CANDY SMART"
+          <img src="/imagenes lavarropas/foto8.webp" class="card-img-top" alt="LAVARROPAS CANDY SMART"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>LAVARROPAS CANDY SMART</strong></h5>
@@ -186,7 +186,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes lavarropas/foto10.jpg" class="card-img-top" alt="LAVARROPAS ELECTROLUX PREMIUM PLUS"
+          <img src="/imagenes lavarropas/foto10.webp" class="card-img-top" alt="LAVARROPAS ELECTROLUX PREMIUM PLUS"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>LAVARROPAS ELECTROLUX PREMIUM PLUS</strong></h5>
@@ -243,7 +243,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes lavarropas/foto13.jfif" class="card-img-top" alt="LAVARROPAS BGH CARGA FRONTAL"
+          <img src="/imagenes lavarropas/foto13.webp" class="card-img-top" alt="LAVARROPAS BGH CARGA FRONTAL"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>LAVARROPAS BGH CARGA FRONTAL</strong></h5>

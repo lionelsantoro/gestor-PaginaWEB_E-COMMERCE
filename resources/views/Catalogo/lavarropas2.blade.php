@@ -15,7 +15,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes lavarropas/foto1.webp" class="card-img-top" alt="LAVARROPAS DREAN CONCEPT 5.05"
+          <img src="/imagenes lavarropas/foto16.webp" class="card-img-top" alt="LAVARROPAS DREAN CONCEPT 5.05"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>LAVARROPAS DREAN CONCEPT 5.05</strong></h5>
@@ -34,7 +34,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes lavarropas/foto2.webp" class="card-img-top" alt="LAVARROPAS SAMSUNG FRONT LOAD AI CONTROL"
+          <img src="/imagenes lavarropas/foto17.webp" class="card-img-top" alt="LAVARROPAS SAMSUNG FRONT LOAD AI CONTROL"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>LAVARROPAS SAMSUNG FRONT LOAD AI CONTROL</strong></h5>
@@ -53,7 +53,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes lavarropas/foto3.webp" class="card-img-top" alt="LAVARROPAS WHIRLPOOL SENSE INVERTER"
+          <img src="/imagenes lavarropas/foto18.webp" class="card-img-top" alt="LAVARROPAS WHIRLPOOL SENSE INVERTER"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>LAVARROPAS WHIRLPOOL SENSE INVERTER</strong></h5>
@@ -72,7 +72,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes lavarropas/foto4.webp" class="card-img-top" alt="LAVARROPAS LG THINQ VIVACE"
+          <img src="/imagenes lavarropas/foto19.webp" class="card-img-top" alt="LAVARROPAS LG THINQ VIVACE"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>LAVARROPAS LG THINQ VIVACE</strong></h5>
@@ -91,7 +91,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes lavarropas/foto5.jpg" class="card-img-top" alt="LAVARROPAS PHILCO CARGA SUPERIOR"
+          <img src="/imagenes lavarropas/foto20.webp" class="card-img-top" alt="LAVARROPAS PHILCO CARGA SUPERIOR"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>LAVARROPAS PHILCO CARGA SUPERIOR</strong></h5>
@@ -110,7 +110,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes lavarropas/foto6.jpg" class="card-img-top" alt="LAVARROPAS MIDEA CARGA FRONTAL SILVER"
+          <img src="/imagenes lavarropas/foto21.webp" class="card-img-top" alt="LAVARROPAS MIDEA CARGA FRONTAL SILVER"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>LAVARROPAS MIDEA CARGA FRONTAL SILVER</strong></h5>
@@ -129,7 +129,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes lavarropas/foto7.webp" class="card-img-top" alt="LAVARROPAS GAFA FUZZY LOGIC"
+          <img src="/imagenes lavarropas/foto22.webp" class="card-img-top" alt="LAVARROPAS GAFA FUZZY LOGIC"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>LAVARROPAS GAFA FUZZY LOGIC</strong></h5>
@@ -148,7 +148,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes lavarropas/foto8.jfif" class="card-img-top" alt="LAVARROPAS CANDY RAPIDO BIANCO"
+          <img src="/imagenes lavarropas/foto23.webp" class="card-img-top" alt="LAVARROPAS CANDY RAPIDO BIANCO"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>LAVARROPAS CANDY RAPIDO BIANCO</strong></h5>
@@ -167,7 +167,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes lavarropas/foto9.webp" class="card-img-top" alt="LAVARROPAS LONGVIE CARGA SUPERIOR L1650"
+          <img src="/imagenes lavarropas/foto24.webp" class="card-img-top" alt="LAVARROPAS LONGVIE CARGA SUPERIOR L1650"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>LAVARROPAS LONGVIE CARGA SUPERIOR L1650</strong></h5>
@@ -186,7 +186,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes lavarropas/foto10.jpg" class="card-img-top" alt="LAVARROPAS ELECTROLUX ESSENTIAL CARE"
+          <img src="/imagenes lavarropas/foto25.webp" class="card-img-top" alt="LAVARROPAS ELECTROLUX ESSENTIAL CARE"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>LAVARROPAS ELECTROLUX ESSENTIAL CARE</strong></h5>
@@ -205,7 +205,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes lavarropas/foto11.webp" class="card-img-top" alt="LAVARROPAS AURORA 6309 CARGA FRONTAL"
+          <img src="/imagenes lavarropas/foto26.webp" class="card-img-top" alt="LAVARROPAS AURORA 6309 CARGA FRONTAL"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>LAVARROPAS AURORA 6309 CARGA FRONTAL</strong></h5>
@@ -224,7 +224,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes lavarropas/foto12.webp" class="card-img-top" alt="LAVARROPAS PATRICK INVERTER LPK10"
+          <img src="/imagenes lavarropas/foto27.webp" class="card-img-top" alt="LAVARROPAS PATRICK INVERTER LPK10"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>LAVARROPAS PATRICK INVERTER LPK10</strong></h5>
@@ -243,7 +243,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes lavarropas/foto13.jfif" class="card-img-top" alt="LAVARROPAS BGH CARGA SUPERIOR BLANCO"
+          <img src="/imagenes lavarropas/foto28.webp" class="card-img-top" alt="LAVARROPAS BGH CARGA SUPERIOR BLANCO"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>LAVARROPAS BGH CARGA SUPERIOR BLANCO</strong></h5>
@@ -262,7 +262,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes lavarropas/foto14.webp" class="card-img-top" alt="LAVARROPAS HISENSE TITANIUM FRONT"
+          <img src="/imagenes lavarropas/foto29.webp" class="card-img-top" alt="LAVARROPAS HISENSE TITANIUM FRONT"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>LAVARROPAS HISENSE TITANIUM FRONT</strong></h5>
@@ -280,7 +280,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes lavarropas/foto15.webp" class="card-img-top" alt="LAVARROPAS DREAN NEXT 10.12 ECO"
+          <img src="/imagenes lavarropas/foto30.webp" class="card-img-top" alt="LAVARROPAS DREAN NEXT 10.12 ECO"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>LAVARROPAS DREAN NEXT 10.12 ECO</strong></h5>
