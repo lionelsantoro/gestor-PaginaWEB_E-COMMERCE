@@ -15,7 +15,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes heladeras/foto1.webp" class="card-img-top" alt="HELADERA SAMSUNG BESPOKE"
+          <img src="/imagenes heladeras/foto16.webp" class="card-img-top" alt="HELADERA SAMSUNG BESPOKE"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>HELADERA SAMSUNG BESPOKE</strong></h5>
@@ -34,7 +34,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes heladeras/foto2.webp" class="card-img-top" alt="HELADERA WHIRLPOOL WRM56K"
+          <img src="/imagenes heladeras/foto17.webp" class="card-img-top" alt="HELADERA WHIRLPOOL WRM56K"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>HELADERA WHIRLPOOL WRM56K</strong></h5>
@@ -53,7 +53,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes heladeras/foto3.webp" class="card-img-top" alt="HELADERA DREAN HDR380"
+          <img src="/imagenes heladeras/foto18.webp" class="card-img-top" alt="HELADERA DREAN HDR380"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>HELADERA DREAN HDR380</strong></h5>
@@ -72,7 +72,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes heladeras/foto4.webp" class="card-img-top" alt="HELADERA LG BOTTOM FREEZER"
+          <img src="/imagenes heladeras/foto19.webp" class="card-img-top" alt="HELADERA LG BOTTOM FREEZER"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>HELADERA LG BOTTOM FREEZER</strong></h5>
@@ -91,7 +91,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes heladeras/foto5.jpg" class="card-img-top" alt="HELADERA GAFA HGF388B"
+          <img src="/imagenes heladeras/foto20.webp" class="card-img-top" alt="HELADERA GAFA HGF388B"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>HELADERA GAFA HGF388B</strong></h5>
@@ -110,7 +110,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes heladeras/foto6.jpg" class="card-img-top" alt="HELADERA PHILCO SIDE BY SIDE"
+          <img src="/imagenes heladeras/foto21.webp" class="card-img-top" alt="HELADERA PHILCO SIDE BY SIDE"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>HELADERA PHILCO SIDE BY SIDE</strong></h5>
@@ -129,7 +129,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes heladeras/foto7.webp" class="card-img-top" alt="HELADERA SIAM HSI-FT330B"
+          <img src="/imagenes heladeras/foto22.webp" class="card-img-top" alt="HELADERA SIAM HSI-FT330B"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>HELADERA SIAM HSI-FT330B</strong></h5>
@@ -148,7 +148,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes heladeras/foto8.jfif" class="card-img-top" alt="HELADERA PATRICK HPK135"
+          <img src="/imagenes heladeras/foto23.webp" class="card-img-top" alt="HELADERA PATRICK HPK135"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>HELADERA PATRICK HPK135</strong></h5>
@@ -167,7 +167,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes heladeras/foto9.webp" class="card-img-top" alt="HELADERA KOH-I-NOOR KDB4394"
+          <img src="/imagenes heladeras/foto24.webp" class="card-img-top" alt="HELADERA KOH-I-NOOR KDB4394"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>HELADERA KOH-I-NOOR KDB4394</strong></h5>
@@ -186,7 +186,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes heladeras/foto10.jpg" class="card-img-top" alt="HELADERA ELECTROLUX TF56"
+          <img src="/imagenes heladeras/foto25.webp" class="card-img-top" alt="HELADERA ELECTROLUX TF56"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>HELADERA ELECTROLUX TF56</strong></h5>
@@ -205,7 +205,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes heladeras/foto11.webp" class="card-img-top" alt="HELADERA HISENSE INVERTER RB400"
+          <img src="/imagenes heladeras/foto26.webp" class="card-img-top" alt="HELADERA HISENSE INVERTER RB400"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>HELADERA HISENSE INVERTER RB400</strong></h5>
@@ -224,7 +224,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes heladeras/foto12.webp" class="card-img-top" alt="HELADERA BOSCH KGN36"
+          <img src="/imagenes heladeras/foto27.webp" class="card-img-top" alt="HELADERA BOSCH KGN36"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>HELADERA BOSCH KGN36</strong></h5>
@@ -243,7 +243,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes heladeras/foto13.jfif" class="card-img-top" alt="HELADERA NEBA A300"
+          <img src="/imagenes heladeras/foto28.webp" class="card-img-top" alt="HELADERA NEBA A300"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>HELADERA NEBA A300</strong></h5>
@@ -262,7 +262,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes heladeras/foto14.webp" class="card-img-top" alt="HELADERA BAMBI 2F1600"
+          <img src="/imagenes heladeras/foto29.webp" class="card-img-top" alt="HELADERA BAMBI 2F1600"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>HELADERA BAMBI 2F1600</strong></h5>
@@ -280,7 +280,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes heladeras/foto15.webp" class="card-img-top" alt="HELADERA BGH MULTIDOOR INVERTER"
+          <img src="/imagenes heladeras/foto30.webp" class="card-img-top" alt="HELADERA BGH MULTIDOOR INVERTER"
             style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>HELADERA BGH MULTIDOOR INVERTER</strong></h5>
