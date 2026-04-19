@@ -11,6 +11,7 @@
                     <li><a class="dropdown-item" href="/catalogo/telefonos">Teléfonos</a></li>
                     <li><a class="dropdown-item" href="/catalogo/computadoras">Computadoras</a></li>
                     <li><a class="dropdown-item" href="/catalogo/lavarropas">Lavarropas</a></li>
+                    <li><a class="dropdown-item" href="/catalogo/heladeras">Heladeras</a></li>
                 </ul>
             </div>
             <a class="nav-link" href="/quienes-somos">Quiénes Somos</a>
