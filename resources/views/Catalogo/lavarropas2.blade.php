@@ -301,26 +301,26 @@
   </div>
 
   <nav aria-label="Navegación de páginas">
-    <ul class="pagination justify-content-center mt-5 mb-5">
-
-      <li class="page-item disabled">
-        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
-      </li>
-
-      <li class="page-item active" aria-current="page">
-        <a class="page-link" href="/catalogo/lavarropas">1</a>
-      </li>
-
-      <li class="page-item">
-        <a class="page-link" href="/catalogo/lavarropas/2">2</a>
-      </li>
-
-      <li class="page-item">
-        <a class="page-link" href="/catalogo/lavarropas/2">Siguiente</a>
-      </li>
-
-    </ul>
-  </nav>
+  <ul class="pagination justify-content-center mt-5 mb-5">
+    
+    <li class="page-item">
+      <a class="page-link" href="/catalogo/lavarropas">Anterior</a>
+    </li>
+    
+    <li class="page-item">
+      <a class="page-link" href="/catalogo/lavarropas">1</a>
+    </li>
+    
+    <li class="page-item active" aria-current="page">
+      <a class="page-link" href="#">2</a>
+    </li>
+    
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Siguiente</a>
+    </li>
+    
+  </ul>
+</nav>
 
   @include('piedepagina')
 
