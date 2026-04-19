@@ -52,6 +52,14 @@ Route::get('/catalogo/lavarropas/2', function () {
     return view('catalogo.lavarropas2');
 });
 
+Route::get('/catalogo/heladeras', function () {
+    return view('catalogo.heladeras');
+});
+
+Route::get('/catalogo/heladeras/2', function () {
+    return view('catalogo.heladeras2');
+});
+
 Route::post('/InformacionDeContacto', [ContactoController::class, 'procesar']);
 
 
