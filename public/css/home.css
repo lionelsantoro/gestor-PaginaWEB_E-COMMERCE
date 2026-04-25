@@ -14,8 +14,8 @@ morado: #7828D8
 }
 
 .btn-categoria:hover {
-    border-color: #B52CD0 !important;
-    /* Aparece el borde negro que envuelve todo */
+    border-color: #B52CD0;
+    /* borde que envuleve a los botones*/
 }
 
 .precio-tachado {
