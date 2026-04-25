@@ -1,9 +1,15 @@
-<footer class="bg-dark text-white text-center py-4 mt-auto">
-    <div class="container">
-        <p class="mb-0">&copy; 2026 Frávega. Todos los derechos reservados.</p>
-        <div class="mt-2">
-            <a href="/terminos-y-usos" class="text-white text-decoration-none">Términos y Usos</a> | 
-            <a href="/informacion-de-contacto" class="text-white text-decoration-none">Contacto</a>
+<footer class="navbar-dark text-center py-4 mt-auto" style="background-color: #7828D8;">
+    <div class="container d-flex flex-column align-items-center">
+        
+        <div class="navbar-nav flex-row mb-2" style="font-size: 1.2rem;">
+            <a class="nav-link px-3 fw-semibold" href="/terminos-y-usos">Términos y Usos</a>
+            <span class="navbar-text px-0 fw-semibold">|</span>
+            <a class="nav-link px-3 fw-semibold" href="/informacion-de-contacto">Contacto</a>
         </div>
+
+        <div class="navbar-nav flex-row mb-2" style="font-size: 1.2rem;">
+            <a class="nav-link px-3 fw-semibold" href="https://www.fravega.com">&copy; 2026 Frávega. Todos los derechos reservados.</a></a>
+        </div>
+
     </div>
 </footer>
