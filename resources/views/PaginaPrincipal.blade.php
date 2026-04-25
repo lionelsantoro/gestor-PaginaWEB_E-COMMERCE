@@ -130,85 +130,95 @@
 
                             <div class="col">
                                 <div class="card h-100 card-producto p-2">
-                                    <div class="bg-light text-center py-5 mb-2 rounded" style="height: 180px;"><span
-                                            class="text-muted">Imagen</span></div>
+                                    <div class="bg-light d-flex justify-content-center align-items-center mb-2 rounded" style="height: 180px;">
+                                        <img src="/Imagenes inicio/foto11.webp" alt="Celular Samsung Galaxy S23" class="img-fluid p-2" style="max-height: 100%;">
+                                    </div>
                                     <div class="card-body p-2 d-flex flex-column">
                                         <div><span class="badge bg-morado mb-2">3 SIN INTERÉS</span></div>
-                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Producto 1</h6>
+                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Celular Samsung Galaxy S23</h6>
                                         <div class="mt-auto">
-                                            <div class="d-flex align-items-center mb-1"><span
-                                                    class="precio-tachado me-2">$99.999</span><span
-                                                    class="badge-descuento">10% OFF</span></div>
-                                            <h5 class="fw-bold mb-3">$89.999</h5><small
-                                                class="text-success fw-bold">Llega mañana</small>
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="precio-tachado me-2">$469.999</span>
+                                                <span class="badge-descuento">14% OFF</span>
+                                            </div>
+                                            <h5 class="fw-bold mb-3">$399.999</h5>
+                                            <small class="text-success fw-bold">Llega mañana</small>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="card h-100 card-producto p-2">
-                                    <div class="bg-light text-center py-5 mb-2 rounded" style="height: 180px;"><span
-                                            class="text-muted">Imagen</span></div>
+                                    <div class="bg-light d-flex justify-content-center align-items-center mb-2 rounded" style="height: 180px;">
+                                        <img src="/Imagenes inicio/foto12.webp" alt="Notebook Lenovo IdeaPad 3" class="img-fluid p-2" style="max-height: 100%;">
+                                    </div>
                                     <div class="card-body p-2 d-flex flex-column">
                                         <div><span class="badge bg-morado mb-2">6 SIN INTERÉS</span></div>
-                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Producto 2</h6>
+                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Notebook Lenovo IdeaPad 3</h6>
                                         <div class="mt-auto">
-                                            <div class="d-flex align-items-center mb-1"><span
-                                                    class="precio-tachado me-2">$120.000</span><span
-                                                    class="badge-descuento">15% OFF</span></div>
-                                            <h5 class="fw-bold mb-3">$102.000</h5><small
-                                                class="text-success fw-bold">Envío GRATIS</small>
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="precio-tachado me-2">$2.599.9999</span>
+                                                <span class="badge-descuento">23% OFF</span>
+                                            </div>
+                                            <h5 class="fw-bold mb-3">$1.999.999</h5>
+                                            <small class="text-success fw-bold">Envío GRATIS</small>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="card h-100 card-producto p-2">
-                                    <div class="bg-light text-center py-5 mb-2 rounded" style="height: 180px;"><span
-                                            class="text-muted">Imagen</span></div>
+                                    <div class="bg-light d-flex justify-content-center align-items-center mb-2 rounded" style="height: 180px;">
+                                        <img src="/Imagenes inicio/foto13.webp" alt="Lavarropas Drean Next 8kg" class="img-fluid p-2" style="max-height: 100%;">
+                                    </div>
                                     <div class="card-body p-2 d-flex flex-column">
                                         <div><span class="badge bg-morado mb-2">12 SIN INTERÉS</span></div>
-                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Producto 3</h6>
+                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Lavarropas Drean Next 8kg</h6>
                                         <div class="mt-auto">
-                                            <div class="d-flex align-items-center mb-1"><span
-                                                    class="precio-tachado me-2">$50.000</span><span
-                                                    class="badge-descuento">5% OFF</span></div>
-                                            <h5 class="fw-bold mb-3">$47.500</h5><small
-                                                class="text-success fw-bold">Llega mañana</small>
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="precio-tachado me-2">$809.999</span>
+                                                <span class="badge-descuento">9% OFF</span>
+                                            </div>
+                                            <h5 class="fw-bold mb-3">$729.999</h5>
+                                            <small class="text-success fw-bold">Llega mañana</small>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="card h-100 card-producto p-2">
-                                    <div class="bg-light text-center py-5 mb-2 rounded" style="height: 180px;"><span
-                                            class="text-muted">Imagen</span></div>
+                                    <div class="bg-light d-flex justify-content-center align-items-center mb-2 rounded" style="height: 180px;">
+                                        <img src="/Imagenes inicio/foto14.webp" alt="Heladera Whirlpool ARB 254" class="img-fluid p-2" style="max-height: 100%;">
+                                    </div>
                                     <div class="card-body p-2 d-flex flex-column">
                                         <div><span class="badge bg-morado mb-2">3 SIN INTERÉS</span></div>
-                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Producto 4</h6>
+                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Heladera Whirlpool ARB 254</h6>
                                         <div class="mt-auto">
-                                            <div class="d-flex align-items-center mb-1"><span
-                                                    class="precio-tachado me-2">$200.000</span><span
-                                                    class="badge-descuento">20% OFF</span></div>
-                                            <h5 class="fw-bold mb-3">$160.000</h5><small
-                                                class="text-success fw-bold">Envío GRATIS</small>
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="precio-tachado me-2">$1.019.999</span>
+                                                <span class="badge-descuento">21% OFF</span>
+                                            </div>
+                                            <h5 class="fw-bold mb-3">$799.999</h5>
+                                            <small class="text-success fw-bold">Envío GRATIS</small>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="card h-100 card-producto p-2">
-                                    <div class="bg-light text-center py-5 mb-2 rounded" style="height: 180px;"><span
-                                            class="text-muted">Imagen</span></div>
+                                    <div class="bg-light d-flex justify-content-center align-items-center mb-2 rounded" style="height: 180px;">
+                                        <img src="/Imagenes inicio/foto15.webp" alt="Celular Motorola Edge 40" class="img-fluid p-2" style="max-height: 100%;">
+                                    </div>
                                     <div class="card-body p-2 d-flex flex-column">
                                         <div><span class="badge bg-morado mb-2">AHORA 12</span></div>
-                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Producto 5</h6>
+                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Celular Motorola Edge 40</h6>
                                         <div class="mt-auto">
-                                            <div class="d-flex align-items-center mb-1"><span
-                                                    class="precio-tachado me-2">$80.000</span><span
-                                                    class="badge-descuento">10% OFF</span></div>
-                                            <h5 class="fw-bold mb-3">$72.000</h5><small
-                                                class="text-success fw-bold">Retíralo YA!</small>
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="precio-tachado me-2">$349.999</span>
+                                                <span class="badge-descuento">5% OFF</span>
+                                            </div>
+                                            <h5 class="fw-bold mb-3">$329.999</h5>
+                                            <small class="text-success fw-bold">Retíralo YA!</small>
                                         </div>
                                     </div>
                                 </div>
@@ -222,85 +232,95 @@
 
                             <div class="col">
                                 <div class="card h-100 card-producto p-2">
-                                    <div class="bg-light text-center py-5 mb-2 rounded" style="height: 180px;"><span
-                                            class="text-muted">Imagen</span></div>
+                                    <div class="bg-light d-flex justify-content-center align-items-center mb-2 rounded" style="height: 180px;">
+                                        <img src="/Imagenes inicio/foto16.webp" alt="PC de Escritorio HP" class="img-fluid p-2" style="max-height: 100%;">
+                                    </div>
                                     <div class="card-body p-2 d-flex flex-column">
                                         <div><span class="badge bg-morado mb-2">3 SIN INTERÉS</span></div>
-                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Producto 6</h6>
+                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">ASUS VIVOBOOK 16</h6>
                                         <div class="mt-auto">
-                                            <div class="d-flex align-items-center mb-1"><span
-                                                    class="precio-tachado me-2">$45.000</span><span
-                                                    class="badge-descuento">5% OFF</span></div>
-                                            <h5 class="fw-bold mb-3">$42.750</h5><small
-                                                class="text-success fw-bold">Llega mañana</small>
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="precio-tachado me-2">$2.178.000</span>
+                                                <span class="badge-descuento">15% OFF</span>
+                                            </div>
+                                            <h5 class="fw-bold mb-3">$1.871.925</h5>
+                                            <small class="text-success fw-bold">Llega mañana</small>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="card h-100 card-producto p-2">
-                                    <div class="bg-light text-center py-5 mb-2 rounded" style="height: 180px;"><span
-                                            class="text-muted">Imagen</span></div>
+                                    <div class="bg-light d-flex justify-content-center align-items-center mb-2 rounded" style="height: 180px;">
+                                        <img src="/Imagenes inicio/foto17.webp" alt="Lavarropas Samsung Inverter" class="img-fluid p-2" style="max-height: 100%;">
+                                    </div>
                                     <div class="card-body p-2 d-flex flex-column">
                                         <div><span class="badge bg-morado mb-2">6 SIN INTERÉS</span></div>
-                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Producto 7</h6>
+                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Lavarropas Samsung Inverter</h6>
                                         <div class="mt-auto">
-                                            <div class="d-flex align-items-center mb-1"><span
-                                                    class="precio-tachado me-2">$300.000</span><span
-                                                    class="badge-descuento">25% OFF</span></div>
-                                            <h5 class="fw-bold mb-3">$225.000</h5><small
-                                                class="text-success fw-bold">Envío GRATIS</small>
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="precio-tachado me-2">$999.999</span>
+                                                <span class="badge-descuento">10% OFF</span>
+                                            </div>
+                                            <h5 class="fw-bold mb-3">$899.999</h5>
+                                            <small class="text-success fw-bold">Envío GRATIS</small>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="card h-100 card-producto p-2">
-                                    <div class="bg-light text-center py-5 mb-2 rounded" style="height: 180px;"><span
-                                            class="text-muted">Imagen</span></div>
+                                    <div class="bg-light d-flex justify-content-center align-items-center mb-2 rounded" style="height: 180px;">
+                                        <img src="/Imagenes inicio/foto18.webp" alt="Heladera Gafa No Frost" class="img-fluid p-2" style="max-height: 100%;">
+                                    </div>
                                     <div class="card-body p-2 d-flex flex-column">
                                         <div><span class="badge bg-morado mb-2">12 SIN INTERÉS</span></div>
-                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Producto 8</h6>
+                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Heladera Gafa No Frost</h6>
                                         <div class="mt-auto">
-                                            <div class="d-flex align-items-center mb-1"><span
-                                                    class="precio-tachado me-2">$150.000</span><span
-                                                    class="badge-descuento">10% OFF</span></div>
-                                            <h5 class="fw-bold mb-3">$135.000</h5><small
-                                                class="text-success fw-bold">Retíralo YA!</small>
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="precio-tachado me-2">$1.047.666</span>
+                                                <span class="badge-descuento">11% OFF</span>
+                                            </div>
+                                            <h5 class="fw-bold mb-3">$942.899</h5>
+                                            <small class="text-success fw-bold">Retíralo YA!</small>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="card h-100 card-producto p-2">
-                                    <div class="bg-light text-center py-5 mb-2 rounded" style="height: 180px;"><span
-                                            class="text-muted">Imagen</span></div>
+                                    <div class="bg-light d-flex justify-content-center align-items-center mb-2 rounded" style="height: 180px;">
+                                        <img src="/Imagenes inicio/foto19.webp" alt="Celular iPhone 14" class="img-fluid p-2" style="max-height: 100%;">
+                                    </div>
                                     <div class="card-body p-2 d-flex flex-column">
                                         <div><span class="badge bg-morado mb-2">3 SIN INTERÉS</span></div>
-                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Producto 9</h6>
+                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Celular iPhone 14</h6>
                                         <div class="mt-auto">
-                                            <div class="d-flex align-items-center mb-1"><span
-                                                    class="precio-tachado me-2">$85.000</span><span
-                                                    class="badge-descuento">15% OFF</span></div>
-                                            <h5 class="fw-bold mb-3">$72.250</h5><small
-                                                class="text-success fw-bold">Envío GRATIS</small>
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="precio-tachado me-2">$888.778</span>
+                                                <span class="badge-descuento">22% OFF</span>
+                                            </div>
+                                            <h5 class="fw-bold mb-3">$699.900</h5>
+                                            <small class="text-success fw-bold">Envío GRATIS</small>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="card h-100 card-producto p-2">
-                                    <div class="bg-light text-center py-5 mb-2 rounded" style="height: 180px;"><span
-                                            class="text-muted">Imagen</span></div>
+                                    <div class="bg-light d-flex justify-content-center align-items-center mb-2 rounded" style="height: 180px;">
+                                        <img src="/Imagenes inicio/foto20.webp" alt="Notebook Asus VivoBook" class="img-fluid p-2" style="max-height: 100%;">
+                                    </div>
                                     <div class="card-body p-2 d-flex flex-column">
                                         <div><span class="badge bg-morado mb-2">AHORA 12</span></div>
-                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Producto 10</h6>
+                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">HP Gamer Victus Gaming</h6>
                                         <div class="mt-auto">
-                                            <div class="d-flex align-items-center mb-1"><span
-                                                    class="precio-tachado me-2">$60.000</span><span
-                                                    class="badge-descuento">20% OFF</span></div>
-                                            <h5 class="fw-bold mb-3">$48.000</h5><small
-                                                class="text-success fw-bold">Llega mañana</small>
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="precio-tachado me-2">$1.749.999</span>
+                                                <span class="badge-descuento">17% OFF</span>
+                                            </div>
+                                            <h5 class="fw-bold mb-3">$1.449.999</h5>
+                                            <small class="text-success fw-bold">Llega mañana</small>
                                         </div>
                                     </div>
                                 </div>
@@ -339,8 +359,6 @@
         </div>
 
     </div>
-
-    
 
     @include('piedepagina')
 
