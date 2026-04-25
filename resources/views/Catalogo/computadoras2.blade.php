@@ -17,8 +17,8 @@
       <div class="card h-100">
         <img src="/Imagenes Computadoras/FOTO16.jfif" class="card-img-top" alt="SAMSUNG GALAXY BOOK4 PRO" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>SAMSUNG GALAXY BOOK4 PRO</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $2.500.000</p>
+          <h5 class="card-title fs-4 fs-4"><strong>SAMSUNG GALAXY BOOK4 PRO</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $2.500.000</p>
           <p class="card-text">
             <strong>Procesador:</strong> Intel Core Ultra 7<br>
             <strong>RAM:</strong> 16 GB LPDDR5x<br>
@@ -35,8 +35,8 @@
       <div class="card h-100">
         <img src="/Imagenes Computadoras/FOTO17.webp" class="card-img-top" alt="LENOVO THINKPAD X1 CARBON GEN 12" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>LENOVO THINKPAD X1 CARBON GEN 12</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $3.300.000</p>
+          <h5 class="card-title fs-4"><strong>LENOVO THINKPAD X1 CARBON GEN 12</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $3.300.000</p>
           <p class="card-text">
             <strong>Procesador:</strong> Intel Core Ultra 7<br>
             <strong>RAM:</strong> 32 GB LPDDR5x<br>
@@ -53,8 +53,8 @@
       <div class="card h-100">
         <img src="/Imagenes Computadoras/FOTO18.webp" class="card-img-top" alt="DELL INSPIRON 16 PLUS" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>DELL INSPIRON 16 PLUS</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $1.850.000</p>
+          <h5 class="card-title fs-4"><strong>DELL INSPIRON 16 PLUS</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $1.850.000</p>
           <p class="card-text">
             <strong>Procesador:</strong> Intel Core i7-13700H<br>
             <strong>RAM:</strong> 16 GB DDR5<br>
@@ -71,8 +71,8 @@
       <div class="card h-100">
         <img src="/Imagenes Computadoras/FOTO19.webp" class="card-img-top" alt="HP ENVY 16" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>HP ENVY 16</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $2.100.000</p>
+          <h5 class="card-title fs-4"><strong>HP ENVY 16</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $2.100.000</p>
           <p class="card-text">
             <strong>Procesador:</strong> Intel Core i7-13700H<br>
             <strong>RAM:</strong> 16 GB DDR5<br>
@@ -89,8 +89,8 @@
       <div class="card h-100">
         <img src="/Imagenes Computadoras/FOTO20.webp" class="card-img-top" alt="ASUS TUF GAMING A15" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>ASUS TUF GAMING A15</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $1.750.000</p>
+          <h5 class="card-title fs-4"><strong>ASUS TUF GAMING A15</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $1.750.000</p>
           <p class="card-text">
             <strong>Procesador:</strong> AMD Ryzen 7 7735HS<br>
             <strong>RAM:</strong> 16 GB DDR5<br>
@@ -107,8 +107,8 @@
       <div class="card h-100">
         <img src="/Imagenes Computadoras/FOTO21.webp" class="card-img-top" alt="APPLE MACBOOK AIR 13 (M2)" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>APPLE MACBOOK AIR 13 (M2)</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $1.650.000</p>
+          <h5 class="card-title fs-4"><strong>APPLE MACBOOK AIR 13 (M2)</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $1.650.000</p>
           <p class="card-text">
             <strong>Procesador:</strong> Apple M2<br>
             <strong>RAM:</strong> 8 GB Unificada<br>
@@ -125,8 +125,8 @@
       <div class="card h-100">
         <img src="/Imagenes Computadoras/FOTO22.webp" class="card-img-top" alt="ACER NITRO 5" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>ACER NITRO 5</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $1.350.000</p>
+          <h5 class="card-title fs-4"><strong>ACER NITRO 5</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $1.350.000</p>
           <p class="card-text">
             <strong>Procesador:</strong> Intel Core i5-13420H<br>
             <strong>RAM:</strong> 8 GB DDR5<br>
@@ -143,8 +143,8 @@
       <div class="card h-100">
         <img src="/Imagenes Computadoras/FOTO23.webp" class="card-img-top" alt="MSI CYBORG 15" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>MSI CYBORG 15</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $1.500.000</p>
+          <h5 class="card-title fs-4"><strong>MSI CYBORG 15</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $1.500.000</p>
           <p class="card-text">
             <strong>Procesador:</strong> Intel Core i7-13620H<br>
             <strong>RAM:</strong> 16 GB DDR5<br>
@@ -161,8 +161,8 @@
       <div class="card h-100">
         <img src="/Imagenes Computadoras/FOTO24.jfif" class="card-img-top" alt="LENOVO IDEAPAD SLIM 5" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>LENOVO IDEAPAD SLIM 5</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $1.150.000</p>
+          <h5 class="card-title fs-4"><strong>LENOVO IDEAPAD SLIM 5</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $1.150.000</p>
           <p class="card-text">
             <strong>Procesador:</strong> AMD Ryzen 7 7730U<br>
             <strong>RAM:</strong> 16 GB LPDDR4x<br>
@@ -179,8 +179,8 @@
       <div class="card h-100">
         <img src="/Imagenes Computadoras/FOTO25.webp" class="card-img-top" alt="HP PAVILION PLUS 14" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>HP PAVILION PLUS 14</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $1.250.000</p>
+          <h5 class="card-title fs-4"><strong>HP PAVILION PLUS 14</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $1.250.000</p>
           <p class="card-text">
             <strong>Procesador:</strong> Intel Core i5-13500H<br>
             <strong>RAM:</strong> 16 GB LPDDR5<br>
@@ -197,8 +197,8 @@
       <div class="card h-100">
         <img src="/Imagenes Computadoras/FOTO26.webp" class="card-img-top" alt="DELL VOSTRO 3530" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>DELL VOSTRO 3530</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $950.000</p>
+          <h5 class="card-title fs-4"><strong>DELL VOSTRO 3530</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $950.000</p>
           <p class="card-text">
             <strong>Procesador:</strong> Intel Core i5-1335U<br>
             <strong>RAM:</strong> 8 GB DDR4<br>
@@ -215,8 +215,8 @@
       <div class="card h-100">
         <img src="/Imagenes Computadoras/FOTO27.webp" class="card-img-top" alt="ASUS VIVOBOOK 16" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>ASUS VIVOBOOK 16</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $1.050.000</p>
+          <h5 class="card-title fs-4 fs-4"><strong>ASUS VIVOBOOK 16</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $1.050.000</p>
           <p class="card-text">
             <strong>Procesador:</strong> AMD Ryzen 5 7530U<br>
             <strong>RAM:</strong> 16 GB DDR4<br>
@@ -233,8 +233,8 @@
       <div class="card h-100">
         <img src="/Imagenes Computadoras/FOTO28.webp" class="card-img-top" alt="ACER ASPIRE 5" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>ACER ASPIRE 5</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $850.000</p>
+          <h5 class="card-title fs-4 fs-4"><strong>ACER ASPIRE 5</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $850.000</p>
           <p class="card-text">
             <strong>Procesador:</strong> Intel Core i3-1315U<br>
             <strong>RAM:</strong> 8 GB DDR4<br>
@@ -251,8 +251,8 @@
       <div class="card h-100">
         <img src="/Imagenes Computadoras/FOTO29.jpeg" class="card-img-top" alt="MSI MODERN 14" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>MSI MODERN 14</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $900.000</p>
+          <h5 class="card-title fs-4 fs-4"><strong>MSI MODERN 14</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $900.000</p>
           <p class="card-text">
             <strong>Procesador:</strong> Intel Core i5-1235U<br>
             <strong>RAM:</strong> 16 GB DDR4<br>
@@ -269,8 +269,8 @@
       <div class="card h-100">
         <img src="/Imagenes Computadoras/FOTO30.webp" class="card-img-top" alt="SAMSUNG GALAXY BOOK3" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>SAMSUNG GALAXY BOOK3</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $1.100.000</p>
+          <h5 class="card-title fs-4 fs-4"><strong>SAMSUNG GALAXY BOOK3</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $1.100.000</p>
           <p class="card-text">
             <strong>Procesador:</strong> Intel Core i5-1335U<br>
             <strong>RAM:</strong> 8 GB LPDDR4x<br>

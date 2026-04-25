@@ -17,8 +17,8 @@
       <div class="card h-100">
         <img src="/Imagenes Computadoras/FOTO1.jpg" class="card-img-top" alt="APPLE MACBOOK PRO 16 (M3 MAX)" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>APPLE MACBOOK PRO 16 (M3 MAX)</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $4.500.000</p>
+          <h5 class="card-title fs-4"><strong>APPLE MACBOOK PRO 16 (M3 MAX)</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $4.500.000</p>
           <p class="card-text">
             <strong>Procesador:</strong> Apple M3 Max<br>
             <strong>RAM:</strong> 36 GB Unificada<br>
@@ -35,8 +35,8 @@
       <div class="card h-100">
         <img src="/Imagenes Computadoras/FOTO2.jfif" class="card-img-top" alt="LENOVO LEGION PRO 7I" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>LENOVO LEGION PRO 7I</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $3.800.000</p>
+          <h5 class="card-title fs-4"><strong>LENOVO LEGION PRO 7I</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $3.800.000</p>
           <p class="card-text">
             <strong>Procesador:</strong> Intel Core i9-14900HX<br>
             <strong>RAM:</strong> 32 GB DDR5<br>
@@ -53,8 +53,8 @@
       <div class="card h-100">
         <img src="/Imagenes Computadoras/FOTO3.jpg" class="card-img-top" alt="DELL XPS 14" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>DELL XPS 14</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $3.200.000</p>
+          <h5 class="card-title fs-4"><strong>DELL XPS 14</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $3.200.000</p>
           <p class="card-text">
             <strong>Procesador:</strong> Intel Core Ultra 7<br>
             <strong>RAM:</strong> 16 GB LPDDR5x<br>
@@ -71,8 +71,8 @@
       <div class="card h-100">
         <img src="/Imagenes Computadoras/FOTO4.webp" class="card-img-top" alt="ASUS ROG ZEPHYRUS G14" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>ASUS ROG ZEPHYRUS G14</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $3.500.000</p>
+          <h5 class="card-title fs-4"><strong>ASUS ROG ZEPHYRUS G14</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $3.500.000</p>
           <p class="card-text">
             <strong>Procesador:</strong> AMD Ryzen 9 8945HS<br>
             <strong>RAM:</strong> 32 GB LPDDR5x<br>
@@ -89,8 +89,8 @@
       <div class="card h-100">
         <img src="/Imagenes Computadoras/FOTO5.webp" class="card-img-top" alt="HP SPECTRE X360 14" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>HP SPECTRE X360 14</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $2.900.000</p>
+          <h5 class="card-title fs-4"><strong>HP SPECTRE X360 14</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $2.900.000</p>
           <p class="card-text">
             <strong>Procesador:</strong> Intel Core Ultra 7<br>
             <strong>RAM:</strong> 16 GB LPDDR5x<br>
@@ -107,8 +107,8 @@
       <div class="card h-100">
         <img src="/Imagenes Computadoras/FOTO6.webp" class="card-img-top" alt="SAMSUNG GALAXY BOOK4 ULTRA" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>SAMSUNG GALAXY BOOK4 ULTRA</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $3.900.000</p>
+          <h5 class="card-title fs-4"><strong>SAMSUNG GALAXY BOOK4 ULTRA</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $3.900.000</p>
           <p class="card-text">
             <strong>Procesador:</strong> Intel Core Ultra 9<br>
             <strong>RAM:</strong> 32 GB LPDDR5x<br>
@@ -125,8 +125,8 @@
       <div class="card h-100">
         <img src="/Imagenes Computadoras/FOTO7.webp" class="card-img-top" alt="MSI STEALTH 16 STUDIO" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>MSI STEALTH 16 STUDIO</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $3.100.000</p>
+          <h5 class="card-title fs-4"><strong>MSI STEALTH 16 STUDIO</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $3.100.000</p>
           <p class="card-text">
             <strong>Procesador:</strong> Intel Core i7-13700H<br>
             <strong>RAM:</strong> 16 GB DDR5<br>
@@ -143,8 +143,8 @@
       <div class="card h-100">
         <img src="/Imagenes Computadoras/FOTO8.jfif" class="card-img-top" alt="ACER PREDATOR HELIOS NEO 16" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>ACER PREDATOR HELIOS NEO 16</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $2.500.000</p>
+          <h5 class="card-title fs-4"><strong>ACER PREDATOR HELIOS NEO 16</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $2.500.000</p>
           <p class="card-text">
             <strong>Procesador:</strong> Intel Core i7-14700HX<br>
             <strong>RAM:</strong> 16 GB DDR5<br>
@@ -161,8 +161,8 @@
       <div class="card h-100">
         <img src="/Imagenes Computadoras/FOTO9.jpg" class="card-img-top" alt="APPLE MACBOOK AIR 15 (M3)" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>APPLE MACBOOK AIR 15 (M3)</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $2.600.000</p>
+          <h5 class="card-title fs-4"><strong>APPLE MACBOOK AIR 15 (M3)</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $2.600.000</p>
           <p class="card-text">
             <strong>Procesador:</strong> Apple M3<br>
             <strong>RAM:</strong> 16 GB Unificada<br>
@@ -179,8 +179,8 @@
       <div class="card h-100">
         <img src="/Imagenes Computadoras/FOTO10.webp" class="card-img-top" alt="LENOVO YOGA 9I" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>LENOVO YOGA 9I</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $2.400.000</p>
+          <h5 class="card-title fs-4"><strong>LENOVO YOGA 9I</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $2.400.000</p>
           <p class="card-text">
             <strong>Procesador:</strong> Intel Core Ultra 7<br>
             <strong>RAM:</strong> 16 GB LPDDR5x<br>
@@ -197,8 +197,8 @@
       <div class="card h-100">
         <img src="/Imagenes Computadoras/FOTO11.jpg" class="card-img-top" alt="DELL ALIENWARE M16 R2" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>DELL ALIENWARE M16 R2</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $3.400.000</p>
+          <h5 class="card-title fs-4"><strong>DELL ALIENWARE M16 R2</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $3.400.000</p>
           <p class="card-text">
             <strong>Procesador:</strong> Intel Core Ultra 9<br>
             <strong>RAM:</strong> 32 GB DDR5<br>
@@ -215,8 +215,8 @@
       <div class="card h-100">
         <img src="/Imagenes Computadoras/FOTO12.jfif" class="card-img-top" alt="HP OMEN TRANSCEND 16" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>HP OMEN TRANSCEND 16</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $2.750.000</p>
+          <h5 class="card-title fs-4"><strong>HP OMEN TRANSCEND 16</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $2.750.000</p>
           <p class="card-text">
             <strong>Procesador:</strong> Intel Core i7-14700HX<br>
             <strong>RAM:</strong> 16 GB DDR5<br>
@@ -233,8 +233,8 @@
       <div class="card h-100">
         <img src="/Imagenes Computadoras/FOTO13.webp" class="card-img-top" alt="ASUS ZENBOOK 14 OLED" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>ASUS ZENBOOK 14 OLED</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $1.950.000</p>
+          <h5 class="card-title fs-4"><strong>ASUS ZENBOOK 14 OLED</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $1.950.000</p>
           <p class="card-text">
             <strong>Procesador:</strong> Intel Core Ultra 7<br>
             <strong>RAM:</strong> 16 GB LPDDR5x<br>
@@ -251,8 +251,8 @@
       <div class="card h-100">
         <img src="/Imagenes Computadoras/FOTO14.webp" class="card-img-top" alt="ACER SWIFT GO 14" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>ACER SWIFT GO 14</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $1.450.000</p>
+          <h5 class="card-title fs-4"><strong>ACER SWIFT GO 14</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $1.450.000</p>
           <p class="card-text">
             <strong>Procesador:</strong> Intel Core Ultra 5<br>
             <strong>RAM:</strong> 16 GB LPDDR5x<br>
@@ -269,8 +269,8 @@
       <div class="card h-100">
         <img src="/Imagenes Computadoras/FOTO15.jpg" class="card-img-top" alt="MSI RAIDER GE78 HX" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>MSI RAIDER GE78 HX</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $4.800.000</p>
+          <h5 class="card-title fs-4"><strong>MSI RAIDER GE78 HX</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $4.800.000</p>
           <p class="card-text">
             <strong>Procesador:</strong> Intel Core i9-14900HX<br>
             <strong>RAM:</strong> 64 GB DDR5<br>

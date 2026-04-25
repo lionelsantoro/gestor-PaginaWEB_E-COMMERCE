@@ -17,8 +17,8 @@
       <div class="card h-100">
         <img src="/Imagenes Celulares/FOTO1.webp" class="card-img-top" alt="SAMSUNG GALAXY S26 ULTRA" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>SAMSUNG GALAXY S26 ULTRA</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $2.800.000</p>
+          <h5 class="card-title fs-4"><strong>SAMSUNG GALAXY S26 ULTRA</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $2.800.000</p>
           <p class="card-text">
             <strong>Almacenamiento:</strong> 512 GB<br>
             <strong>Stock:</strong> 15 disponibles<br>
@@ -33,8 +33,8 @@
       <div class="card h-100">
         <img src="/Imagenes Celulares/FOTO2.webp" class="card-img-top" alt="APPLE IPHONE 17 PRO MAX" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>APPLE IPHONE 17 PRO MAX</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $3.100.000</p>
+          <h5 class="card-title fs-4"><strong>APPLE IPHONE 17 PRO MAX</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $3.100.000</p>
           <p class="card-text">
             <strong>Almacenamiento:</strong> 512 GB<br>
             <strong>Stock:</strong> 10 disponibles<br>
@@ -49,8 +49,8 @@
       <div class="card h-100">
         <img src="/Imagenes Celulares/FOTO3.webp" class="card-img-top" alt="MOTOROLA EDGE 60 ULTRA" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>MOTOROLA EDGE 60 ULTRA</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $1.900.000</p>
+          <h5 class="card-title fs-4"><strong>MOTOROLA EDGE 60 ULTRA</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $1.900.000</p>
           <p class="card-text">
             <strong>Almacenamiento:</strong> 256 GB<br>
             <strong>Stock:</strong> 22 disponibles<br>
@@ -65,8 +65,8 @@
       <div class="card h-100">
         <img src="/Imagenes Celulares/FOTO4.webp" class="card-img-top" alt="SAMSUNG GALAXY Z FOLD 7" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>SAMSUNG GALAXY Z FOLD 7</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $3.500.000</p>
+          <h5 class="card-title fs-4"><strong>SAMSUNG GALAXY Z FOLD 7</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $3.500.000</p>
           <p class="card-text">
             <strong>Almacenamiento:</strong> 1 TB<br>
             <strong>Stock:</strong> 5 disponibles<br>
@@ -81,8 +81,8 @@
       <div class="card h-100">
         <img src="/Imagenes Celulares/FOTO5.jpg" class="card-img-top" alt="APPLE IPHONE 16 PRO" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>APPLE IPHONE 16 PRO</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $2.100.000</p>
+          <h5 class="card-title fs-4"><strong>APPLE IPHONE 16 PRO</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $2.100.000</p>
           <p class="card-text">
             <strong>Almacenamiento:</strong> 128 GB<br>
             <strong>Stock:</strong> 15 disponibles<br>
@@ -97,8 +97,8 @@
       <div class="card h-100">
         <img src="/Imagenes Celulares/FOTO6.jpg" class="card-img-top" alt="MOTOROLA RAZR 60 ULTRA" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>MOTOROLA RAZR 60 ULTRA</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $2.100.000</p>
+          <h5 class="card-title fs-4"><strong>MOTOROLA RAZR 60 ULTRA</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $2.100.000</p>
           <p class="card-text">
             <strong>Almacenamiento:</strong> 512 GB<br>
             <strong>Stock:</strong> 8 disponibles<br>
@@ -113,8 +113,8 @@
       <div class="card h-100">
         <img src="/Imagenes Celulares/FOTO7.webp" class="card-img-top" alt="SAMSUNG GALAXY A26" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>SAMSUNG GALAXY A26</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $450.000</p>
+          <h5 class="card-title fs-4"><strong>SAMSUNG GALAXY A26</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $450.000</p>
           <p class="card-text">
             <strong>Almacenamiento:</strong> 128 GB<br>
             <strong>Stock:</strong> 70 disponibles<br>
@@ -129,8 +129,8 @@
       <div class="card h-100">
         <img src="/Imagenes Celulares/FOTO8.jfif" class="card-img-top" alt="APPLE IPHONE SE4" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>APPLE IPHONE SE4</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $1.100.000</p>
+          <h5 class="card-title fs-4"><strong>APPLE IPHONE SE4</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $1.100.000</p>
           <p class="card-text">
             <strong>Almacenamiento:</strong> 128 GB<br>
             <strong>Stock:</strong> 28 disponibles<br>
@@ -145,8 +145,8 @@
       <div class="card h-100">
         <img src="/Imagenes Celulares/FOTO9.webp" class="card-img-top" alt="XIAOMI 15 PRO" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>XIAOMI 15 PRO</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $2.100.000</p>
+          <h5 class="card-title fs-4"><strong>XIAOMI 15 PRO</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $2.100.000</p>
           <p class="card-text">
             <strong>Almacenamiento:</strong> 512 GB<br>
             <strong>Stock:</strong> 18 disponibles<br>
@@ -161,8 +161,8 @@
       <div class="card h-100">
         <img src="/Imagenes Celulares/FOTO10.jpg" class="card-img-top" alt="GOOGLE PIXEL 10 PRO" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>GOOGLE PIXEL 10 PRO</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $2.300.000</p>
+          <h5 class="card-title fs-4"><strong>GOOGLE PIXEL 10 PRO</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $2.300.000</p>
           <p class="card-text">
             <strong>Almacenamiento:</strong> 256 GB<br>
             <strong>Stock:</strong> 12 disponibles<br>
@@ -177,8 +177,8 @@
       <div class="card h-100">
         <img src="/Imagenes Celulares/FOTO11.webp" class="card-img-top" alt="HUAWEI PURA 80 PRO" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>HUAWEI PURA 80 PRO</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $2.400.000</p>
+          <h5 class="card-title fs-4"><strong>HUAWEI PURA 80 PRO</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $2.400.000</p>
           <p class="card-text">
             <strong>Almacenamiento:</strong> 512 GB<br>
             <strong>Stock:</strong> 8 disponibles<br>
@@ -193,8 +193,8 @@
       <div class="card h-100">
         <img src="/Imagenes Celulares/FOTO12.webp" class="card-img-top" alt="OPPO FIND X8 PRO" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>OPPO FIND X8 PRO</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $2.200.000</p>
+          <h5 class="card-title fs-4"><strong>OPPO FIND X8 PRO</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $2.200.000</p>
           <p class="card-text">
             <strong>Almacenamiento:</strong> 512 GB<br>
             <strong>Stock:</strong> 14 disponibles<br>
@@ -209,8 +209,8 @@
       <div class="card h-100">
         <img src="/Imagenes Celulares/FOTO13.jfif" class="card-img-top" alt="XIAOMI REDMI NOTE 15 PRO+" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>XIAOMI REDMI NOTE 15 PRO+</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $950.000</p>
+          <h5 class="card-title fs-4"><strong>XIAOMI REDMI NOTE 15 PRO+</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $950.000</p>
           <p class="card-text">
             <strong>Almacenamiento:</strong> 256 GB<br>
             <strong>Stock:</strong> 30 disponibles<br>
@@ -225,8 +225,8 @@
       <div class="card h-100">
         <img src="/Imagenes Celulares/FOTO14.webp" class="card-img-top" alt="GOOGLE PIXEL 10A" style="height: 250px; object-fit: contain;">
         <div class="card-body">
-          <h5 class="card-title"><strong>GOOGLE PIXEL 10A</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $1.200.000</p>
+          <h5 class="card-title fs-4"><strong>GOOGLE PIXEL 10A</strong></h5>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $1.200.000</p>
           <p class="card-text">
             <strong>Almacenamiento:</strong> 128 GB<br>
             <strong>Stock:</strong> 25 disponibles<br>
@@ -242,7 +242,7 @@
         <img src="/Imagenes Celulares/FOTO15.webp" class="card-img-top" alt="OPPO RENO 13 PRO" style="height: 250px; object-fit: contain;">
         <div class="card-body">
           <h5 class="card-title"><strong>OPPO RENO 13 PRO</strong></h5>
-          <p class="fs-4 fw-bold mb-3">PRECIO: $1.450.000</p>
+          <p class="fs-5 fw-bold mb-3">PRECIO: $1.450.000</p>
           <p class="card-text">
             <strong>Almacenamiento:</strong> 256 GB<br>
             <strong>Stock:</strong> 20 disponibles<br>
