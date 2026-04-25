@@ -275,7 +275,7 @@
                                     </div>
                                     <div class="card-body p-2 d-flex flex-column">
                                         <div><span class="badge bg-morado mb-2">3 SIN INTERÉS</span></div>
-                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">ASUS VIVOBOOK 16</h6>
+                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Asus Vivobook 16</h6>
                                         <div class="mt-auto">
                                             <div class="d-flex align-items-center mb-1">
                                                 <span class="precio-tachado me-2">$2.178.000</span>
