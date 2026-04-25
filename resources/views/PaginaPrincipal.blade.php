@@ -5,24 +5,7 @@
     <meta charset="UTF-8">
     <title>Página Principal</title>
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
-
-    <style>
-        /**rosado: #B52CD0 */
-        .btn-categoria {
-            border: 2px solid transparent;
-            /* Borde transparente por defecto */
-            border-radius: 16px;
-            /* Cuadrado redondeado */
-            padding: 15px 10px;
-            /* Espacio interior para que el borde respire */
-            transition: border-color 0.3s ease;
-            /* Animación suave */
-        }
-        .btn-categoria:hover {
-            border-color: #7828D8 !important;
-            /* Aparece el borde negro que envuelve todo */
-        }
-    </style>
+    <link rel="stylesheet" href="/css/home.css">
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -86,7 +69,7 @@
                         <div class="circulo-categoria bg-white rounded-circle shadow-sm mb-2 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
                             <img src="/Imagenes inicio/foto7.png" class="img-fluid" style="max-width: 60px; max-height: 60px; object-fit: contain;">
                         </div>
-                        <span class="fw-medium">Teléfonos</span>
+                        <span class="fw-medium" style="color: #B52CD0;">Teléfonos</span>
                     </a>
                 </div>
 
@@ -95,7 +78,7 @@
                         <div class="circulo-categoria bg-white rounded-circle shadow-sm mb-2 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
                             <img src="/Imagenes inicio/foto8.png" class="img-fluid" style="max-width: 60px; max-height: 60px; object-fit: contain;">
                         </div>
-                        <span class="fw-medium">Computadoras</span>
+                        <span class="fw-medium" style="color: #B52CD0;">Computadoras</span>
                     </a>
                 </div>
 
@@ -104,7 +87,7 @@
                         <div class="circulo-categoria bg-white rounded-circle shadow-sm mb-2 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
                             <img src="/Imagenes inicio/foto9.png" class="img-fluid" style="max-width: 60px; max-height: 60px; object-fit: contain;">
                         </div>
-                        <span class="fw-medium">Lavarropas</span>
+                        <span class="fw-medium" style="color: #B52CD0;">Lavarropas</span>
                     </a>
                 </div>
 
@@ -113,16 +96,16 @@
                         <div class="circulo-categoria bg-white rounded-circle shadow-sm mb-2 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
                             <img src="/Imagenes inicio/foto10.png" class="img-fluid" style="max-width: 60px; max-height: 60px; object-fit: contain;">
                         </div>
-                        <span class="fw-medium">Heladeras</span>
+                        <span class="fw-medium" style="color: #B52CD0;">Heladeras</span>
                     </a>
                 </div>
 
         </div>
 
         <div class="bg-ofertas p-4 mt-5 relative">
-            <h3 class="fw-bold mb-4">Ofertas únicas</h3>
+            <h3 class="fw-bold mb-4" style="color: #7828D8;">Ofertas únicas</h3>
 
-            <div id="carruselProductos" class="carousel slide" data-bs-ride="carousel">
+            <div id="carruselProductos" class="carousel slide px-5" data-bs-ride="carousel">
                 <div class="carousel-inner pb-2">
 
                     <div class="carousel-item active">
@@ -331,15 +314,13 @@
 
                 </div>
 
-                <button class="carousel-control-prev btn-nav-productos" type="button"
-                    data-bs-target="#carruselProductos" data-bs-slide="prev" style="left: -10px;">
+                <button class="carousel-control-prev btn-nav-productos w-auto" type="button"
+                    data-bs-target="#carruselProductos" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Anterior</span>
                 </button>
-                <button class="carousel-control-next btn-nav-productos" type="button"
-                    data-bs-target="#carruselProductos" data-bs-slide="next" style="right: -10px;">
+                <button class="carousel-control-next btn-nav-productos w-auto" type="button"
+                    data-bs-target="#carruselProductos" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Siguiente</span>
                 </button>
             </div>
         </div>
