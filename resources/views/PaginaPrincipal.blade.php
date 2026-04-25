@@ -140,7 +140,7 @@
             </div>
 
             <div class="col-6 col-md-3 mb-3">
-                <a href="#" class="btn-categoria text-decoration-none text-dark d-flex flex-column align-items-center">
+                <a href="/catalogo/lavarropas" " class="btn-categoria text-decoration-none text-dark d-flex flex-column align-items-center">
                     <div class="circulo-categoria bg-white rounded-circle shadow-sm d-flex align-items-center justify-content-center" style="width: 110px; height: 110px;">
                         <img src="/Imagenes inicio/foto9.png" class="img-fluid" style="max-width: 90px; max-height: 90px; object-fit: contain;">
                     </div>
@@ -148,7 +148,7 @@
             </div>
 
             <div class="col-6 col-md-3 mb-3">
-                <a href="#" class="btn-categoria text-decoration-none text-dark d-flex flex-column align-items-center">
+                <a href="/catalogo/heladeras" class="btn-categoria text-decoration-none text-dark d-flex flex-column align-items-center">
                     <div class="circulo-categoria bg-white rounded-circle shadow-sm d-flex align-items-center justify-content-center" style="width: 110px; height: 110px;">
                         <img src="/Imagenes inicio/foto10.png" class="img-fluid" style="max-width: 90px; max-height: 90px; object-fit: contain;">
                     </div>
