@@ -40,21 +40,21 @@
                     <div class="col-md-4">
                         <div class="p-4 bg-white border rounded h-100 shadow-sm d-flex flex-column align-items-center text-center">
                             <span class="fs-1 mb-2">📱</span>
-                            <h5 class="fw-bold" style="color: #B52CD0;">Tecnología</h5>
+                            <h5 class="fw-bold">Tecnología</h5>
                             <p class="text-muted mb-0" style="font-size: 0.95rem;">Lo último en smartphones, notebooks y smart TVs. Todo lo que necesitás para estudiar, trabajar y mantenerte conectado.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="p-4 bg-white border rounded h-100 shadow-sm d-flex flex-column align-items-center text-center">
                             <span class="fs-1 mb-2">❄️</span>
-                            <h5 class="fw-bold" style="color: #B52CD0;">Electrodomésticos</h5>
+                            <h5 class="fw-bold">Electrodomésticos</h5>
                             <p class="text-muted mb-0" style="font-size: 0.95rem;">Equipá tu casa con las mejores marcas en heladeras, lavarropas y línea blanca. Soluciones diseñadas para facilitar tu rutina.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="p-4 bg-white border rounded h-100 shadow-sm d-flex flex-column align-items-center text-center">
                             <span class="fs-1 mb-2">🛋️</span>
-                            <h5 class="fw-bold" style="color: #B52CD0;">Hogar y Clima</h5>
+                            <h5 class="fw-bold">Hogar y Clima</h5>
                             <p class="text-muted mb-0" style="font-size: 0.95rem;">Aires acondicionados, calefacción y pequeños electrodomésticos. Garantizamos el máximo confort en tus espacios.</p>
                         </div>
                     </div>
