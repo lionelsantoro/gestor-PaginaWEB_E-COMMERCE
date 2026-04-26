@@ -15,7 +15,7 @@
     
     <div class="container flex-grow-1 d-flex justify-content-center align-items-center my-5">
         
-        <div class="card shadow-sm border-0" style="width: 100%; max-width: 700px;">
+        <div class="card shadow-sm border-0" style="width: 100%; max-width: 600px;">
             <div class="card-body p-4 p-md-5">
                 
                 <h4 class="text-center fw-bold mb-4">Crear una cuenta</h4>
@@ -40,35 +40,13 @@
                         <input type="email" class="form-control" id="email" name="email" placeholder="nombre@ejemplo.com" required>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="celular" class="form-label">Número de celular</label>
-                            <input type="tel" class="form-control" id="celular" name="celular" placeholder="Código de área + número" required>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="edad" class="form-label">Edad</label>
-                            <input type="number" class="form-control" id="edad" name="edad" placeholder="Tu edad" min="18" required>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="pais" class="form-label">País</label>
-                            <input type="text" class="form-control" id="pais" name="pais" placeholder="Tu país" required>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="ciudad" class="form-label">Ciudad</label>
-                            <input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="Tu ciudad" required>
-                        </div>
-                    </div>
-                    
                     <div class="mb-4">
                         <label for="password" class="form-label">Contraseña</label>
                         <input type="password" class="form-control" id="password" name="password" placeholder="Creá una contraseña segura" required>
                     </div>
                     
                     <div class="d-grid mb-3">
-                        <button type="submit" class="btn btn-primary btn-lg">Registrarse</button>
+                        <button type="submit" class="btn flag-primary btn-primary btn-lg">Registrarse</button>
                     </div>
                     
                     <div class="text-center text-muted small">
