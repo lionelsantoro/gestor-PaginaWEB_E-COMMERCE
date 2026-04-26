@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #7828D8;">
+<nav class="navbar navbar-expand-lg navbar-dark fondo-morado">
     <div class="container">
         <a class="navbar-brand" href="/">
             <img src="/Imagenes inicio/foto0.png" height="50" alt="Logo de la marca">
@@ -19,7 +19,7 @@
                     <a class="nav-link dropdown-toggle px-3 fw-semibold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Catálogo
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-dark" style="background-color: #7828D8; border: none;">
+                    <ul class="dropdown-menu dropdown-menu-dark fondo-morado">
                         <li><a class="dropdown-item fw-semibold" href="/catalogo/telefonos">Teléfonos</a></li>
                         <li><a class="dropdown-item fw-semibold" href="/catalogo/computadoras">Computadoras</a></li>
                         <li><a class="dropdown-item fw-semibold" href="/catalogo/lavarropas">Lavarropas</a></li>
