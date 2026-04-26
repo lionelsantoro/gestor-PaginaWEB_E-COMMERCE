@@ -35,9 +35,6 @@
                             <a href="#seccion-cambios" class="list-group-item list-group-item-action border-0 text-dark rounded mb-1">
                                 <i class="bi bi-arrow-counterclockwise me-2 text-rosado"></i> Cambios, devoluciones y...
                             </a>
-                            <a href="#seccion-cuenta" class="list-group-item list-group-item-action border-0 text-dark rounded mb-1">
-                                <i class="bi bi-person-gear me-2 text-rosado"></i> Configuración de Mi cuenta
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -55,9 +52,9 @@
                             </h2>
                             <div id="collapseQuiero1" class="accordion-collapse collapse" data-bs-parent="#accordionQuieroComprar">
                                 <div class="accordion-body text-muted">
-                                    <p>A continuación te dejamos los pasos para comprar en <a href="/" class="text-decoration-none">fravega.com</a>. No es necesario que te registres.</p>
+                                    <p>A continuación te dejamos los pasos para comprar en <a href="/" class="text-decoration-none text-morado">Fravega.com</a>. No es necesario que te registres.</p>
                                     <ol>
-                                        <li class="mb-2">Una vez que estés en <a href="/" class="text-decoration-none">fravega.com</a>, buscá el producto que querés comprar en el buscador o seleccioná la categoría que prefieras desde el menú principal.</li>
+                                        <li class="mb-2">Una vez que estés en <a href="/" class="text-decoration-none text-morado">Fravega.com</a>, buscá el producto que querés comprar en el buscador o seleccioná la categoría que prefieras desde el menú principal.</li>
                                         <li class="mb-2">Seleccioná el producto y hacé click en el botón <strong>COMPRAR</strong>.</li>
                                         <li class="mb-2">En <strong>Mi carrito</strong>, podrás ver los productos elegidos y agregar una Garantía para tu compra (si el producto lo permite).<br>Si tenés un código de descuento, podrás ingresarlo en este paso.</li>
                                         <li class="mb-2">Clickeá el botón <strong>FINALIZAR COMPRA</strong> para continuar.</li>
@@ -78,7 +75,7 @@
                             </h2>
                             <div id="collapseQuiero2" class="accordion-collapse collapse" data-bs-parent="#accordionQuieroComprar">
                                 <div class="accordion-body text-muted">
-                                    <p>Si querés comprar a través de <a href="/" class="text-decoration-none">Fravega.com</a> pero retirar en una sucursal, podés consultar si hay stock siguiendo estos pasos:</p>
+                                    <p>Si querés comprar a través de <a href="/" class="text-decoration-none text-morado">Fravega.com</a> pero retirar en una sucursal, podés consultar si hay stock siguiendo estos pasos:</p>
                                     <ol>
                                         <li class="mb-2">Seleccioná el producto que querés comprar.</li>
                                         <li class="mb-2">Debajo de los medios de pago y opciones de financiación, hacé click en Ver sucursales.</li>
@@ -96,8 +93,8 @@
                             </h2>
                             <div id="collapseQuiero3" class="accordion-collapse collapse" data-bs-parent="#accordionQuieroComprar">
                                 <div class="accordion-body text-muted">
-                                    <p>En <a href="/" class="text-decoration-none">Fravega.com</a> te garantizamos la seguridad de todas tus compras online, manteniendo tus datos bajo la más estricta confidencialidad. Toda la información personal ingresada es cifrada, y no puede ser leída ni utilizada por terceros.</p>
-                                    <p class="mb-0">Para más información ver <a href="/terminos-y-usos" class="text-decoration-none">Términos y Condiciones</a>.</p>
+                                    <p>En <a href="/" class="text-decoration-none text-morado">Fravega.com</a> te garantizamos la seguridad de todas tus compras online, manteniendo tus datos bajo la más estricta confidencialidad. Toda la información personal ingresada es cifrada, y no puede ser leída ni utilizada por terceros.</p>
+                                    <p class="mb-0">Para más información ver <a href="/terminos-y-usos" class="text-decoration-none text-morado">Términos y Condiciones</a>.</p>
                                 </div>
                             </div>
                         </div>
@@ -114,7 +111,7 @@
                             </h2>
                             <div id="collapsePago1" class="accordion-collapse collapse" data-bs-parent="#accordionPago">
                                 <div class="accordion-body text-muted">
-                                    <p class="fw-bold mb-2 text-dark">Si comprás en <a href="/" class="text-decoration-none">Fravega.com</a></p>
+                                    <p class="fw-bold mb-2 text-dark">Si comprás en <a href="/" class="text-decoration-none text-morado">Fravega.com</a></p>
                                     <ul>
                                         <li>Tarjeta de crédito</li>
                                         <li>Tarjeta de débito</li>
@@ -150,10 +147,9 @@
                                     
                                     <div class="p-3 mt-4 bg-light border rounded" style="border-color: #e0e5ea !important;">
                                         <div class="d-flex align-items-center mb-2">
-                                            <i class="bi bi-info-circle text-primary me-2"></i>
-                                            <strong class="text-primary">Importante</strong>
+                                            <i class="bi bi-info-circle text-primary me-2 text-morado"></i>
+                                            <strong class="text-primary text-morado">Importante</strong>
                                         </div>
-                                        <p class="fw-bold mb-1 text-dark">Importante:</p>
                                         <p class="mb-2">Si no encontraste el comprobante que buscabas:</p>
                                         <ol class="mb-0">
                                             <li class="mb-1">Ingresá a la solapa <strong>Pago y facturación</strong>.</li>
@@ -175,8 +171,8 @@
                                 <div class="accordion-body text-muted">
                                     <div class="p-3 mb-4 bg-light border rounded" style="border-color: #e0e5ea !important;">
                                         <div class="d-flex align-items-center mb-2">
-                                            <i class="bi bi-info-circle text-primary me-2"></i>
-                                            <strong class="text-primary">Importante</strong>
+                                            <i class="bi bi-info-circle me-2 text-morado"></i>
+                                            <strong class="text-primary text-morado">Importante</strong>
                                         </div>
                                         <p class="mb-0 text-dark">Los datos de cabecera, no pueden modificarse.</p>
                                     </div>
@@ -308,8 +304,8 @@
                                     
                                     <div class="p-3 bg-light border rounded" style="border-color: #e0e5ea !important;">
                                         <div class="d-flex align-items-center mb-2">
-                                            <i class="bi bi-info-circle text-primary me-2"></i>
-                                            <strong class="text-primary">Importante</strong>
+                                            <i class="bi bi-info-circle me-2 text-morado"></i>
+                                            <strong class="text-primary text-morado">Importante</strong>
                                         </div>
                                         <ul class="mb-0 list-unstyled">
                                             <li class="mb-1">- El retiro en sucursal <strong>¡es gratis!</strong></li>
@@ -335,17 +331,18 @@
                         </div>
                     </div>
 
-                    <h4 id="seccion-cambios" class="mt-4 mb-3 fw-bold pt-3 text-rosado">Cambios, devoluciones y cancelaciones</h4>
+                   <h4 id="seccion-cambios" class="mt-4 mb-3 fw-bold pt-3 text-rosado">Cambios, devoluciones y cancelaciones</h4>
                     <div class="accordion mb-5" id="accordionCambios">
+                        
                         <div class="accordion-item border-0 border-bottom">
                             <h2 class="accordion-header" id="headingCambios1">
                                 <button class="accordion-button collapsed bg-white text-dark fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCambios1">
-                                    Condiciones para cambiar o devolver un producto
+                                    ¿Qué requisitos debe cumplir un producto para poder cambiarlo o devolverlo?
                                 </button>
                             </h2>
                             <div id="collapseCambios1" class="accordion-collapse collapse" data-bs-parent="#accordionCambios">
                                 <div class="accordion-body text-muted">
-                                    <h5 class="fw-bold text-dark mb-3">¿Qué requisitos debe cumplir un producto para poder cambiarlo o devolverlo?</h5>
+                                    
                                     <p>A continuación, conocé toda la información que necesitás sobre cambios y devoluciones.</p>
                                     
                                     <p class="fw-bold mb-1 text-dark">No tienen devolución:</p>
@@ -381,15 +378,25 @@
                                     
                                     <div class="p-3 mb-4 bg-light border rounded" style="border-color: #e0e5ea !important;">
                                         <div class="d-flex align-items-center mb-2">
-                                            <i class="bi bi-info-circle text-primary me-2"></i>
-                                            <strong class="text-primary">Importante</strong>
+                                            <i class="bi bi-info-circle text-primary me-2 text-morado"></i>
+                                            <strong class="text-morado">Importante</strong>
                                         </div>
                                         <p class="mb-0">Para solicitar el cambio o devolución será necesario que los productos se encuentren en perfectas condiciones, con su empaque original, accesorios y manuales completos.</p>
                                     </div>
-                            
-                                    <hr class="my-4">
-                            
-                                    <h5 class="fw-bold text-dark mb-3">¿Cuáles son los plazos para cambiar o devolver un producto?</h5>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 border-bottom">
+                            <h2 class="accordion-header" id="headingCambios2">
+                                <button class="accordion-button collapsed bg-white text-dark fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCambios2">
+                                    ¿Cuáles son los plazos para cambiar o devolver un producto?
+                                </button>
+                            </h2>
+                            <div id="collapseCambios2" class="accordion-collapse collapse" data-bs-parent="#accordionCambios">
+                                <div class="accordion-body text-muted">
+                                    
                                     <p class="mb-4">Tené en cuenta los siguientes requisitos y plazos para poder devolver o cambiar tu producto:</p>
                             
                                     <p class="fw-bold mb-1 text-dark">Llegó roto o dañado</p>
@@ -429,45 +436,49 @@
                             
                                     <div class="p-3 mb-4 bg-light border rounded" style="border-color: #e0e5ea !important;">
                                         <div class="d-flex align-items-center mb-2">
-                                            <i class="bi bi-info-circle text-primary me-2"></i>
-                                            <strong class="text-primary">Importante</strong>
+                                            <i class="bi bi-info-circle text-morado me-2"></i>
+                                            <strong class="text-morado">Importante</strong>
                                         </div>
                                         <p class="mb-0">Algunos productos que requieren adaptadores USB y/o pilas no incluyen este accesorio de fábrica.</p>
                                     </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 border-bottom">
+                            <h2 class="accordion-header" id="headingCambios3">
+                                <button class="accordion-button collapsed bg-white text-dark fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCambios3">
+                                    ¿Cómo pedir el cambio o la devolución de un producto?
+                                </button>
+                            </h2>
+                            <div id="collapseCambios3" class="accordion-collapse collapse" data-bs-parent="#accordionCambios">
+                                <div class="accordion-body text-muted">
                             
-                                    <hr class="my-4">
-                            
-                                    <h5 class="fw-bold text-dark mb-3">¿Cómo pido el cambio o la devolución de un producto?</h5>
-                                    
                                     <p class="fw-bold mb-2 text-dark">Si compraste por la web de Frávega, por teléfono o en alguna de nuestras tiendas afiliadas*</p>
                                     <ol class="mb-4">
                                         <li class="mb-1">Ingresá a <strong>Mi cuenta</strong>.</li>
-                                        <li class="mb-1">Elegí la opción <strong>Mis compras</strong> e iniciá sesión con tus datos.</li>
+                                        <li class="mb-1">Elegí la option <strong>Mis compras</strong> e iniciá sesión con tus datos.</li>
                                         <li class="mb-1">Seleccioná la compra que contiene el producto a cambiar o devolver.</li>
                                         <li class="mb-1">Hacé click en el botón <strong>NECESITO AYUDA</strong>.</li>
                                         <li class="mb-1">Elegí la opción <strong>Quiero cambiar o devolver un producto</strong>.</li>
                                         <li class="mb-0">Indicá el motivo y seguí los pasos.</li>
                                     </ol>
-                            
-                                    <p class="fw-bold mb-1 text-dark">Si compraste en una sucursal</p>
-                                    <p class="mb-4">Completá <a href="/" class="text-decoration-none">este formulario</a> para que nos contactemos con vos.</p>
-                            
-                                    <p class="fw-bold mb-1 text-dark">Si compraste en Mercado Libre</p>
-                                    <p class="mb-0">Podrás solicitar el cambio o devolución de un producto ingresando a Mercado Libre.</p>
+                                    
                                 </div>
                             </div>
                         </div>
+
                         <div class="accordion-item border-0 border-bottom">
-                            <h2 class="accordion-header" id="headingCambios2">
-                                <button class="accordion-button collapsed bg-white text-dark fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCambios2">
+                            <h2 class="accordion-header" id="headingCambios4">
+                                <button class="accordion-button collapsed bg-white text-dark fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCambios4">
                                     Condiciones para cancelar una compra pendiente de entrega
                                 </button>
                             </h2>
-                            <div id="collapseCambios2" class="accordion-collapse collapse" data-bs-parent="#accordionCambios">
+                            <div id="collapseCambios4" class="accordion-collapse collapse" data-bs-parent="#accordionCambios">
                                 <div class="accordion-body text-muted">
-                                    <h5 class="fw-bold text-dark mb-4">¿Cómo cancelo una compra pendiente de entrega?</h5>
                                     
-                                    <p class="fw-bold mb-2 text-dark">Si compraste en <a href="/" class="text-decoration-none">Fravega.com</a> o por teléfono</p>
+                                    <p class="fw-bold mb-2 text-dark">Si compraste en <a href="/" class="text-decoration-none text-morado">Fravega.com</a> o por teléfono</p>
                                     <ol class="mb-4">
                                         <li class="mb-1">Ingresá a <strong>Mi cuenta</strong>.</li>
                                         <li class="mb-1">Elegí la opción <strong>Mis compras</strong> e iniciá sesión con tus datos.</li>
@@ -478,8 +489,8 @@
                             
                                     <div class="p-3 bg-light border rounded" style="border-color: #e0e5ea !important;">
                                         <div class="d-flex align-items-center mb-2">
-                                            <i class="bi bi-info-circle text-primary me-2"></i>
-                                            <strong class="text-primary">Importante</strong>
+                                            <i class="bi bi-info-circle text-primary me-2 text-morado"></i>
+                                            <strong class="text-primary text-morado">Importante</strong>
                                         </div>
                                         <ul class="mb-0 list-unstyled">
                                             <li class="mb-1">- Si tu compra está confirmada y todavía no fue despachada: podés avanzar con la cancelación de forma inmediata.</li>
@@ -487,51 +498,10 @@
                                             <li class="mb-0">- Si tu compra fue entregada: podés hacer la solicitud desde la opción <strong>Cambios y devoluciones</strong> en la sección <strong>Mis Compras</strong>.</li>
                                         </ul>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <h4 id="seccion-cuenta" class="mt-4 mb-3 fw-bold pt-3 text-rosado">Configuración de Mi cuenta</h4>
-                    <div class="accordion mb-5" id="accordionCuenta">
-                        <div class="accordion-item border-0 border-bottom">
-                            <h2 class="accordion-header" id="headingCuenta1">
-                                <button class="accordion-button collapsed bg-white text-dark fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCuenta1">
-                                    Crear cuenta
-                                </button>
-                            </h2>
-                            <div id="collapseCuenta1" class="accordion-collapse collapse" data-bs-parent="#accordionCuenta">
-                                <div class="accordion-body text-muted">
-                                    <ol>
-                                        <li class="mb-2">Ingresá a <strong>Mi cuenta</strong>.</li>
-                                        <li class="mb-2">Elegí la opción <strong>Mis datos.</strong></li>
-                                        <li class="mb-2">Podés ingresar con tu cuenta de Gmail o Facebook. Si preferís crear tu cuenta con un mail y contraseña distinto, elegí la opción <strong>Ingresar con mail y contraseña.</strong></li>
-                                        <li class="mb-2">Hacé click en <strong>Registrala ahora</strong> y seguí los pasos.</li>
-                                    </ol>
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item border-0 border-bottom">
-                            <h2 class="accordion-header" id="headingCuenta2">
-                                <button class="accordion-button collapsed bg-white text-dark fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCuenta2">
-                                    Recuperar contraseña
-                                </button>
-                            </h2>
-                            <div id="collapseCuenta2" class="accordion-collapse collapse" data-bs-parent="#accordionCuenta">
-                                <div class="accordion-body text-muted">
-                                    <ol>
-                                        <li class="mb-2">Ingresá a <strong>Mi cuenta</strong>.</li>
-                                        <li class="mb-2">Elegí la opción <strong>Mis datos.</strong></li>
-                                        <li class="mb-2">Seleccioná <strong>Ingresar con mail y contraseña.</strong></li>
-                                        <li class="mb-2">Hacé click en <strong>Olvidé mi contraseña.</strong></li>
-                                        <li class="mb-2">Ingresá tu mail.</li>
-                                        <li class="mb-2">Elegí tu nueva contraseña y hacé click en <strong>Registrar una nueva contraseña.</strong></li>
-                                        <li class="mb-2">Ingresá el <strong>código de acceso temporal</strong> que te enviamos por mail y hacé click en el botón <strong>Cambiar contraseña.</strong></li>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-                        
                     </div>
 
                 </div>
