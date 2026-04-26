@@ -35,3 +35,13 @@
 .accordion-body {
     text-align: justify;
 }
+
+/*Menu fijo de comercializacion*/
+.catalogo-fijo{
+    top: 2rem; 
+    z-index: 1;
+}
+
+.card-importante{
+    border-color: #e0e5ea !important;
+}

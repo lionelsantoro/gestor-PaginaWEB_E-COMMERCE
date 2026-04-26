@@ -18,7 +18,7 @@
             <div class="row">
                 
                 <div class="col-md-3 position-relative">
-                    <div class="sticky-top" style="top: 2rem; z-index: 1;">
+                    <div class="sticky-top catalogo-fijo">
                         <h6 class="mb-3 fs-4 fw-bold text-muted text-morado">Categorías</h6>
                         
                         <div class="list-group list-group-flush border-start border-4 border-morado ps-3" id="menuLateral">
@@ -145,7 +145,7 @@
                                         <li class="mb-2">Descargá el documento que necesites.</li>
                                     </ol>
                                     
-                                    <div class="p-3 mt-4 bg-light border rounded" style="border-color: #e0e5ea !important;">
+                                    <div class="p-3 mt-4 bg-light border rounded card-importante">
                                         <div class="d-flex align-items-center mb-2">
                                             <i class="bi bi-info-circle text-primary me-2 text-morado"></i>
                                             <strong class="text-primary text-morado">Importante</strong>
@@ -169,7 +169,7 @@
                             </h2>
                             <div id="collapsePago3" class="accordion-collapse collapse" data-bs-parent="#accordionPago">
                                 <div class="accordion-body text-muted">
-                                    <div class="p-3 mb-4 bg-light border rounded" style="border-color: #e0e5ea !important;">
+                                    <div class="p-3 mb-4 bg-light border rounded card-importante">
                                         <div class="d-flex align-items-center mb-2">
                                             <i class="bi bi-info-circle me-2 text-morado"></i>
                                             <strong class="text-primary text-morado">Importante</strong>
@@ -302,7 +302,7 @@
                                     <p class="fw-bold mt-4 mb-2 text-dark">¿Cuál es el plazo para retiro en sucursal?</p>
                                     <p class="mb-3">Una vez que recibas el mail para informarte que tu compra ya está lista, <strong>tenés 15 días corridos para retirarla</strong>. Transcurrido ese plazo, se cancelará la compra y se realizará la devolución del dinero al mismo medio de pago utilizado.</p>
                                     
-                                    <div class="p-3 bg-light border rounded" style="border-color: #e0e5ea !important;">
+                                    <div class="p-3 bg-light border rounded card-importante">
                                         <div class="d-flex align-items-center mb-2">
                                             <i class="bi bi-info-circle me-2 text-morado"></i>
                                             <strong class="text-primary text-morado">Importante</strong>
@@ -376,7 +376,7 @@
                                         <li>Monopatines y hoverboards, blanquería y muebles para armar, aparatos de deportes y fitness, bicicletas, herramientas, iluminación, estabilizadores y grupos electrógenos, productos de jardín, piletas e inflables, baterías y neumáticos, impresoras y drones.</li>
                                     </ul>
                                     
-                                    <div class="p-3 mb-4 bg-light border rounded" style="border-color: #e0e5ea !important;">
+                                    <div class="p-3 mb-4 bg-light border rounded card-importante">
                                         <div class="d-flex align-items-center mb-2">
                                             <i class="bi bi-info-circle text-primary me-2 text-morado"></i>
                                             <strong class="text-morado">Importante</strong>
@@ -434,7 +434,7 @@
                                         <li>En productos de <strong>compra internacional y/o reacondicionados</strong> no se admite cambio y el plazo para efectuar la devolución es de 10 días corridos a partir de la fecha de entrega.</li>
                                     </ul>
                             
-                                    <div class="p-3 mb-4 bg-light border rounded" style="border-color: #e0e5ea !important;">
+                                    <div class="p-3 mb-4 bg-light border rounded card-importante">
                                         <div class="d-flex align-items-center mb-2">
                                             <i class="bi bi-info-circle text-morado me-2"></i>
                                             <strong class="text-morado">Importante</strong>
@@ -487,7 +487,7 @@
                                         <li class="mb-0">Elegí la opción <strong>Quiero cancelar la compra</strong> y seguí los pasos.</li>
                                     </ol>
                             
-                                    <div class="p-3 bg-light border rounded" style="border-color: #e0e5ea !important;">
+                                    <div class="p-3 bg-light border rounded card-importante">
                                         <div class="d-flex align-items-center mb-2">
                                             <i class="bi bi-info-circle text-primary me-2 text-morado"></i>
                                             <strong class="text-primary text-morado">Importante</strong>
