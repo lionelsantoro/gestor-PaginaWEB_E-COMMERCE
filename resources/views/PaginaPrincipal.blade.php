@@ -28,33 +28,33 @@
             </div>
         </div>
 
-         <div class="row my-5 mx-0 rounded shadow-sm" style="background-color: #f8f9fa; border-left: 6px solid #7828D8;">
+        <div class="row my-5 mx-0 rounded shadow-sm" style="background-color: #f8f9fa; border-left: 6px solid #B52CD0;">
             <div class="col-12 p-4 p-md-5">
-                <h2 class="fw-bold mb-3" style="color: #7828D8;">Conocé Frávega</h2>
+                <h2 class="fw-bold mb-3" style="color: #B52CD0;">Conocé Frávega</h2>
                 <p class="fs-5 text-secondary mb-4">
                     Somos la empresa líder en Argentina con más de 100 años de trayectoria, dedicada a acercar la mejor tecnología y equipamiento a millones de hogares. Nuestro compromiso es brindarte calidad, innovación y una experiencia de compra excepcional, acompañándote en cada etapa de tu vida.
                 </p>
                 
-                <h4 class="fw-bold text-dark mb-4 mt-2">Nuestras Principales Categorías</h4>
+                <h4 class="fw-bold mb-4 mt-2" style="color: #B52CD0;">Nuestras Principales Categorías</h4>
                 <div class="row g-4">
                     <div class="col-md-4">
                         <div class="p-4 bg-white border rounded h-100 shadow-sm d-flex flex-column align-items-center text-center">
-                            <span class="fs-1 mb-2" style="color: #7828D8;">📱</span>
-                            <h5 class="fw-bold text-dark">Tecnología</h5>
+                            <span class="fs-1 mb-2">📱</span>
+                            <h5 class="fw-bold" style="color: #B52CD0;">Tecnología</h5>
                             <p class="text-muted mb-0" style="font-size: 0.95rem;">Lo último en smartphones, notebooks y smart TVs. Todo lo que necesitás para estudiar, trabajar y mantenerte conectado.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="p-4 bg-white border rounded h-100 shadow-sm d-flex flex-column align-items-center text-center">
-                            <span class="fs-1 mb-2" style="color: #7828D8;">❄️</span>
-                            <h5 class="fw-bold text-dark">Electrodomésticos</h5>
+                            <span class="fs-1 mb-2">❄️</span>
+                            <h5 class="fw-bold" style="color: #B52CD0;">Electrodomésticos</h5>
                             <p class="text-muted mb-0" style="font-size: 0.95rem;">Equipá tu casa con las mejores marcas en heladeras, lavarropas y línea blanca. Soluciones diseñadas para facilitar tu rutina.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="p-4 bg-white border rounded h-100 shadow-sm d-flex flex-column align-items-center text-center">
-                            <span class="fs-1 mb-2" style="color: #7828D8;">🛋️</span>
-                            <h5 class="fw-bold text-dark">Hogar y Clima</h5>
+                            <span class="fs-1 mb-2">🛋️</span>
+                            <h5 class="fw-bold" style="color: #B52CD0;">Hogar y Clima</h5>
                             <p class="text-muted mb-0" style="font-size: 0.95rem;">Aires acondicionados, calefacción y pequeños electrodomésticos. Garantizamos el máximo confort en tus espacios.</p>
                         </div>
                     </div>
@@ -118,7 +118,7 @@
                                     </div>
                                     <div class="card-body p-2 d-flex flex-column">
                                         <div><span class="badge bg-morado mb-2">3 SIN INTERÉS</span></div>
-                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Celular Samsung Galaxy S23</h6>
+                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Samsung Galaxy S23</h6>
                                         <div class="mt-auto">
                                             <div class="d-flex align-items-center mb-1">
                                                 <span class="precio-tachado me-2">$469.999</span>
@@ -137,7 +137,7 @@
                                     </div>
                                     <div class="card-body p-2 d-flex flex-column">
                                         <div><span class="badge bg-morado mb-2">6 SIN INTERÉS</span></div>
-                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Notebook Lenovo IdeaPad 3</h6>
+                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Lenovo IdeaPad 3</h6>
                                         <div class="mt-auto">
                                             <div class="d-flex align-items-center mb-1">
                                                 <span class="precio-tachado me-2">$2.599.9999</span>
@@ -156,7 +156,7 @@
                                     </div>
                                     <div class="card-body p-2 d-flex flex-column">
                                         <div><span class="badge bg-morado mb-2">12 SIN INTERÉS</span></div>
-                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Lavarropas Drean Next 8kg</h6>
+                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Drean Next 8kg</h6>
                                         <div class="mt-auto">
                                             <div class="d-flex align-items-center mb-1">
                                                 <span class="precio-tachado me-2">$809.999</span>
@@ -175,7 +175,7 @@
                                     </div>
                                     <div class="card-body p-2 d-flex flex-column">
                                         <div><span class="badge bg-morado mb-2">3 SIN INTERÉS</span></div>
-                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Heladera Whirlpool ARB 254</h6>
+                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Whirlpool ARB 254</h6>
                                         <div class="mt-auto">
                                             <div class="d-flex align-items-center mb-1">
                                                 <span class="precio-tachado me-2">$1.019.999</span>
@@ -194,7 +194,7 @@
                                     </div>
                                     <div class="card-body p-2 d-flex flex-column">
                                         <div><span class="badge bg-morado mb-2">AHORA 12</span></div>
-                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Celular Motorola Edge 40</h6>
+                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Motorola Edge 40</h6>
                                         <div class="mt-auto">
                                             <div class="d-flex align-items-center mb-1">
                                                 <span class="precio-tachado me-2">$349.999</span>
@@ -239,7 +239,7 @@
                                     </div>
                                     <div class="card-body p-2 d-flex flex-column">
                                         <div><span class="badge bg-morado mb-2">6 SIN INTERÉS</span></div>
-                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Lavarropas Samsung Inverter</h6>
+                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Samsung Inverter</h6>
                                         <div class="mt-auto">
                                             <div class="d-flex align-items-center mb-1">
                                                 <span class="precio-tachado me-2">$999.999</span>
@@ -258,7 +258,7 @@
                                     </div>
                                     <div class="card-body p-2 d-flex flex-column">
                                         <div><span class="badge bg-morado mb-2">12 SIN INTERÉS</span></div>
-                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Heladera Gafa No Frost</h6>
+                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Gafa No Frost</h6>
                                         <div class="mt-auto">
                                             <div class="d-flex align-items-center mb-1">
                                                 <span class="precio-tachado me-2">$1.047.666</span>
@@ -277,7 +277,7 @@
                                     </div>
                                     <div class="card-body p-2 d-flex flex-column">
                                         <div><span class="badge bg-morado mb-2">3 SIN INTERÉS</span></div>
-                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">Celular iPhone 14</h6>
+                                        <h6 class="card-title text-truncate" style="font-size: 0.9rem;">iPhone 14</h6>
                                         <div class="mt-auto">
                                             <div class="d-flex align-items-center mb-1">
                                                 <span class="precio-tachado me-2">$888.778</span>
