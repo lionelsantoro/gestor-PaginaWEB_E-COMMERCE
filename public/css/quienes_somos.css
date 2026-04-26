@@ -1,0 +1,9 @@
+/* Color rosado para textos e iconos */
+.text-rosado {
+    color: #B52CD0 !important;
+}
+
+/* Color rosado para bordes */
+.border-rosado {
+    border-color: #B52CD0 !important;
+}
