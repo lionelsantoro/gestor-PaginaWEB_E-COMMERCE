@@ -3,7 +3,20 @@
     color: #B52CD0 !important;
 }
 
+.text-morado{
+    color: #7828D8 !important;
+}
+
 /* Color rosado para bordes */
 .border-rosado {
     border-color: #B52CD0 !important;
+}
+
+.border-morado {
+    border-color: #7828D8 !important;
+}
+
+/* Justificar el texto de todos los acordeones de terminos y usos*/
+.accordion-body {
+    text-align: justify;
 }

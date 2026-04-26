@@ -16,7 +16,7 @@
         <section class="container my-5">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-10 col-lg-8">
-                    <h1 class="fw-bold mb-4 display-5 text-rosado">Quiénes somos</h1>
+                    <h1 class="fw-bold mb-4 display-5 text-morado">Quiénes somos</h1>
 
                     <p class="lead fw-bold mb-4 text-rosado">
                         Frávega es una empresa argentina con más 100 años de trayectoria y más de 100 sucursales en todo
@@ -38,7 +38,7 @@
 
                     <div class="col-12 col-sm-6 col-lg-3">
                         <div class="d-flex align-items-center justify-content-center justify-content-sm-start p-2">
-                            <i class="bi bi-clock-history display-5 text-primary me-3 text-rosado"></i>
+                            <i class="bi bi-clock-history display-5 text-primary me-3 text-morado"></i>
                             <div>
                                 <h3 class="fw-bold mb-0">+100</h3>
                                 <p class="text-muted mb-0">Años de historia</p>
@@ -48,7 +48,7 @@
 
                     <div class="col-12 col-sm-6 col-lg-3">
                         <div class="d-flex align-items-center justify-content-center justify-content-sm-start p-2">
-                            <i class="bi bi-shop display-5 text-primary me-3 text-rosado"></i>
+                            <i class="bi bi-shop display-5 text-primary me-3 text-morado"></i>
                             <div>
                                 <h3 class="fw-bold mb-0">+100</h3>
                                 <p class="text-muted mb-0">Sucursales</p>
@@ -58,7 +58,7 @@
 
                     <div class="col-12 col-sm-6 col-lg-3">
                         <div class="d-flex align-items-center justify-content-center justify-content-sm-start p-2">
-                            <i class="bi bi-people display-5 text-primary me-3 text-rosado"></i>
+                            <i class="bi bi-people display-5 text-primary me-3 text-morado"></i>
                             <div>
                                 <h3 class="fw-bold mb-0">+2.700</h3>
                                 <p class="text-muted mb-0">Colaboradores</p>
@@ -68,7 +68,7 @@
 
                     <div class="col-12 col-sm-6 col-lg-3">
                         <div class="d-flex align-items-center justify-content-center justify-content-sm-start p-2">
-                            <i class="bi bi-buildings display-5 text-primary me-3 text-rosado"></i>
+                            <i class="bi bi-buildings display-5 text-primary me-3 text-morado"></i>
                             <div>
                                 <h3 class="fw-bold mb-0">2</h3>
                                 <p class="text-muted mb-0">Plantas industriales</p>
@@ -102,7 +102,7 @@
 
         <section class="container mb-5">
             <div class="row justify-content-center">
-                <div class="col-12 col-md-10 col-lg-8 border-start border-rosado border-4 ps-4">
+                <div class="col-12 col-md-10 col-lg-8 border-start border-morado border-4 ps-4">
                     <p class="text-secondary">
                         Hoy Frávega también juega un papel muy importante en la producción de electrodomésticos,
                         principalmente en los rubros TV, Audio, Microondas e Informática. Con dos plantas, una en Tierra

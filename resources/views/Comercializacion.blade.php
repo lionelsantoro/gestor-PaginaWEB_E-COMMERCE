@@ -19,9 +19,9 @@
                 
                 <div class="col-md-3 position-relative">
                     <div class="sticky-top" style="top: 2rem; z-index: 1;">
-                        <h6 class="mb-3 fs-4 fw-bold text-muted text-rosado">Categorías</h6>
+                        <h6 class="mb-3 fs-4 fw-bold text-muted text-morado">Categorías</h6>
                         
-                        <div class="list-group list-group-flush border-start border-4 border-rosado ps-3" id="menuLateral">
+                        <div class="list-group list-group-flush border-start border-4 border-morado ps-3" id="menuLateral">
                             <a href="#seccion-quiero-comprar" class="list-group-item list-group-item-action border-0 text-dark rounded mb-1">
                                 <i class="bi bi-cart3 me-2 text-rosado"></i> Quiero comprar
                             </a>
