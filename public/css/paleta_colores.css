@@ -3,7 +3,7 @@
     color: #B52CD0 !important;
 }
 
-.text-morado{
+.text-morado {
     color: #7828D8 !important;
 }
 
@@ -14,6 +14,16 @@
 
 .border-morado {
     border-color: #7828D8 !important;
+}
+
+.fondo-rosado {
+    background-color: #B52CD0 !important;
+    color: #fff !important;
+}
+
+.fondo-morado {
+    background-color: #7828D8 !important;
+    color: #fff !important;
 }
 
 /* Justificar el texto de todos los acordeones de terminos y usos*/

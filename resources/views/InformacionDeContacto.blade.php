@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <title>Contacto | Mi E-Commerce</title>
+    <link rel="stylesheet" href="/css/paleta_colores.css">
+    <title>Contacto</title>
 </head> 
 
 <body class="d-flex flex-column min-vh-100 bg-light">
@@ -16,7 +17,7 @@
     <div class="container my-5">
         
         <div class="text-center mb-5">
-            <h2 class="fw-bold">Contactate con nosotros</h2>
+            <h2 class="fw-bold text-rosado">Contactate con nosotros</h2>
             <p class="text-muted">Completá el formulario o comunicate a través de nuestros canales de atención.</p>
         </div>
 
@@ -25,7 +26,7 @@
             <div class="col-lg-6">
                 <div class="card shadow-sm border-0 h-100">
                     <div class="card-body p-4 p-md-5">
-                        <h4 class="mb-4">Envianos un mensaje</h4>
+                        <h4 class="mb-4 text-rosado"><strong>Envianos un mensaje</strong></h4>
 
 
                         <form action="/informacion-de-contacto" method="POST">
@@ -53,7 +54,7 @@
                                 </div>
                                 
                                 <div class="d-grid">
-                                    <button type="submit" class="btn btn-primary btn-lg">Enviar Mensaje</button>
+                                    <button type="submit" class="btn btn-lg fondo-rosado">Enviar Mensaje</button>
                                 </div>
                             </form>
                     </div>
@@ -66,7 +67,7 @@
                         
                         <div class="mb-4">
                             <h5 class="fw-bold d-flex align-items-center">
-                                <i class="bi bi-headset fs-4 text-primary me-2"></i> Atención al cliente
+                                <i class="bi bi-headset fs-4 text-primary me-2 text-morado"></i> Atención al cliente
                             </h5>
                             <p class="fs-5 mb-1"><strong>0800 122 0338</strong></p>
                             <p class="fs-5 mb-1"><strong>0810 999 3728</strong></p>
@@ -78,7 +79,7 @@
 
                         <div class="mb-4">
                             <h5 class="fw-bold d-flex align-items-center">
-                                <i class="bi bi-telephone fs-4 text-primary me-2"></i> Venta telefónica
+                                <i class="bi bi-telephone fs-4 text-primary me-2 text-morado"></i> Venta telefónica
                             </h5>
                             <p class="fs-5 mb-1"><strong>0810 333 8700</strong></p>
                             <p class="text-muted small mb-0">LUNES A VIERNES de 8:00 a 20:00</p>
@@ -90,13 +91,13 @@
                         <div class="row mb-4">
                             <div class="col-md-6 mb-3 mb-md-0">
                                 <h6 class="fw-bold d-flex align-items-center">
-                                    <i class="bi bi-envelope text-primary me-2"></i> Cobranza de créditos
+                                    <i class="bi bi-envelope text-primary me-2 text-morado"></i> Cobranza de créditos
                                 </h6>
                                 <p class="mb-0">cobranzas@fravega.com.ar</p>
                             </div>
                             <div class="col-md-6">
                                 <h6 class="fw-bold d-flex align-items-center">
-                                    <i class="bi bi-building text-primary me-2"></i> Servicios a empresas
+                                    <i class="bi bi-building text-primary me-2 text-morado"></i> Servicios a empresas
                                 </h6>
                                 <p class="mb-0">Ventas corporativas</p>
                             </div>
@@ -106,19 +107,19 @@
                             <h6 class="fw-bold mb-3">Seguinos en nuestras redes:</h6>
                             <div class="d-flex gap-3">
                                 <a href="https://www.facebook.com/fravegaonline" class="text-secondary text-decoration-none fs-3 hover-primary">
-                                    <i class="bi bi-facebook"></i>
+                                    <i class="bi bi-facebook text-morado"></i>
                                 </a>
-                                <a href="https://www.instagram.com/fravegaonline" class="text-secondary text-decoration-none fs-3 hover-primary">
-                                    <i class="bi bi-instagram"></i>
+                                <a href="https://www.instagram.com/fravegaonline text-morado" class="text-secondary text-decoration-none fs-3 hover-primary">
+                                    <i class="bi bi-instagram text-morado"></i>
                                 </a>
                                 <a href="https://www.youtube.com/user/fravegaonline" class="text-secondary text-decoration-none fs-3 hover-primary">
-                                    <i class="bi bi-youtube"></i>
+                                    <i class="bi bi-youtube text-morado"></i>
                                 </a>
                                 <a href="https://x.com/fravegaonline" class="text-secondary text-decoration-none fs-3 hover-primary">
-                                    <i class="bi bi-twitter-x"></i>
+                                    <i class="bi bi-twitter-x text-morado"></i>
                                 </a>
                                 <a href="https://www.linkedin.com/company/fravega-saciei" class="text-secondary text-decoration-none fs-3 hover-primary">
-                                    <i class="bi bi-linkedin"></i>
+                                    <i class="bi bi-linkedin text-morado"></i>
                                 </a>
                             </div>
                         </div>
