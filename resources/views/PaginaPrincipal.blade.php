@@ -69,7 +69,7 @@
                         <div class="circulo-categoria bg-white rounded-circle shadow-sm mb-2 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
                             <img src="/Imagenes inicio/foto7.png" class="img-fluid" style="max-width: 60px; max-height: 60px; object-fit: contain;">
                         </div>
-                        <span class="fw-medium" style="color: #B52CD0;">Teléfonos</span>
+                        <span class="fw-medium" style="color: #7828D8;">Teléfonos</span>
                     </a>
                 </div>
 
@@ -78,7 +78,7 @@
                         <div class="circulo-categoria bg-white rounded-circle shadow-sm mb-2 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
                             <img src="/Imagenes inicio/foto8.png" class="img-fluid" style="max-width: 60px; max-height: 60px; object-fit: contain;">
                         </div>
-                        <span class="fw-medium" style="color: #B52CD0;">Computadoras</span>
+                        <span class="fw-medium" style="color: #7828D8;">Computadoras</span>
                     </a>
                 </div>
 
@@ -87,7 +87,7 @@
                         <div class="circulo-categoria bg-white rounded-circle shadow-sm mb-2 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
                             <img src="/Imagenes inicio/foto9.png" class="img-fluid" style="max-width: 60px; max-height: 60px; object-fit: contain;">
                         </div>
-                        <span class="fw-medium" style="color: #B52CD0;">Lavarropas</span>
+                        <span class="fw-medium" style="color: #7828D8;">Lavarropas</span>
                     </a>
                 </div>
 
@@ -96,7 +96,7 @@
                         <div class="circulo-categoria bg-white rounded-circle shadow-sm mb-2 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
                             <img src="/Imagenes inicio/foto10.png" class="img-fluid" style="max-width: 60px; max-height: 60px; object-fit: contain;">
                         </div>
-                        <span class="fw-medium" style="color: #B52CD0;">Heladeras</span>
+                        <span class="fw-medium" style="color: #7828D8;">Heladeras</span>
                     </a>
                 </div>
 
