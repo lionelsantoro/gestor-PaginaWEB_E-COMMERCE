@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <title>Registro | Mi E-Commerce</title>
+    <link rel="stylesheet" href="/css/paleta_colores.css">
+    <title>Registro</title>
 </head> 
 
 <body class="d-flex flex-column min-vh-100 bg-light">
@@ -18,7 +19,7 @@
         <div class="card shadow-sm border-0" style="width: 100%; max-width: 600px;">
             <div class="card-body p-4 p-md-5">
                 
-                <h4 class="text-center fw-bold mb-4">Crear una cuenta</h4>
+                <h4 class="text-center fw-bold mb-4 text-rosado">Crear una cuenta</h4>
                 
                 <form action="/registro" method="POST">
                     
@@ -46,11 +47,11 @@
                     </div>
                     
                     <div class="d-grid mb-3">
-                        <button type="submit" class="btn flag-primary btn-primary btn-lg">Registrarse</button>
+                        <button type="submit" class="btn flag-primary btn-lg fondo-rosado">Registrarse</button>
                     </div>
                     
                     <div class="text-center text-muted small">
-                        ¿Ya tenés una cuenta? <a href="/login" class="text-decoration-none">Iniciá sesión acá</a>
+                        ¿Ya tenés una cuenta? <a href="/login" class="text-decoration-none text-rosado">Iniciá sesión acá</a>
                     </div>
 
                 </form>
