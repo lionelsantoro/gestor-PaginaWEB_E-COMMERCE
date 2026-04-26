@@ -7,6 +7,7 @@
         <title>Comercializacion</title>
         <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}"> 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="/css/paleta_colores.css">
     </head> 
 
     <body class="d-flex flex-column min-vh-100 bg-light">
@@ -18,24 +19,24 @@
                 
                 <div class="col-md-3 position-relative">
                     <div class="sticky-top" style="top: 2rem; z-index: 1;">
-                        <h6 class="mb-3 fw-bold text-muted ps-3">Categorías</h6>
+                        <h6 class="mb-3 fs-4 fw-bold text-muted text-rosado">Categorías</h6>
                         
-                        <div class="list-group list-group-flush" id="menuLateral">
+                        <div class="list-group list-group-flush border-start border-4 border-rosado ps-3" id="menuLateral">
                             <a href="#seccion-quiero-comprar" class="list-group-item list-group-item-action border-0 text-dark rounded mb-1">
-                                <i class="bi bi-cart3 me-2"></i> Quiero comprar
+                                <i class="bi bi-cart3 me-2 text-rosado"></i> Quiero comprar
                             </a>
                             <a href="#seccion-pago" class="list-group-item list-group-item-action border-0 text-dark rounded mb-1">
-                                <i class="bi bi-currency-dollar me-2"></i> Pago y facturación
+                                <i class="bi bi-currency-dollar me-2 text-rosado"></i> Pago y facturación
                             </a>
                             <a href="#seccion-entregas" class="list-group-item list-group-item-action border-0 text-dark rounded mb-1">
-                                <i class="bi bi-truck me-2"></i> Entregas
+                                <i class="bi bi-truck me-2 text-rosado"></i> Entregas
                             </a>
                     
                             <a href="#seccion-cambios" class="list-group-item list-group-item-action border-0 text-dark rounded mb-1">
-                                <i class="bi bi-arrow-counterclockwise me-2"></i> Cambios, devoluciones y...
+                                <i class="bi bi-arrow-counterclockwise me-2 text-rosado"></i> Cambios, devoluciones y...
                             </a>
                             <a href="#seccion-cuenta" class="list-group-item list-group-item-action border-0 text-dark rounded mb-1">
-                                <i class="bi bi-person-gear me-2"></i> Configuración de Mi cuenta
+                                <i class="bi bi-person-gear me-2 text-rosado"></i> Configuración de Mi cuenta
                             </a>
                         </div>
                     </div>
@@ -43,7 +44,7 @@
 
                 <div class="col-md-9 px-md-4">
                     
-                    <h4 id="seccion-quiero-comprar" class="mt-4 mb-3 fw-bold text-dark pt-3">Quiero comprar</h4>
+                    <h4 id="seccion-quiero-comprar" class="mt-4 mb-3 fw-bold pt-3 text-rosado">Quiero comprar</h4>
                     <div class="accordion mb-5" id="accordionQuieroComprar">
                         
                         <div class="accordion-item border-0 border-bottom">
@@ -103,7 +104,7 @@
 
                     </div>
 
-                    <h4 id="seccion-pago" class="mt-4 mb-3 fw-bold text-dark pt-3">Pago y facturación</h4>
+                    <h4 id="seccion-pago" class="mt-4 mb-3 fw-bold pt-3 text-rosado">Pago y facturación</h4>
                     <div class="accordion mb-5" id="accordionPago">
                         <div class="accordion-item border-0 border-bottom">
                             <h2 class="accordion-header" id="headingPago1">
@@ -206,7 +207,7 @@
                         </div>
                     </div>
 
-                    <h4 id="seccion-entregas" class="mt-4 mb-3 fw-bold text-dark pt-3">Entregas</h4>
+                    <h4 id="seccion-entregas" class="mt-4 mb-3 fw-bold pt-3 text-rosado">Entregas</h4>
                     <div class="accordion mb-5" id="accordionEntregas">
                         <div class="accordion-item border-0 border-bottom">
                             <h2 class="accordion-header" id="headingEntregas1">
@@ -334,7 +335,7 @@
                         </div>
                     </div>
 
-                    <h4 id="seccion-cambios" class="mt-4 mb-3 fw-bold text-dark pt-3">Cambios, devoluciones y cancelaciones</h4>
+                    <h4 id="seccion-cambios" class="mt-4 mb-3 fw-bold pt-3 text-rosado">Cambios, devoluciones y cancelaciones</h4>
                     <div class="accordion mb-5" id="accordionCambios">
                         <div class="accordion-item border-0 border-bottom">
                             <h2 class="accordion-header" id="headingCambios1">
@@ -491,7 +492,7 @@
                         </div>
                     </div>
 
-                    <h4 id="seccion-cuenta" class="mt-4 mb-3 fw-bold text-dark pt-3">Configuración de Mi cuenta</h4>
+                    <h4 id="seccion-cuenta" class="mt-4 mb-3 fw-bold pt-3 text-rosado">Configuración de Mi cuenta</h4>
                     <div class="accordion mb-5" id="accordionCuenta">
                         <div class="accordion-item border-0 border-bottom">
                             <h2 class="accordion-header" id="headingCuenta1">
