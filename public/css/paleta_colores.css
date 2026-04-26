@@ -12,6 +12,11 @@
     border-color: #B52CD0 !important;
 }
 
+.border-inicio{
+    background-color: #f8f9fa; 
+    border-left: 6px solid #B52CD0;
+}
+
 .border-morado {
     border-color: #7828D8 !important;
 }

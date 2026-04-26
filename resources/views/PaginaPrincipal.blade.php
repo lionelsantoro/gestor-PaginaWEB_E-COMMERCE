@@ -6,6 +6,7 @@
     <title>Página Principal</title>
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/paleta_colores.css">
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -28,14 +29,14 @@
             </div>
         </div>
 
-        <div class="row my-5 mx-0 rounded shadow-sm" style="background-color: #f8f9fa; border-left: 6px solid #B52CD0;">
+        <div class="row my-5 mx-0 rounded shadow-sm border-inicio">
             <div class="col-12 p-4 p-md-5">
-                <h2 class="fw-bold mb-3" style="color: #B52CD0;">Conocé Frávega</h2>
+                <h2 class="fw-bold mb-3 text-rosado">Conocé Frávega</h2>
                 <p class="fs-5 text-secondary mb-4">
                     Somos la empresa líder en Argentina con más de 100 años de trayectoria, dedicada a acercar la mejor tecnología y equipamiento a millones de hogares. Nuestro compromiso es brindarte calidad, innovación y una experiencia de compra excepcional, acompañándote en cada etapa de tu vida.
                 </p>
                 
-                <h4 class="fw-bold mb-4 mt-2" style="color: #B52CD0;">Nuestras Principales Categorías</h4>
+                <h4 class="fw-bold mb-4 mt-2 text-rosado">Nuestras Principales Categorías</h4>
                 <div class="row g-4">
                     <div class="col-md-4">
                         <div class="p-4 bg-white border rounded h-100 shadow-sm d-flex flex-column align-items-center text-center">
@@ -69,7 +70,7 @@
                         <div class="circulo-categoria bg-white rounded-circle shadow-sm mb-2 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
                             <img src="/Imagenes inicio/foto7.png" class="img-fluid" style="max-width: 60px; max-height: 60px; object-fit: contain;">
                         </div>
-                        <span class="fw-medium" style="color: #7828D8;">Teléfonos</span>
+                        <span class="fw-medium text-morado">Teléfonos</span>
                     </a>
                 </div>
 
@@ -78,7 +79,7 @@
                         <div class="circulo-categoria bg-white rounded-circle shadow-sm mb-2 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
                             <img src="/Imagenes inicio/foto8.png" class="img-fluid" style="max-width: 60px; max-height: 60px; object-fit: contain;">
                         </div>
-                        <span class="fw-medium" style="color: #7828D8;">Computadoras</span>
+                        <span class="fw-medium text-morado">Computadoras</span>
                     </a>
                 </div>
 
@@ -87,7 +88,7 @@
                         <div class="circulo-categoria bg-white rounded-circle shadow-sm mb-2 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
                             <img src="/Imagenes inicio/foto9.png" class="img-fluid" style="max-width: 60px; max-height: 60px; object-fit: contain;">
                         </div>
-                        <span class="fw-medium" style="color: #7828D8;">Lavarropas</span>
+                        <span class="fw-medium text-morado">Lavarropas</span>
                     </a>
                 </div>
 
@@ -96,14 +97,14 @@
                         <div class="circulo-categoria bg-white rounded-circle shadow-sm mb-2 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
                             <img src="/Imagenes inicio/foto10.png" class="img-fluid" style="max-width: 60px; max-height: 60px; object-fit: contain;">
                         </div>
-                        <span class="fw-medium" style="color: #7828D8;">Heladeras</span>
+                        <span class="fw-medium text-morado">Heladeras</span>
                     </a>
                 </div>
 
         </div>
 
         <div class="bg-ofertas p-4 mt-5 relative">
-            <h3 class="fw-bold mb-4" style="color: #7828D8;">Ofertas únicas</h3>
+            <h3 class="fw-bold mb-4 text-morado">Ofertas únicas</h3>
 
             <div id="carruselProductos" class="carousel slide px-5" data-bs-ride="carousel">
                 <div class="carousel-inner pb-2">
