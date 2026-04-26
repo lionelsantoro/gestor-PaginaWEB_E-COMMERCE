@@ -3,6 +3,8 @@
 
 <head>
   <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="/css/boton_catalogo.css">
+
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -301,7 +303,7 @@
   </div>
 
   <nav aria-label="Navegación de páginas">
-    <ul class="pagination justify-content-center mt-5 mb-5">
+    <ul class="pagination justify-content-center mt-5 mb-5 pagination-pink">
 
       <li class="page-item disabled">
         <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>

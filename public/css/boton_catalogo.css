@@ -1,0 +1,29 @@
+  /* Color de fondo y texto para los botones normales */
+  .pagination-pink .page-link {
+      background-color: #B52CD0 !important;
+      color: white !important;
+      border-color: #9c25b3 !important;
+      /* Un tono un poco más oscuro para el borde */
+  }
+
+  /* Efecto al pasar el mouse por encima (Hover) */
+  .pagination-pink .page-link:hover {
+      background-color: #8f20a6 !important;
+      /* Un púrpura más oscuro */
+      color: white !important;
+  }
+
+  /* Estilo para el botón activo (el número 1) */
+  .pagination-pink .page-item.active .page-link {
+      background-color: #6a167d !important;
+      /* Mucho más oscuro para destacar */
+      border-color: #6a167d !important;
+  }
+
+  /* Estilo para el botón deshabilitado (Anterior) */
+  .pagination-pink .page-item.disabled .page-link {
+      background-color: #B52CD0 !important;
+      color: white !important;
+      opacity: 0.6;
+      /* Lo hace un poco transparente para que se vea inactivo */
+  }

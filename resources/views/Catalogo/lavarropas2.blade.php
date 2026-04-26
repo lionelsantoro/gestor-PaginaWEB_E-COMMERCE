@@ -3,6 +3,7 @@
 
 <head>
   <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="/css/boton_catalogo.css">
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -34,8 +35,8 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="/imagenes lavarropas/foto17.webp" class="card-img-top" alt="LAVARROPAS SAMSUNG FRONT LOAD AI CONTROL"
-            style="height: 250px; object-fit: contain;">
+          <img src="/imagenes lavarropas/foto17.webp" class="card-img-top"
+            alt="LAVARROPAS SAMSUNG FRONT LOAD AI CONTROL" style="height: 250px; object-fit: contain;">
           <div class="card-body">
             <h5 class="card-title fs-4"><strong>LAVARROPAS SAMSUNG FRONT LOAD AI CONTROL</strong></h5>
             <p class="fs-5 fw-bold mb-3">PRECIO: $1.350.000</p>
@@ -300,27 +301,27 @@
     </div>
   </div>
 
- <nav aria-label="Navegación de páginas">
-  <ul class="pagination justify-content-center mt-5 mb-5">
-    
-    <li class="page-item">
-      <a class="page-link" href="/catalogo/lavarropas">Anterior</a>
-    </li>
-    
-    <li class="page-item">
-      <a class="page-link" href="/catalogo/lavarropas">1</a>
-    </li>
-    
-    <li class="page-item active" aria-current="page">
-      <a class="page-link" href="#">2</a>
-    </li>
-    
-    <li class="page-item disabled">
-      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Siguiente</a>
-    </li>
-    
-  </ul>
-</nav>
+  <nav aria-label="Navegación de páginas">
+    <ul class="pagination justify-content-center mt-5 mb-5 pagination-pink">
+
+      <li class="page-item">
+        <a class="page-link" href="/catalogo/lavarropas">Anterior</a>
+      </li>
+
+      <li class="page-item">
+        <a class="page-link" href="/catalogo/lavarropas">1</a>
+      </li>
+
+      <li class="page-item active" aria-current="page">
+        <a class="page-link" href="#">2</a>
+      </li>
+
+      <li class="page-item disabled">
+        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Siguiente</a>
+      </li>
+
+    </ul>
+  </nav>
 
   @include('piedepagina')
 
@@ -329,5 +330,3 @@
 </body>
 
 </html>
-
-
