@@ -12,7 +12,7 @@
             <ul class="navbar-nav ms-auto" style="font-size: 1.1rem;">
                 
                 <li class="nav-item">
-                    <a class="nav-link px-3 fw-semibold active" aria-current="page" href="/">Inicio</a>
+                    <a class="nav-link px-3 fw-semibold" aria-current="page" href="/">Inicio</a>
                 </li>
 
                 <li class="nav-item dropdown">
