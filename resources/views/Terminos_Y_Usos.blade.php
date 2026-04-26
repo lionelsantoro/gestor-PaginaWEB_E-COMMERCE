@@ -19,7 +19,7 @@
             <!-- Ítem 1: Servicios ofrecidos, Capacidad Legal y Condiciones Generales -->
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed text-morado" type="button" data-bs-toggle="collapse"
+                    <button class="accordion-button collapsed text-rosado" type="button" data-bs-toggle="collapse"
                         data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false"
                         aria-controls="panelsStayOpen-collapseOne">
                         <strong>1. Servicios ofrecidos, Capacidad Legal y Condiciones Generales de Uso</strong>
@@ -48,7 +48,7 @@
             <!-- Ítem 2: Políticas de Privacidad, Protección de Datos Personales y Uso de Cookies -->
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed text-morado" type="button" data-bs-toggle="collapse"
+                    <button class="accordion-button collapsed text-rosado" type="button" data-bs-toggle="collapse"
                         data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
                         aria-controls="panelsStayOpen-collapseTwo">
                         <strong>2. Políticas de Privacidad, Protección de Datos Personales y Uso de Cookies</strong>
@@ -77,7 +77,7 @@
             <!-- Ítem 3: Marco de Garantías y Exclusiones de Cobertura (sin "vicios") -->
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed text-morado" type="button" data-bs-toggle="collapse"
+                    <button class="accordion-button collapsed text-rosado" type="button" data-bs-toggle="collapse"
                         data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
                         aria-controls="panelsStayOpen-collapseThree">
                         <strong>3. Marco de Garantías y Exclusiones de Cobertura</strong>
@@ -106,7 +106,7 @@
             <!-- Ítem 4: Soporte Postventa y Política de Devoluciones (sin Botón de Arrepentimiento) -->
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed text-morado" type="button" data-bs-toggle="collapse"
+                    <button class="accordion-button collapsed text-rosado" type="button" data-bs-toggle="collapse"
                         data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
                         aria-controls="panelsStayOpen-collapseFour">
                         <strong>4. Soporte Postventa y Política de Devoluciones</strong>
@@ -130,7 +130,7 @@
             <!-- Ítem 5: Modalidades, Condiciones Estrictas de Entrega y Recepción en Conformidad -->
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed text-morado" type="button" data-bs-toggle="collapse"
+                    <button class="accordion-button collapsed text-rosado" type="button" data-bs-toggle="collapse"
                         data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false"
                         aria-controls="panelsStayOpen-collapseFive">
                         <strong>5. Modalidades, Condiciones Estrictas de Entrega y Recepción en Conformidad</strong>
@@ -163,7 +163,7 @@
             <!-- Ítem 6: Procesamiento Administrativo, Tiempos Involucrados y Casos de Fuerza Mayor -->
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed text-morado" type="button" data-bs-toggle="collapse"
+                    <button class="accordion-button collapsed text-rosado" type="button" data-bs-toggle="collapse"
                         data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false"
                         aria-controls="panelsStayOpen-collapseSix">
                         <strong>6. Procesamiento Administrativo, Tiempos Involucrados y Casos de Fuerza Mayor</strong>
