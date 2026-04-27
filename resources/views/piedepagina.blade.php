@@ -1,4 +1,4 @@
-<footer class="navbar-dark text-center py-4 mt-auto fondo-morado">
+<footer class="navbar-dark text-center py-4 mt-auto" style="background-color: #7828D8;">
     <div class="container d-flex flex-column align-items-center">
         
         <div class="navbar-nav flex-row mb-2" style="font-size: 1.2rem;">
