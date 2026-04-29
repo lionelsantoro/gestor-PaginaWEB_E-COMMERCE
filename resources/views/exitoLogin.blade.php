@@ -19,7 +19,7 @@
         <div class="toast shadow-lg border-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false" id="toastLogin">
             <div class="toast-header bg-white">
                 <i class="bi bi-check-circle-fill text-success me-2 text-rosado"></i>
-                <strong class="me-auto fs-5">Inicio de sesión exitoso</strong>
+                <strong class="me-auto fs-5 text-rosado">Inicio de sesión exitoso</strong>
             </div>
             
             <div class="toast-body bg-white text-center p-4">
