@@ -35,22 +35,22 @@
 
                                 <div class="mb-3">
                                     <label for="nombre" class="form-label">Nombre completo</label>
-                                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingresá tu nombre">
+                                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingresá tu nombre" pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$" required>
                                 </div>
                                 
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Correo electrónico</label>
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="nombre@ejemplo.com">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="nombre@ejemplo.com" pattern="^[^@\s]+@[^@\s]+\.com$" required>
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="asunto" class="form-label">Asunto</label>
-                                    <input type="text" class="form-control" id="asunto" name="asunto" placeholder="¿En qué te podemos ayudar?">
+                                    <input type="text" class="form-control" id="asunto" name="asunto" placeholder="¿En qué te podemos ayudar?" pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$" required>
                                 </div>
                                 
                                 <div class="mb-4">
                                     <label for="mensaje" class="form-label">Mensaje</label>
-                                    <textarea class="form-control" id="mensaje" name="mensaje" rows="5" placeholder="Escribí tu mensaje acá..."></textarea>
+                                    <textarea class="form-control" id="mensaje" name="mensaje" rows="5" placeholder="Escribí tu mensaje acá..." required></textarea>
                                 </div>
                                 
                                 <div class="d-grid">

@@ -28,17 +28,17 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="nombre" class="form-label">Nombre/s</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="ej. Lionel" required>
+                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="ej. Lionel" pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$" required>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="apellido" class="form-label">Apellido/s</label>
-                            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="ej. Pérez" required>
+                            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="ej. Pérez" pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$" required>
                         </div>
                     </div>
                     
                     <div class="mb-3">
                         <label for="email" class="form-label">Correo electrónico</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="nombre@ejemplo.com" required>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="nombre@ejemplo.com" pattern="^[^@\s]+@[^@\s]+\.com$" required>
                     </div>
 
                     <div class="mb-4">
