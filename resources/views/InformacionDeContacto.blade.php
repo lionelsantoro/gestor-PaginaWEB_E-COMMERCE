@@ -106,19 +106,20 @@
                         <div class="mt-5 pt-3 border-top">
                             <h6 class="fw-bold mb-3">Seguinos en nuestras redes:</h6>
                             <div class="d-flex gap-3">
-                                <a href="https://www.facebook.com/fravegaonline" class="text-secondary text-decoration-none fs-3 hover-primary">
+                                <!-- Se agregó target="_blank" para abrir en nueva pestaña y rel="noopener noreferrer" por seguridad -->
+                                <a href="https://www.facebook.com/fravegaonline" target="_blank" rel="noopener noreferrer" class="text-secondary text-decoration-none fs-3 hover-primary">
                                     <i class="bi bi-facebook text-morado"></i>
                                 </a>
-                                <a href="https://www.instagram.com/fravegaonline text-morado" class="text-secondary text-decoration-none fs-3 hover-primary">
+                                <a href="https://www.instagram.com/fravegaonline" target="_blank" rel="noopener noreferrer" class="text-secondary text-decoration-none fs-3 hover-primary">
                                     <i class="bi bi-instagram text-morado"></i>
                                 </a>
-                                <a href="https://www.youtube.com/user/fravegaonline" class="text-secondary text-decoration-none fs-3 hover-primary">
+                                <a href="https://www.youtube.com/user/fravegaonline" target="_blank" rel="noopener noreferrer" class="text-secondary text-decoration-none fs-3 hover-primary">
                                     <i class="bi bi-youtube text-morado"></i>
                                 </a>
-                                <a href="https://x.com/fravegaonline" class="text-secondary text-decoration-none fs-3 hover-primary">
+                                <a href="https://x.com/fravegaonline" target="_blank" rel="noopener noreferrer" class="text-secondary text-decoration-none fs-3 hover-primary">
                                     <i class="bi bi-twitter-x text-morado"></i>
                                 </a>
-                                <a href="https://www.linkedin.com/company/fravega-saciei" class="text-secondary text-decoration-none fs-3 hover-primary">
+                                <a href="https://www.linkedin.com/company/fravega-saciei" target="_blank" rel="noopener noreferrer" class="text-secondary text-decoration-none fs-3 hover-primary">
                                     <i class="bi bi-linkedin text-morado"></i>
                                 </a>
                             </div>
