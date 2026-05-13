@@ -8,6 +8,23 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="/css/paleta_colores.css">
     <title>Contacto</title>
+
+    <!-- Estilo para el fondo desenfocado (Overlay) -->
+    <style>
+        .fondo-desenfocado {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.4); 
+            backdrop-filter: blur(8px); 
+            z-index: 9999; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 </head> 
 
 <body class="d-flex flex-column min-vh-100 bg-light">
@@ -27,7 +44,6 @@
                 <div class="card shadow-sm border-0 h-100">
                     <div class="card-body p-4 p-md-5">
                         <h4 class="mb-4 text-rosado"><strong>Envianos un mensaje</strong></h4>
-
 
                         <form action="/informacion-de-contacto" method="POST">
                                 
@@ -54,7 +70,7 @@
                                 </div>
                                 
                                 <div class="d-grid">
-                                    <button type="submit" class="btn btn-lg fondo-rosado">Enviar Mensaje</button>
+                                    <button type="submit" class="btn btn-lg fondo-rosado text-white">Enviar Mensaje</button>
                                 </div>
                             </form>
                     </div>
@@ -106,7 +122,6 @@
                         <div class="mt-5 pt-3 border-top">
                             <h6 class="fw-bold mb-3">Seguinos en nuestras redes:</h6>
                             <div class="d-flex gap-3">
-                                <!-- Se agregó target="_blank" para abrir en nueva pestaña y rel="noopener noreferrer" por seguridad -->
                                 <a href="https://www.facebook.com/fravegaonline" target="_blank" rel="noopener noreferrer" class="text-secondary text-decoration-none fs-3 hover-primary">
                                     <i class="bi bi-facebook text-morado"></i>
                                 </a>
@@ -132,9 +147,40 @@
         </div>
     </div>
 
+    <!-- VISTA EMERGENTE (TOAST) CON FONDO DESENFOCADO -->
+    @if(session('success'))
+    <div class="fondo-desenfocado">
+        <div class="toast shadow-lg border-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false" id="toastContacto">
+            <div class="toast-header bg-white">
+                <i class="bi bi-check-circle-fill text-success me-2 text-rosado"></i>
+                <strong class="me-auto fs-5 text-rosado">Mensaje enviado</strong>
+            </div>
+            
+            <div class="toast-body bg-white text-center p-4">
+                <p class="fs-6 mb-4">¡Gracias por contactarte! Responderemos a la brevedad.</p>
+                
+                <div class="mt-3 pt-3 border-top d-flex justify-content-center gap-2">
+                    <a href="/" class="btn fondo-rosado text-white">Aceptar y continuar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endif
+
     @include('piedepagina')
 
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script> 
+
+    <!-- Script para activar el toast automáticamente al cargar la página -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var toastElement = document.getElementById('toastContacto');
+            if (toastElement) {
+                var toast = new bootstrap.Toast(toastElement);
+                toast.show();
+            }
+        });
+    </script>
 
 </body>
 </html>
