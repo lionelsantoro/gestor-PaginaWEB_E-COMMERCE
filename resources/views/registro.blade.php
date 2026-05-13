@@ -8,6 +8,23 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="/css/paleta_colores.css">
     <title>Registro</title>
+
+    <!-- Estilos para el fondo desenfocado (overlay) -->
+    <style>
+        .fondo-desenfocado {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.4); 
+            backdrop-filter: blur(8px); 
+            z-index: 9999; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 </head> 
 
 <body class="d-flex flex-column min-vh-100 bg-light">
@@ -47,7 +64,7 @@
                     </div>
                     
                     <div class="d-grid mb-3">
-                        <button type="submit" class="btn flag-primary btn-lg fondo-rosado">Registrarse</button>
+                        <button type="submit" class="btn flag-primary btn-lg fondo-rosado text-white">Registrarse</button>
                     </div>
                     
                     <div class="text-center text-muted small">
@@ -60,9 +77,40 @@
 
     </div>
 
+    <!-- VISTA EMERGENTE (TOAST) CON FONDO DESENFOCADO -->
+    @if(session('success'))
+    <div class="fondo-desenfocado">
+        <div class="toast shadow-lg border-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false" id="toastRegistro">
+            <div class="toast-header bg-white">
+                <i class="bi bi-check-circle-fill text-success me-2 text-rosado"></i>
+                <strong class="me-auto fs-5 text-rosado">Registro exitoso</strong>
+            </div>
+            
+            <div class="toast-body bg-white text-center p-4">
+                <p class="fs-6 mb-4">¡Tu cuenta ha sido creada correctamente!</p>
+                
+                <div class="mt-3 pt-3 border-top d-flex justify-content-center gap-2">
+                    <a href="/" class="btn fondo-rosado text-white">Aceptar y continuar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endif
+
     @include('piedepagina')
 
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script> 
+
+    <!-- Script para activar el toast automáticamente al cargar la página -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var toastElement = document.getElementById('toastRegistro');
+            if (toastElement) {
+                var toast = new bootstrap.Toast(toastElement);
+                toast.show();
+            }
+        });
+    </script>
 
 </body>
 </html>
