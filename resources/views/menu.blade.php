@@ -46,6 +46,10 @@
                 <li class="nav-item">
                     <a class="nav-link px-3 fw-semibold" href="/login">Iniciar Sesion</a>
                 </li>
+               
+               <li class="nav-item">
+                        <a class="nav-link px-3 fw-semibold" href="/admin">Admin</a>
+                    </li>
 
             </ul>
         </div>

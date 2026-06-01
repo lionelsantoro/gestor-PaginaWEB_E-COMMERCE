@@ -75,3 +75,11 @@ Route::get('/registro', function () {
 });
 
 Route::post('/registro', [App\Http\Controllers\RegistroController::class, 'procesar']);
+
+// Rutas del Panel de Administración
+Route::get('/admin', function () { return view('Admin'); });
+Route::get('/admin/productos', function () { return view('adminProductos'); });
+Route::get('/admin/usuarios', function () { return view('adminUsuarios'); });
+Route::get('/admin/categorias', function () { return view('adminCategorias'); });
+Route::get('/admin/consultas', function () { return view('adminConsultas'); });
+Route::get('/admin/pedidos', function () { return view('adminPedidos'); });
