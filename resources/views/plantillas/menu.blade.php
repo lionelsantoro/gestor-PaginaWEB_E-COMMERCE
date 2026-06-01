@@ -12,44 +12,44 @@
             <ul class="navbar-nav ms-auto" style="font-size: 1.1rem;">
                 
                 <li class="nav-item">
-                    <a class="nav-link px-3 fw-semibold" aria-current="page" href="/">Inicio</a>
+                    <a class="nav-link px-3 fw-semibold {{ request()->is('/') ? 'active' : '' }}" aria-current="page" href="/">Inicio</a>
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle px-3 fw-semibold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle px-3 fw-semibold {{ request()->is('catalogo*') ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Catálogo
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark" style="background-color: #7828D8; border: none;">
-                        <li><a class="dropdown-item fw-semibold" href="/catalogo/telefonos">Teléfonos</a></li>
-                        <li><a class="dropdown-item fw-semibold" href="/catalogo/computadoras">Computadoras</a></li>
-                        <li><a class="dropdown-item fw-semibold" href="/catalogo/lavarropas">Lavarropas</a></li>
-                        <li><a class="dropdown-item fw-semibold" href="/catalogo/heladeras">Heladeras</a></li>
+                        <li><a class="dropdown-item fw-semibold {{ request()->is('catalogo/telefonos') ? 'active' : '' }}" href="/catalogo/telefonos">Teléfonos</a></li>
+                        <li><a class="dropdown-item fw-semibold {{ request()->is('catalogo/computadoras') ? 'active' : '' }}" href="/catalogo/computadoras">Computadoras</a></li>
+                        <li><a class="dropdown-item fw-semibold {{ request()->is('catalogo/lavarropas') ? 'active' : '' }}" href="/catalogo/lavarropas">Lavarropas</a></li>
+                        <li><a class="dropdown-item fw-semibold {{ request()->is('catalogo/heladeras') ? 'active' : '' }}" href="/catalogo/heladeras">Heladeras</a></li>
                     </ul>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link px-3 fw-semibold" href="/quienes-somos">Quiénes Somos</a>
+                    <a class="nav-link px-3 fw-semibold {{ request()->is('quienes-somos') ? 'active' : '' }}" href="/quienes-somos">Quiénes Somos</a>
                 </li>
                 
                 <li class="nav-item">
-                    <a class="nav-link px-3 fw-semibold" href="/comercializacion">Comercialización</a>
+                    <a class="nav-link px-3 fw-semibold {{ request()->is('comercializacion') ? 'active' : '' }}" href="/comercializacion">Comercialización</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link px-3 fw-semibold" href="/terminos-y-usos">Términos y Usos</a>
+                    <a class="nav-link px-3 fw-semibold {{ request()->is('terminos-y-usos') ? 'active' : '' }}" href="/terminos-y-usos">Términos y Usos</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link px-3 fw-semibold" href="/informacion-de-contacto">Contacto</a>
+                    <a class="nav-link px-3 fw-semibold {{ request()->is('informacion-de-contacto') ? 'active' : '' }}" href="/informacion-de-contacto">Contacto</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link px-3 fw-semibold" href="/login">Iniciar Sesion</a>
+                    <a class="nav-link px-3 fw-semibold {{ request()->is('login') ? 'active' : '' }}" href="/login">Iniciar Sesion</a>
                 </li>
-               
-               <li class="nav-item">
-                        <a class="nav-link px-3 fw-semibold" href="/admin">Admin</a>
-                    </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link px-3 fw-semibold {{ request()->is('admin*') ? 'active' : '' }}" href="/admin">Admin</a>
+                </li>
 
             </ul>
         </div>
