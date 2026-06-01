@@ -3,15 +3,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class EspecHeladera extends Model
+class EspecLavarropa extends Model
 {
-    protected $table = 'espec_heladeras';
+    protected $table = 'espec_lavarropas';
     protected $primaryKey = 'idProducto';
     public $incrementing = false;
     protected $keyType = 'int';
     public $timestamps = false;
 
-    protected $fillable = ['idProducto', 'capacidadLitros', 'noFrost', 'consumoEnergetico'];
+    protected $fillable = ['idProducto', 'capacidadKg', 'programas', 'tipoCarga'];
 
     public function producto()
     {

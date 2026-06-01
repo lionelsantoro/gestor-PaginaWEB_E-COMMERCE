@@ -11,21 +11,21 @@ return new class extends Migration
      */
   public function up(): void
 {
-    Schema::create('espec_celulares', function (Blueprint $table) {
-        $table->unsignedBigInteger('idProducto')->primary(); // Actúa como PK y FK
-        $table->string('ram', 50)->nullable();
-        $table->string('almacenamiento', 50)->nullable();
-        $table->string('pixeles', 100)->nullable();
-        $table->integer('bateria')->nullable();
+    Schema::create('espec_lavarropas', function (Blueprint $table) {
+        $table->unsignedBigInteger('idProducto')->primary();
+        $table->decimal('capacidadKg', 5, 2)->nullable();
+        $table->integer('programas')->nullable();
+        $table->string('tipoCarga', 50)->nullable();
 
         $table->foreign('idProducto')->references('id')->on('productos')->onDelete('cascade');
     });
 }
+
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('espec_celulars');
+        Schema::dropIfExists('espec_lavarropas');
     }
 };
