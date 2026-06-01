@@ -52,9 +52,14 @@
                         <input type="email" class="form-control" id="email" name="email" placeholder="nombre@ejemplo.com" pattern="^[^@\s]+@[^@\s]+\.com$" required>
                     </div>
 
-                    <div class="mb-4">
+                    <div class="mb-3">
                         <label for="password" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Creá una contraseña segura" required>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Creá una contraseña segura" required oninput="document.getElementById('password_confirmation').setCustomValidity(document.getElementById('password_confirmation').value != this.value ? 'Las contraseñas no coinciden.' : '')">
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="password_confirmation" class="form-label">Confirmar contraseña</label>
+                        <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Repetí tu contraseña" required oninput="this.setCustomValidity(this.value != document.getElementById('password').value ? 'Las contraseñas no coinciden.' : '')">
                     </div>
                     
                     <div class="d-grid mb-3">
