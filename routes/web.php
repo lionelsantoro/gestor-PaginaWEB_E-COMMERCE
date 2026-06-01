@@ -64,14 +64,14 @@ Route::post('/InformacionDeContacto', [ContactoController::class, 'procesar']);
 
 
 Route::get('/login', function () {
-    return view('Login');
+    return view('formularios.Login');
 });
 
 Route::post('/login', [App\Http\Controllers\LoginController::class, 'procesar']);
 
 
 Route::get('/registro', function () {
-    return view('registro'); // Asegurate de que tu archivo se llame registro.blade.php
+    return view('formularios.registro'); // Asegurate de que tu archivo se llame registro.blade.php
 });
 
 Route::post('/registro', [App\Http\Controllers\RegistroController::class, 'procesar']);
