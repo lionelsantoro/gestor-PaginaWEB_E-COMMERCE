@@ -1,17 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Página Principal</title>
-    <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="/css/home.css">
-    <link rel="stylesheet" href="/css/paleta_colores.css">
-</head>
+@include('plantillas.head', ['titulo' => 'PaginaPrincipal'])
 
 <body class="d-flex flex-column min-vh-100">
 
-    @include('menu')
+    @include('plantillas.menu')
 
     <div class="container my-2">
 
@@ -342,7 +336,7 @@
 
     </div>
 
-    @include('piedepagina')
+    @include('plantillas.piedepagina')
 
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 

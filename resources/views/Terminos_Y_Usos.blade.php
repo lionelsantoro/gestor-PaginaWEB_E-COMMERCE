@@ -1,17 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="/css/paleta_colores.css">
-    <title>Términos y Condiciones</title>
-</head>
+@include('plantillas.head', ['titulo' => 'TerminosYUsos'])
 
 <body class="d-flex flex-column min-vh-100">
 
-    @include('menu')
+    @include('plantillas.menu')
 
     <div class="container my-5">
         <div class="accordion" id="accordionPanelsStayOpenExample">
@@ -194,7 +188,7 @@
         </div>
     </div>
 
-    @include('piedepagina')
+    @include('plantillas.piedepagina')
 
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 </body>

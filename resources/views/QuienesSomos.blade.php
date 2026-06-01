@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="/css/paleta_colores.css">
-</head>
+@include('plantillas.head', ['titulo' => 'QuienesSomos'])
 
 <body class="d-flex flex-column min-vh-100">
 
-    @include('menu')
+    @include('plantillas.menu')
 
     <main class="flex-grow-1">
 
@@ -118,7 +113,7 @@
 
     </main>
 
-    @include('piedepagina')
+    @include('plantillas.piedepagina')
 
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 

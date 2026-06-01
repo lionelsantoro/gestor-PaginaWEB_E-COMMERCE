@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Panel de Administración</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons (Para los íconos de las tarjetas) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-</head>
+
+@include('plantillas.head', ['titulo' => 'PanelAdmin'])
+
 <body class="d-flex flex-column min-vh-100" style="background-color: #F4F6F9;">
 
-    @include('menu')
+    @include('plantillas.menu')
 
     <div class="container-fluid flex-grow-1 py-4 px-4">
         <div class="row h-100">
             
             <!-- Menú Lateral -->
             <div class="col-md-3 col-lg-2 mb-4">
-                @include('menuAdmin') 
+                @include('plantillas.menuAdmin') 
             </div>
 
             <!-- Contenido del Dashboard -->
@@ -169,9 +164,8 @@
         </div>
     </div>
 
-    @include('piedepagina')
+    @include('plantillas.piedepagina')
 
-    <!-- Scripts de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,18 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 
-    <head> 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Comercializacion</title>
-        <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}"> 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="/css/paleta_colores.css">
-    </head> 
+@include('plantillas.head', ['titulo' => 'Comercializacion'])
 
     <body class="d-flex flex-column min-vh-100 bg-light">
 
-        @include('menu')
+    @include('plantillas.menu')
 
         <main class="container my-5 flex-grow-1 bg-white p-4 rounded shadow-sm">
             <div class="row">
@@ -508,7 +501,7 @@
             </div>
         </main>
 
-        @include('piedepagina')
+        @include('plantillas.piedepagina')
 
         <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script> 
     

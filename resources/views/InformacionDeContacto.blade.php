@@ -1,15 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}"> 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="/css/paleta_colores.css">
-    <title>Contacto</title>
+@include('plantillas.head', ['titulo' => 'Contacto'])
 
-    <!-- Estilo para el fondo desenfocado (Overlay) -->
+<head>
     <style>
         .fondo-desenfocado {
             position: fixed;
@@ -29,7 +23,7 @@
 
 <body class="d-flex flex-column min-vh-100 bg-light">
 
-    @include('menu')
+    @include('plantillas.menu')
     
     <div class="container my-5">
         
@@ -167,7 +161,7 @@
     </div>
     @endif
 
-    @include('piedepagina')
+    @include('plantillas.piedepagina')
 
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script> 
 

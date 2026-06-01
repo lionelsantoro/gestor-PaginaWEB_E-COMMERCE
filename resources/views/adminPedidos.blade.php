@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Pedidos - Administración</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
+
+@include('plantillas.head', ['titulo' => 'PedidosAdmin'])
+
 <body class="d-flex flex-column min-vh-100" style="background-color: #F4F6F9;">
 
-    @include('menu')
+    @include('plantillas.menu')
 
     <div class="container-fluid flex-grow-1 py-4 px-4">
         <div class="row h-100">
             <div class="col-md-3 col-lg-2 mb-4">
-                @include('menuAdmin') 
+                @include('plantillas.menuAdmin') 
             </div>
 
             <div class="col-md-9 col-lg-10">
@@ -82,6 +80,8 @@
             </div>
         </div>
     </div>
+
+    @include('plantillas.piedepagina')
 
     <div class="modal fade" id="modal1023" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header text-white" style="background-color: #7828D8;"><h5 class="modal-title">Detalle del Pedido #1023</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div><div class="modal-body p-4"><div class="row mb-4"><div class="col-6"><h6>Datos del Cliente</h6><p>Nombre: Juan Pérez<br>Email: juan.perez@email.com</p></div><div class="col-6"><h6>Datos de Envío</h6><p>San Martín 1550<br>Corrientes Capital</p></div></div><table class="table border"><thead><tr><th>Producto</th><th>Cant.</th><th>Subtotal</th></tr></thead><tbody><tr><td>Lenovo IdeaPad 3</td><td>1</td><td>$ 1.999.999</td></tr></tbody></table></div><div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button><button class="btn text-white" style="background-color: #7828D8;">Factura PDF</button></div></div></div></div>
     
