@@ -8,7 +8,7 @@
         </div>
 
         <div class="navbar-nav flex-row mb-2" style="font-size: 1.2rem;">
-            <a class="nav-link px-3 fw-semibold" href="https://www.fravega.com">&copy; 2026 Frávega. Todos los derechos reservados.</a></a>
+            <a class="nav-link px-3 fw-semibold" href="https://www.fravega.com">&copy; 2026 Frávega. Todos los derechos reservados.</a>
         </div>
 
     </div>
