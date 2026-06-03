@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\LoginController; 
 use App\Http\Controllers\RegistroController;
+use App\Http\Controllers\CatalogoController; // ¡ESTA ES LA LÍNEA QUE TE FALTABA!
 
 
 Route::get('/', function () {
@@ -27,6 +28,8 @@ Route::post('/informacion-de-contacto', [ContactoController::class, 'procesar'])
 Route::get('/terminos-y-usos', function () {
     return view('Terminos_Y_Usos');
 });
+
+/*  === RUTAS ANTIGUAS ESTÁTICAS (COMENTADAS) ===
 
 Route::get('/catalogo/telefonos', function () {
     return view('catalogo.telefonos'); 
@@ -60,6 +63,8 @@ Route::get('/catalogo/heladeras/2', function () {
     return view('catalogo.heladeras2');
 });
 
+*/
+
 Route::post('/InformacionDeContacto', [ContactoController::class, 'procesar']);
 
 
@@ -83,3 +88,9 @@ Route::get('/admin/usuarios', function () { return view('Admin.adminUsuarios'); 
 Route::get('/admin/categorias', function () { return view('Admin.adminCategorias'); });
 Route::get('/admin/consultas', function () { return view('Admin.adminConsultas'); });
 Route::get('/admin/pedidos', function () { return view('Admin.adminPedidos'); });
+
+
+// ==========================================
+// NUEVA RUTA DINÁMICA DEL CATÁLOGO
+// ==========================================
+Route::get('/catalogo', [CatalogoController::class, 'index'])->name('catalogo.index');

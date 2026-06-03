@@ -14,18 +14,22 @@
                 <li class="nav-item">
                     <a class="nav-link px-3 fw-semibold {{ request()->is('/') ? 'active' : '' }}" aria-current="page" href="/">Inicio</a>
                 </li>
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle px-3 fw-semibold {{ request()->is('catalogo*') ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Catálogo
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark" style="background-color: #7828D8; border: none;">
-                        <li><a class="dropdown-item fw-semibold {{ request()->is('catalogo/telefonos') ? 'active' : '' }}" href="/catalogo/telefonos">Teléfonos</a></li>
-                        <li><a class="dropdown-item fw-semibold {{ request()->is('catalogo/computadoras') ? 'active' : '' }}" href="/catalogo/computadoras">Computadoras</a></li>
-                        <li><a class="dropdown-item fw-semibold {{ request()->is('catalogo/lavarropas') ? 'active' : '' }}" href="/catalogo/lavarropas">Lavarropas</a></li>
-                        <li><a class="dropdown-item fw-semibold {{ request()->is('catalogo/heladeras') ? 'active' : '' }}" href="/catalogo/heladeras">Heladeras</a></li>
-                    </ul>
-                </li>
+                
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle px-3 fw-semibold {{ request()->is('catalogo*') ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Catálogo
+    </a>
+    <ul class="dropdown-menu dropdown-menu-dark" style="background-color: #7828D8; border: none;">
+        <!-- Opción para ver todo por defecto -->
+        <li><a class="dropdown-item fw-semibold {{ !request()->has('categoria') || request('categoria') == 'todas' ? 'active' : '' }}" href="/catalogo">Todas las categorías</a></li>
+        <li><hr class="dropdown-divider" style="border-color: rgba(255,255,255,0.2);"></li>
+        <!-- Filtros específicos -->
+        <li><a class="dropdown-item fw-semibold {{ request('categoria') == '1' ? 'active' : '' }}" href="/catalogo?categoria=1">Teléfonos</a></li>
+        <li><a class="dropdown-item fw-semibold {{ request('categoria') == '2' ? 'active' : '' }}" href="/catalogo?categoria=2">Computadoras</a></li>
+        <li><a class="dropdown-item fw-semibold {{ request('categoria') == '3' ? 'active' : '' }}" href="/catalogo?categoria=3">Lavarropas</a></li>
+        <li><a class="dropdown-item fw-semibold {{ request('categoria') == '4' ? 'active' : '' }}" href="/catalogo?categoria=4">Heladeras</a></li>
+    </ul>
+</li>
 
                 <li class="nav-item">
                     <a class="nav-link px-3 fw-semibold {{ request()->is('quienes-somos') ? 'active' : '' }}" href="/quienes-somos">Quiénes Somos</a>

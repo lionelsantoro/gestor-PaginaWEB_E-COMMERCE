@@ -2,24 +2,25 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use App\Models\Producto;
+use App\Models\Categoria;
 
 class DatabaseSeeder extends Seeder
 {
-    use WithoutModelEvents;
-
-    /**
-     * Seed the application's database.
-     */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // Limpiamos las tablas desactivando las claves foráneas temporalmente
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        Producto::truncate();
+        Categoria::truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        // Llamamos a los seeders individuales en orden estricto
+        $this->call([
+            CategoriaSeeder::class,
+            ProductoSeeder::class, // Producto debe ir después para encontrar las categorías
         ]);
     }
 }
