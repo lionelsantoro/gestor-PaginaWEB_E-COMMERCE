@@ -1,12 +1,14 @@
 <?php
+
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Producto extends Model
 {
-    use SoftDeletes;
+    use HasFactory, SoftDeletes;
 
     protected $table = 'productos';
 
@@ -15,21 +17,19 @@ class Producto extends Model
         'descripcion',
         'precio',
         'stock',
-        'stockBajo',
-        'idCategoria',
-        'urlImagen',
-        'activo'
+        'stock_bajo',
+        'ID_categoria',
+        'url_image',
+        'activo',
     ];
 
-    // Relación: Pertenece a una Categoría
     public function categoria()
     {
-        return $this->belongsTo(Categoria::class, 'idCategoria');
+        return $this->belongsTo(Categoria::class, 'ID_categoria');
     }
 
-    // Relaciones 1 a 1 con sus especificaciones
-    public function especCelular() { return $this->hasOne(EspecCelular::class, 'idProducto'); }
-    public function especComputadora() { return $this->hasOne(EspecComputadora::class, 'idProducto'); }
-    public function especLavarropa() { return $this->hasOne(EspecLavarropa::class, 'idProducto'); }
-    public function especHeladera() { return $this->hasOne(EspecHeladera::class, 'idProducto'); }
+    public function pedidoItems()
+    {
+        return $this->hasMany(PedidoItem::class, 'ID_Producto');
+    }
 }
