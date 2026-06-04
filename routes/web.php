@@ -2,11 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactoController;
-use App\Http\Controllers\LoginController; 
-use App\Http\Controllers\RegistroController;
-use App\Http\Controllers\CatalogoController; // ¡ESTA ES LA LÍNEA QUE TE FALTABA!
+use App\Http\Controllers\CatalogoController;
+use App\Http\Controllers\AuthController;     // NUEVO CONTROLADOR DE LOGIN/REGISTRO
+use App\Http\Controllers\CarritoController;  // NUEVO CONTROLADOR DEL CARRITO
 
-
+// ==========================================
+// RUTAS PÚBLICAS (INICIO Y CONTACTO)
+// ==========================================
 Route::get('/', function () {
     return view('PaginaPrincipal');
 });
@@ -19,78 +21,59 @@ Route::get('/comercializacion', function () {
     return view('Comercializacion');
 });
 
-Route::get('/informacion-de-contacto', function () {
-    return view('InformacionDeContacto');
-});
-
-Route::post('/informacion-de-contacto', [ContactoController::class, 'procesar']);
-
 Route::get('/terminos-y-usos', function () {
     return view('Terminos_Y_Usos');
 });
 
-/*  === RUTAS ANTIGUAS ESTÁTICAS (COMENTADAS) ===
-
-Route::get('/catalogo/telefonos', function () {
-    return view('catalogo.telefonos'); 
+Route::get('/informacion-de-contacto', function () {
+    return view('InformacionDeContacto');
 });
-
-Route::get('/catalogo/telefonos/2', function () {
-    return view('catalogo.telefonos2'); 
-});
-
-Route::get('/catalogo/computadoras', function () {
-    return view('catalogo.computadoras');
-});
-
-Route::get('/catalogo/computadoras/2', function () {
-    return view('catalogo.computadoras2');
-});
-
-Route::get('/catalogo/lavarropas', function () {
-    return view('catalogo.lavarropas');
-});
-
-Route::get('/catalogo/lavarropas/2', function () {
-    return view('catalogo.lavarropas2');
-});
-
-Route::get('/catalogo/heladeras', function () {
-    return view('catalogo.heladeras');
-});
-
-Route::get('/catalogo/heladeras/2', function () {
-    return view('catalogo.heladeras2');
-});
-
-*/
-
-Route::post('/InformacionDeContacto', [ContactoController::class, 'procesar']);
+Route::post('/informacion-de-contacto', [ContactoController::class, 'procesar']);
 
 
+// ==========================================
+// RUTA DINÁMICA DEL CATÁLOGO
+// ==========================================
+Route::get('/catalogo', [CatalogoController::class, 'index'])->name('catalogo.index');
+
+
+// ==========================================
+// RUTAS DE AUTENTICACIÓN (LOGIN Y REGISTRO)
+// ==========================================
+// Importante: El ->name('login') le avisa a Laravel a dónde mandar a los que no tienen sesión
 Route::get('/login', function () {
     return view('formularios.Login');
-});
+})->name('login');
 
-Route::post('/login', [App\Http\Controllers\LoginController::class, 'procesar']);
-
+Route::post('/login', [AuthController::class, 'login']);
 
 Route::get('/registro', function () {
-    return view('formularios.registro'); // Asegurate de que tu archivo se llame registro.blade.php
+    return view('formularios.registro'); 
 });
 
-Route::post('/registro', [App\Http\Controllers\RegistroController::class, 'procesar']);
+Route::post('/registro', [AuthController::class, 'registrar']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-// Rutas del Panel de Administración
+
+// ==========================================
+// RUTAS DEL CARRITO DE COMPRAS (SOLO CLIENTES)
+// ==========================================
+// El middleware 'auth' protege estas rutas. Si alguien sin cuenta quiere entrar, Laravel lo manda al login.
+Route::middleware(['auth'])->group(function () {
+  Route::get('/carrito', [CarritoController::class, 'index'])->name('carrito');
+    Route::post('/carrito/agregar/{producto}', [CarritoController::class, 'agregar']);
+    Route::post('/carrito/actualizar/{item}', [CarritoController::class, 'actualizarCantidad']);
+    Route::get('/carrito/eliminar/{item}', [CarritoController::class, 'eliminar']);
+    Route::post('/carrito/pagar', [CarritoController::class, 'confirmarPago']);
+});
+
+
+// ==========================================
+// RUTAS DEL PANEL DE ADMINISTRACIÓN
+// ==========================================
 Route::get('/admin', function () { return view('Admin.Admin'); });
 Route::get('/admin/productos', function () { return view('Admin.adminProductos'); });
 Route::get('/admin/usuarios', function () { return view('Admin.adminUsuarios'); });
 Route::get('/admin/categorias', function () { return view('Admin.adminCategorias'); });
 Route::get('/admin/consultas', function () { return view('Admin.adminConsultas'); });
 Route::get('/admin/pedidos', function () { return view('Admin.adminPedidos'); });
-
-
-// ==========================================
-// NUEVA RUTA DINÁMICA DEL CATÁLOGO
-// ==========================================
-Route::get('/catalogo', [CatalogoController::class, 'index'])->name('catalogo.index');

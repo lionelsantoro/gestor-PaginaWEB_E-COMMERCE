@@ -36,6 +36,14 @@
                     
                     @csrf
                     
+
+@if ($errors->any())
+    <div class="alert alert-danger shadow-sm border-0 mb-4 text-center">
+        <i class="bi bi-exclamation-triangle-fill me-2"></i> {{ $errors->first() }}
+    </div>
+@endif
+
+
                     <div class="mb-3">
                         <label for="email" class="form-label">Correo electrónico</label>
                         <!-- Se eliminó el pattern que bloqueaba la arroba. type="email" y required mantienen la validación nativa. -->
