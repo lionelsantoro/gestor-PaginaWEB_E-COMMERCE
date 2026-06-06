@@ -28,6 +28,11 @@ Route::get('/terminos-y-usos', function () {
 Route::get('/informacion-de-contacto', function () {
     return view('InformacionDeContacto');
 });
+
+Route::get('/historialcompra', function () {
+    return view('carrito.historialcompra');
+});
+
 Route::post('/informacion-de-contacto', [ContactoController::class, 'procesar']);
 
 
