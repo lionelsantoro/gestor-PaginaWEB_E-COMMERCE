@@ -48,12 +48,22 @@
 
                     {{-- BARRA DE BÚSQUEDA Y BOTÓN CREAR --}}
                     <div class="d-flex justify-content-between align-items-center mb-4">
-                        <div class="d-flex gap-3 w-50">
-                            <input type="text" class="form-control rounded-pill" placeholder="Buscar producto..." style="background-color: #F8F9FA; border: 1px solid #dee2e6;">
-                            <select class="form-select rounded-pill" style="background-color: #F8F9FA; border: 1px solid #dee2e6;">
-                                <option selected>Todas las categorías</option>
+                        
+                        {{-- FORMULARIO DE BÚSQUEDA Y FILTRO --}}
+                        <form action="/admin/productos" method="GET" class="d-flex gap-3 w-50 m-0">
+                            <div class="input-group">
+                                <input type="text" name="buscar" value="{{ request('buscar') }}" class="form-control rounded-start-pill" placeholder="Buscar producto..." style="background-color: #F8F9FA; border: 1px solid #dee2e6;">
+                                <button class="btn btn-secondary rounded-end-pill" type="submit">Buscar</button>
+                            </div>
+                            <select name="categoria" class="form-select rounded-pill" style="background-color: #F8F9FA; border: 1px solid #dee2e6;" onchange="this.form.submit()">
+                                <option value="" {{ request('categoria') == '' ? 'selected' : '' }}>Todas las categorías</option>
+                                <option value="1" {{ request('categoria') == '1' ? 'selected' : '' }}>Teléfonos</option>
+                                <option value="2" {{ request('categoria') == '2' ? 'selected' : '' }}>Computadoras</option>
+                                <option value="3" {{ request('categoria') == '3' ? 'selected' : '' }}>Lavarropas</option>
+                                <option value="4" {{ request('categoria') == '4' ? 'selected' : '' }}>Heladeras</option>
                             </select>
-                        </div>
+                        </form>
+
                         <button class="btn text-white rounded-pill px-4 fw-semibold" style="background-color: #7828D8;" data-bs-toggle="modal" data-bs-target="#modalCrearProducto">
                             Crear producto
                         </button>
@@ -82,14 +92,25 @@
                                     </td>
                                     <td class="fw-semibold text-dark">{{ $producto->nombre }}</td>
                                     <td class="text-muted">{{ $producto->categoria->nombre ?? 'N/A' }}</td>
-                                    <td class="text-center">{{ $producto->stock }}</td>
+                                    
+                                    {{-- LÓGICA DE ALERTA DE STOCK BAJO APLICADA AQUÍ --}}
+                                    <td class="text-center">
+                                        @if($producto->stock <= $producto->stock_bajo)
+                                            <span class="text-danger fw-bold" title="Stock bajo (Mínimo requerido: {{ $producto->stock_bajo }})">
+                                                {{ $producto->stock }}
+                                            </span>
+                                        @else
+                                            <span class="text-success fw-semibold">
+                                                {{ $producto->stock }}
+                                            </span>
+                                        @endif
+                                    </td>
+                                    
                                     <td>$ {{ number_format($producto->precio, 0, ',', '.') }}</td>
                                     <td>
                                         <div class="d-flex gap-2 justify-content-end">
-                                            {{-- BOTÓN EDITAR (Abre modal específico de este producto) --}}
                                             <button type="button" class="btn btn-sm rounded px-3 fw-semibold" style="background-color: #e0e7ff; color: #4f46e5; border: none;" data-bs-toggle="modal" data-bs-target="#modalEditarProducto{{ $producto->id }}">Editar</button>
                                             
-                                            {{-- FORMULARIO PARA BAJA LÓGICA --}}
                                             <form action="/admin/productos/{{ $producto->id }}/baja" method="POST" class="m-0" onsubmit="return confirm('¿Seguro que deseas dar de baja este producto?');">
                                                 @csrf
                                                 @method('PATCH')
@@ -126,10 +147,15 @@
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-6 mb-3">
-                                                            <label class="form-label fw-semibold">Stock</label>
+                                                            <label class="form-label fw-semibold">Stock Actual</label>
                                                             <input type="number" name="stock" class="form-control rounded" value="{{ $producto->stock }}" required min="0">
                                                         </div>
+                                                        {{-- Añadido campo Stock Bajo al editar para mayor control --}}
                                                         <div class="col-6 mb-3">
+                                                            <label class="form-label fw-semibold">Alerta Stock Bajo</label>
+                                                            <input type="number" name="stock_bajo" class="form-control rounded" value="{{ $producto->stock_bajo }}" required min="0">
+                                                        </div>
+                                                        <div class="col-12 mb-3">
                                                             <label class="form-label fw-semibold">Precio ($)</label>
                                                             <input type="number" step="0.01" name="precio" class="form-control rounded" value="{{ $producto->precio }}" required min="0">
                                                         </div>
@@ -179,11 +205,16 @@
                             </select>
                         </div>
                         <div class="row">
-                            <div class="col-6 mb-3">
+                            <div class="col-4 mb-3">
                                 <label class="form-label fw-semibold">Stock</label>
                                 <input type="number" name="stock" class="form-control rounded" placeholder="0" required min="0">
                             </div>
-                            <div class="col-6 mb-3">
+                            {{-- Añadido campo Stock Bajo al crear --}}
+                            <div class="col-4 mb-3">
+                                <label class="form-label fw-semibold">Stock Bajo</label>
+                                <input type="number" name="stock_bajo" class="form-control rounded" placeholder="5" value="5" required min="0">
+                            </div>
+                            <div class="col-4 mb-3">
                                 <label class="form-label fw-semibold">Precio</label>
                                 <input type="number" step="0.01" name="precio" class="form-control rounded" placeholder="0.00" required min="0">
                             </div>

@@ -7,11 +7,24 @@ use App\Models\Producto;
 
 class ProductoController extends Controller
 {
-    // 1. MOSTRAR LA VISTA
-    public function index()
+    // 1. MOSTRAR LA VISTA (Con filtros de búsqueda y categoría)
+    public function index(Request $request)
     {
-        // Traemos solo los productos que están activos
-        $productos = Producto::with('categoria')->where('activo', true)->get();
+        // Empezamos la consulta trayendo solo los productos activos y sus categorías
+        $query = Producto::with('categoria')->where('activo', true);
+
+        // Si el usuario escribió algo en el campo "buscar"
+        if ($request->filled('buscar')) {
+            $query->where('nombre', 'LIKE', '%' . $request->buscar . '%');
+        }
+
+        // Si el usuario seleccionó una "categoría" del menú desplegable
+        if ($request->filled('categoria')) {
+            $query->where('ID_categoria', $request->categoria);
+        }
+
+        // Ejecutamos la consulta final
+        $productos = $query->get();
         
         return view('Admin.adminProductos', compact('productos'));
     }
@@ -23,6 +36,7 @@ class ProductoController extends Controller
             'nombre' => $request->nombre,
             'ID_categoria' => $request->ID_categoria,
             'stock' => $request->stock,
+            'stock_bajo' => $request->stock_bajo, // <-- Agregado para la alerta de stock
             'precio' => $request->precio,
             'activo' => true
             // Si en tu form agregas descripción o imagen, los pones aquí
@@ -40,6 +54,7 @@ class ProductoController extends Controller
             'nombre' => $request->nombre,
             'ID_categoria' => $request->ID_categoria,
             'stock' => $request->stock,
+            'stock_bajo' => $request->stock_bajo, // <-- Agregado para poder editar el límite
             'precio' => $request->precio,
         ]);
 
