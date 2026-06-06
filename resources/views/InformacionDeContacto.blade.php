@@ -39,20 +39,23 @@
                     <div class="card-body p-4 p-md-5">
                         <h4 class="mb-4 text-rosado"><strong>Envianos un mensaje</strong></h4>
 
-                        <form action="/informacion-de-contacto" method="POST">
-                                
+                        {{-- SI EL USUARIO INICIÓ SESIÓN, VE EL FORMULARIO --}}
+                        @auth
+                            <form action="/informacion-de-contacto" method="POST">
                                 @csrf
 
+                                {{-- Campos bloqueados que se autocompletan con los datos de la sesión --}}
                                 <div class="mb-3">
                                     <label for="nombre" class="form-label">Nombre completo</label>
-                                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingresá tu nombre" pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$" required>
+                                    <input type="text" class="form-control text-muted" id="nombre" value="{{ Auth::user()->nombreCompleto }}" readonly style="background-color: #e9ecef;">
                                 </div>
                                 
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Correo electrónico</label>
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="nombre@ejemplo.com" pattern="^[^@\s]+@[^@\s]+\.com$" required>
+                                    <input type="email" class="form-control text-muted" id="email" value="{{ Auth::user()->correo }}" readonly style="background-color: #e9ecef;">
                                 </div>
 
+                                {{-- Campos editables (Asunto y Mensaje) --}}
                                 <div class="mb-3">
                                     <label for="asunto" class="form-label">Asunto</label>
                                     <input type="text" class="form-control" id="asunto" name="asunto" placeholder="¿En qué te podemos ayudar?" pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$" required>
@@ -67,6 +70,18 @@
                                     <button type="submit" class="btn btn-lg fondo-rosado text-white">Enviar Mensaje</button>
                                 </div>
                             </form>
+                        @endauth
+
+                        {{-- SI ES UN INVITADO (GUEST), LE PEDIMOS QUE INICIE SESIÓN --}}
+                        @guest
+                            <div class="alert alert-warning text-center p-4 rounded-3" role="alert">
+                                <i class="bi bi-person-lock fs-1 text-warning d-block mb-3"></i>
+                                <h5 class="fw-bold text-dark mb-2">¡Ups! Sesión requerida</h5>
+                                <p class="text-muted mb-4">Para poder enviarnos una consulta o reclamo, necesitás ingresar a tu cuenta.</p>
+                                <a href="/login" class="btn fondo-rosado text-white fw-bold px-4 rounded-pill">Iniciar Sesión</a>
+                            </div>
+                        @endguest
+
                     </div>
                 </div>
             </div>
@@ -141,10 +156,9 @@
         </div>
     </div>
 
-    <!-- VISTA EMERGENTE (TOAST) CON FONDO DESENFOCADO -->
     @if(session('success'))
     <div class="fondo-desenfocado">
-        <div class="toast shadow-lg border-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false" id="toastContacto">
+        <div class="toast show shadow-lg border-0" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header bg-white">
                 <i class="bi bi-check-circle-fill text-success me-2 text-rosado"></i>
                 <strong class="me-auto fs-5 text-rosado">Mensaje enviado</strong>
@@ -163,18 +177,7 @@
 
     @include('plantillas.piedepagina')
 
-    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script> 
-
-    <!-- Script para activar el toast automáticamente al cargar la página -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var toastElement = document.getElementById('toastContacto');
-            if (toastElement) {
-                var toast = new bootstrap.Toast(toastElement);
-                toast.show();
-            }
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
 
 </body>
 </html>

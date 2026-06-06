@@ -3,10 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\CatalogoController;
-use App\Http\Controllers\AuthController;    
-use App\Http\Controllers\CarritoController; 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CarritoController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\ConsultaController;
 
 // ==========================================
 // RUTAS PÚBLICAS (INICIO Y CONTACTO)
@@ -110,13 +111,13 @@ Route::middleware(['auth'])->group(function () {
 
     // Otras vistas de administración (Pendientes de pasar a controlador)
     Route::get('/admin/categorias', function () {
-        return view('Admin.adminCategorias'); 
+        return view('Admin.adminCategorias');
     });
     Route::get('/admin/consultas', function () {
-        return view('Admin.adminConsultas'); 
+        return view('Admin.adminConsultas');
     });
     Route::get('/admin/pedidos', function () {
-        return view('Admin.adminPedidos'); 
+        return view('Admin.adminPedidos');
     });
 
     // ==========================================
@@ -128,3 +129,10 @@ Route::middleware(['auth'])->group(function () {
     Route::patch('/admin/productos/{id}/baja', [ProductoController::class, 'bajaLogica']); // Baja Lógica
 
 });
+
+// ==========================================
+// CRUD CONSULTAS (Conectado al ConsultaController)
+// ==========================================
+Route::get('/admin/consultas', [ConsultaController::class, 'index']);
+Route::patch('/admin/consultas/{id}/leido', [ConsultaController::class, 'marcarLeido']);
+Route::delete('/admin/consultas/{id}/eliminar', [ConsultaController::class, 'destroy']);
