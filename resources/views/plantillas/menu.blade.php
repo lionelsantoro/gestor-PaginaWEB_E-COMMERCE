@@ -52,7 +52,7 @@
     {{-- SI EL USUARIO NO INICIÓ SESIÓN --}}
     @guest
         <li class="nav-item">
-            <a class="nav-link fw-semibold text-rosado" href="/login">Iniciar Sesión</a>
+            <a class="nav-link fw-semibold" href="/login">Iniciar Sesión</a>
         </li>
         <li class="nav-item ms-2">
             <a class="btn fondo-rosado text-white fw-bold px-4" href="/registro" style="border-radius: 8px;">Registrarse</a>
@@ -72,7 +72,7 @@
         {{-- 2. Si es Cliente: Ve el carrito, NO ve el panel admin --}}
         @if(Auth::user()->rol === 'cliente')
             <li class="nav-item ms-2">
-                <a class="nav-link px-3 fw-bold text-white d-flex align-items-center" href="/carrito" style="background-color: #ffc107; border-radius: 8px;">
+                <a class="nav-link px-3 fw-bold text-white d-flex align-items-center fondo-rosado" href="/carrito" style="border-radius: 8px;">
                     <i class="bi bi-cart3 me-1"></i> Mi Carrito
                     @php
                         $carritoActivo = \App\Models\Pedido::where('ID_Usuario', Auth::id())->where('estado', 'creada')->first();
@@ -87,7 +87,7 @@
 
         {{-- 3. Botón de Cerrar Sesión para ambos roles --}}
         <li class="nav-item dropdown ms-3">
-            <a class="nav-link dropdown-toggle fw-bold text-rosado" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle fw-bold fondo-rosado" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 8px;">
                 <i class="bi bi-person-circle me-1"></i> {{ Auth::user()->nombreCompleto }}
             </a>
             <ul class="dropdown-menu dropdown-menu-end border-0 shadow-sm">
