@@ -3,9 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\CatalogoController;
-use App\Http\Controllers\AuthController;     // NUEVO CONTROLADOR DE LOGIN/REGISTRO
-use App\Http\Controllers\CarritoController;  // NUEVO CONTROLADOR DEL CARRITO
+use App\Http\Controllers\AuthController;    
+use App\Http\Controllers\CarritoController; 
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\UsuarioController;
 
 // ==========================================
 // RUTAS PÚBLICAS (INICIO Y CONTACTO)
@@ -90,28 +91,40 @@ Route::get('/historialcompra', function () {
 })->middleware('auth'); // Protegemos la ruta para que solo entren usuarios logueados
 
 // ==========================================
-// RUTAS DEL PANEL DE ADMINISTRACIÓN Y CRUD PRODUCTOS
+// RUTAS DEL PANEL DE ADMINISTRACIÓN (PROTEGIDAS)
 // ==========================================
-// Agrupamos todas las rutas admin bajo el middleware 'auth' para protegerlas
 Route::middleware(['auth'])->group(function () {
 
-    // Vistas principales del Panel
+    // Redirección principal del admin
     Route::get('/admin', function () {
         return redirect('/admin/productos');
     });
-    Route::get('/admin/usuarios', function () {
-        return view('Admin.adminUsuarios'); });
-    Route::get('/admin/categorias', function () {
-        return view('Admin.adminCategorias'); });
-    Route::get('/admin/consultas', function () {
-        return view('Admin.adminConsultas'); });
-    Route::get('/admin/pedidos', function () {
-        return view('Admin.adminPedidos'); });
 
+    // ==========================================
+    // CRUD USUARIOS (Conectado al UsuarioController)
+    // ==========================================
+    Route::get('/admin/usuarios', [UsuarioController::class, 'index']); // Leer
+    Route::post('/admin/usuarios', [UsuarioController::class, 'store']); // Crear Admin
+    Route::put('/admin/usuarios/{id}', [UsuarioController::class, 'update']); // Modificar Admin
+    Route::patch('/admin/usuarios/{id}/baja', [UsuarioController::class, 'bajaLogica']); // Baja Lógica
+
+    // Otras vistas de administración (Pendientes de pasar a controlador)
+    Route::get('/admin/categorias', function () {
+        return view('Admin.adminCategorias'); 
+    });
+    Route::get('/admin/consultas', function () {
+        return view('Admin.adminConsultas'); 
+    });
+    Route::get('/admin/pedidos', function () {
+        return view('Admin.adminPedidos'); 
+    });
+
+    // ==========================================
     // CRUD PRODUCTOS (Conectado al ProductoController)
+    // ==========================================
     Route::get('/admin/productos', [ProductoController::class, 'index']); // Leer (Mostrar tabla)
     Route::post('/admin/productos', [ProductoController::class, 'store']); // Crear
-    Route::put('/admin/productos/{id}', [ProductoController::class, 'update']); // Modificar (Faltaba la barra "/")
-    Route::patch('/admin/productos/{id}/baja', [ProductoController::class, 'bajaLogica']); // Baja Lógica (Faltaba la barra "/")
+    Route::put('/admin/productos/{id}', [ProductoController::class, 'update']); // Modificar
+    Route::patch('/admin/productos/{id}/baja', [ProductoController::class, 'bajaLogica']); // Baja Lógica
 
 });
