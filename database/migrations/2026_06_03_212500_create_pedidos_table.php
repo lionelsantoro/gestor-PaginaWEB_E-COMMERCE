@@ -12,7 +12,6 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('ID_Usuario');
             $table->decimal('total', 12, 2)->default(0);
-            // Acá están tus 4 estados exactos del UML
             $table->enum('estado', ['creada', 'pendientePago', 'pagada', 'cancelada'])->default('creada');
             $table->string('direccion', 255)->nullable();
             

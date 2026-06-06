@@ -82,3 +82,19 @@ Route::get('/admin/usuarios', function () { return view('Admin.adminUsuarios'); 
 Route::get('/admin/categorias', function () { return view('Admin.adminCategorias'); });
 Route::get('/admin/consultas', function () { return view('Admin.adminConsultas'); });
 Route::get('/admin/pedidos', function () { return view('Admin.adminPedidos'); });
+
+// ==========================================
+// RUTAS DE HISTORIAL DE COMPRA
+// ==========================================
+Route::get('/historialcompra', function () {
+    // 1. Obtenemos los pedidos del usuario logueado
+    // 2. Traemos las relaciones 'items' y 'items.producto' para evitar múltiples consultas a la base de datos (Eager Loading)
+    // 3. Excluimos los pedidos 'creada' porque esos son el carrito activo, no el historial
+    $pedidos = \App\Models\Pedido::with('items.producto')
+                ->where('ID_Usuario', Auth::id())
+                ->where('estado', '!=', 'creada') 
+                ->orderBy('created_at', 'desc') // Ordenamos del más reciente al más antiguo
+                ->get();
+
+    return view('carrito.historialcompra', compact('pedidos'));
+})->middleware('auth'); // Protegemos la ruta para que solo entren usuarios logueados
