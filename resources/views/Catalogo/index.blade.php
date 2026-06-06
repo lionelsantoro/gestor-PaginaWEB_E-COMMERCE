@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 
-@include('plantillas.head', ['titulo' => 'Catálogo Dinámico'])
+@include('plantillas.head', ['titulo' => 'Catálogo'])
 
 <body class="d-flex flex-column min-vh-100">
 

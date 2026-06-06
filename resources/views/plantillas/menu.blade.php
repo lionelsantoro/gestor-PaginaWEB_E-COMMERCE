@@ -11,7 +11,7 @@
 
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             
-            {{-- ENLACES PRINCIPALES --}}
+            {{-- ENLACES PRINCIPALES (El ms-auto empuja todo el bloque a la derecha) --}}
             <ul class="navbar-nav ms-auto" style="font-size: 1.1rem;">
 
                 <li class="nav-item">
@@ -49,8 +49,8 @@
                 @endif
             </ul>
 
-            {{-- SECCIÓN DE USUARIO Y CARRITO --}}
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+            {{-- SECCIÓN DE USUARIO Y CARRITO (Quitamos el ms-auto y agregamos ms-lg-3 para un pequeño margen) --}}
+            <ul class="navbar-nav mb-2 mb-lg-0 align-items-center ms-lg-3">
 
                 {{-- SI EL USUARIO NO INICIÓ SESIÓN --}}
                 @guest
