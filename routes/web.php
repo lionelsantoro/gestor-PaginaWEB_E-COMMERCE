@@ -5,6 +5,7 @@ use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\CatalogoController;
 use App\Http\Controllers\AuthController;     // NUEVO CONTROLADOR DE LOGIN/REGISTRO
 use App\Http\Controllers\CarritoController;  // NUEVO CONTROLADOR DEL CARRITO
+use App\Http\Controllers\ProductoController;
 
 // ==========================================
 // RUTAS PÚBLICAS (INICIO Y CONTACTO)
@@ -72,17 +73,6 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/carrito/pagar', [CarritoController::class, 'confirmarPago']);
 });
 
-
-// ==========================================
-// RUTAS DEL PANEL DE ADMINISTRACIÓN
-// ==========================================
-Route::get('/admin', function () { return view('Admin.Admin'); });
-Route::get('/admin/productos', function () { return view('Admin.adminProductos'); });
-Route::get('/admin/usuarios', function () { return view('Admin.adminUsuarios'); });
-Route::get('/admin/categorias', function () { return view('Admin.adminCategorias'); });
-Route::get('/admin/consultas', function () { return view('Admin.adminConsultas'); });
-Route::get('/admin/pedidos', function () { return view('Admin.adminPedidos'); });
-
 // ==========================================
 // RUTAS DE HISTORIAL DE COMPRA
 // ==========================================
@@ -98,3 +88,24 @@ Route::get('/historialcompra', function () {
 
     return view('carrito.historialcompra', compact('pedidos'));
 })->middleware('auth'); // Protegemos la ruta para que solo entren usuarios logueados
+
+// ==========================================
+// RUTAS DEL PANEL DE ADMINISTRACIÓN Y CRUD PRODUCTOS
+// ==========================================
+// Agrupamos todas las rutas admin bajo el middleware 'auth' para protegerlas
+Route::middleware(['auth'])->group(function () {
+    
+    // Vistas principales del Panel
+    Route::get('/admin', function () { return view('Admin.Admin'); });
+    Route::get('/admin/usuarios', function () { return view('Admin.adminUsuarios'); });
+    Route::get('/admin/categorias', function () { return view('Admin.adminCategorias'); });
+    Route::get('/admin/consultas', function () { return view('Admin.adminConsultas'); });
+    Route::get('/admin/pedidos', function () { return view('Admin.adminPedidos'); });
+
+    // CRUD PRODUCTOS (Conectado al ProductoController)
+    Route::get('/admin/productos', [ProductoController::class, 'index']); // Leer (Mostrar tabla)
+    Route::post('/admin/productos', [ProductoController::class, 'store']); // Crear
+    Route::put('/admin/productos/{id}', [ProductoController::class, 'update']); // Modificar (Faltaba la barra "/")
+    Route::patch('/admin/productos/{id}/baja', [ProductoController::class, 'bajaLogica']); // Baja Lógica (Faltaba la barra "/")
+
+});
