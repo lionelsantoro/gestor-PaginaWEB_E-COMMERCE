@@ -54,7 +54,7 @@ Route::get('/login', function () {
 Route::post('/login', [AuthController::class, 'login']);
 
 Route::get('/registro', function () {
-    return view('formularios.registro'); 
+    return view('formularios.registro');
 });
 
 Route::post('/registro', [AuthController::class, 'registrar']);
@@ -66,7 +66,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 // ==========================================
 // El middleware 'auth' protege estas rutas. Si alguien sin cuenta quiere entrar, Laravel lo manda al login.
 Route::middleware(['auth'])->group(function () {
-  Route::get('/carrito', [CarritoController::class, 'index'])->name('carrito');
+    Route::get('/carrito', [CarritoController::class, 'index'])->name('carrito');
     Route::post('/carrito/agregar/{producto}', [CarritoController::class, 'agregar']);
     Route::post('/carrito/actualizar/{item}', [CarritoController::class, 'actualizarCantidad']);
     Route::get('/carrito/eliminar/{item}', [CarritoController::class, 'eliminar']);
@@ -81,10 +81,10 @@ Route::get('/historialcompra', function () {
     // 2. Traemos las relaciones 'items' y 'items.producto' para evitar múltiples consultas a la base de datos (Eager Loading)
     // 3. Excluimos los pedidos 'creada' porque esos son el carrito activo, no el historial
     $pedidos = \App\Models\Pedido::with('items.producto')
-                ->where('ID_Usuario', Auth::id())
-                ->where('estado', '!=', 'creada') 
-                ->orderBy('created_at', 'desc') // Ordenamos del más reciente al más antiguo
-                ->get();
+        ->where('ID_Usuario', Auth::id())
+        ->where('estado', '!=', 'creada')
+        ->orderBy('created_at', 'desc') // Ordenamos del más reciente al más antiguo
+        ->get();
 
     return view('carrito.historialcompra', compact('pedidos'));
 })->middleware('auth'); // Protegemos la ruta para que solo entren usuarios logueados
@@ -94,13 +94,19 @@ Route::get('/historialcompra', function () {
 // ==========================================
 // Agrupamos todas las rutas admin bajo el middleware 'auth' para protegerlas
 Route::middleware(['auth'])->group(function () {
-    
+
     // Vistas principales del Panel
-    Route::get('/admin', function () { return view('Admin.Admin'); });
-    Route::get('/admin/usuarios', function () { return view('Admin.adminUsuarios'); });
-    Route::get('/admin/categorias', function () { return view('Admin.adminCategorias'); });
-    Route::get('/admin/consultas', function () { return view('Admin.adminConsultas'); });
-    Route::get('/admin/pedidos', function () { return view('Admin.adminPedidos'); });
+    Route::get('/admin', function () {
+        return redirect('/admin/productos');
+    });
+    Route::get('/admin/usuarios', function () {
+        return view('Admin.adminUsuarios'); });
+    Route::get('/admin/categorias', function () {
+        return view('Admin.adminCategorias'); });
+    Route::get('/admin/consultas', function () {
+        return view('Admin.adminConsultas'); });
+    Route::get('/admin/pedidos', function () {
+        return view('Admin.adminPedidos'); });
 
     // CRUD PRODUCTOS (Conectado al ProductoController)
     Route::get('/admin/productos', [ProductoController::class, 'index']); // Leer (Mostrar tabla)

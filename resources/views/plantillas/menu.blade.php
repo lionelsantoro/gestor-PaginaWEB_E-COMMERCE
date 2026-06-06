@@ -67,7 +67,7 @@
                     {{-- 1. Si es Administrador: Ve el panel admin, NO ve el carrito --}}
                     @if(Auth::user()->rol === 'admin')
                         <li class="nav-item ms-2">
-                            <a class="nav-link px-3 fw-bold text-white bg-dark" href="/admin" style="border-radius: 8px;">
+                            <a class="nav-link px-3 fw-bold text-white bg-dark" href="/admin/productos" style="border-radius: 8px;">
                                 <i class="bi bi-shield-lock-fill me-1"></i> Panel de Administración
                             </a>
                         </li>
