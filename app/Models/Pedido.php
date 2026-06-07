@@ -13,11 +13,20 @@ class Pedido extends Model
     protected $table = 'pedidos';
 
     protected $fillable = [
-        'ID_Usuario', 'total', 'estado', 'direccion',
+        'ID_Usuario',
+        'total',
+        'estado',
+        'direccion',
     ];
 
     public function items()
     {
         return $this->hasMany(PedidoItem::class, 'ID_Pedido');
     }
+
+    public function usuario()
+    {
+        return $this->belongsTo(Usuario::class, 'ID_Usuario');
+    }
+
 }

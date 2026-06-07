@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 @include('plantillas.head', ['titulo' => 'ConsultasAdmin'])
 
 <body class="d-flex flex-column min-vh-100" style="background-color: #F4F6F9;">
@@ -78,64 +77,62 @@
                                             @endif
                                         </div>
                                     </li>
-
-                                    <div class="modal fade" id="modalVerConsulta{{ $consulta->id }}" tabindex="-1">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content border-0 shadow">
-                                                <div class="modal-header text-white" style="background-color: {{ $consulta->estado == 'noLeido' ? '#7828D8' : '#64748b' }};">
-                                                    <h5 class="modal-title fw-bold">Detalle del Mensaje</h5>
-                                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                                                </div>
-                                                <div class="modal-body p-4 bg-light">
-                                                    <div class="bg-white p-3 rounded border mb-3">
-                                                        <div class="row">
-                                                            <div class="col-md-6 mb-2">
-                                                                <span class="text-muted small d-block">Nombre completo:</span>
-                                                                <span class="fw-semibold text-dark">{{ $consulta->usuario->nombreCompleto ?? 'Desconocido' }}</span>
-                                                            </div>
-                                                            <div class="col-md-6 mb-2">
-                                                                <span class="text-muted small d-block">Correo electrónico:</span>
-                                                                <a href="mailto:{{ $consulta->usuario->correo ?? '' }}" class="fw-semibold text-primary text-decoration-none">{{ $consulta->usuario->correo ?? 'Sin correo' }}</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="bg-white p-4 rounded border">
-                                                        <span class="text-muted small d-block mb-1">Asunto:</span>
-                                                        <h6 class="fw-bold mb-3 border-bottom pb-2 text-dark">{{ $consulta->asunto }}</h6>
-                                                        <span class="text-muted small d-block mb-1">Mensaje:</span>
-                                                        <p class="text-dark" style="white-space: pre-wrap; line-height: 1.6;">{{ $consulta->mensaje }}</p>
-                                                    </div>
-                                                </div>
-                                                <div class="modal-footer bg-white border-top-0 d-flex justify-content-between">
-                                                    <button type="button" class="btn btn-light fw-semibold border" data-bs-dismiss="modal">Cerrar</button>
-                                                    <div class="d-flex gap-2">
-                                                        <a href="mailto:{{ $consulta->usuario->correo ?? '' }}" class="btn btn-outline-primary fw-semibold">Responder por Email</a>
-                                                        
-                                                        @if($consulta->estado == 'noLeido')
-                                                            <form action="/admin/consultas/{{ $consulta->id }}/leido" method="POST" class="m-0">
-                                                                @csrf
-                                                                @method('PATCH')
-                                                                <button type="submit" class="btn text-white fw-semibold" style="background-color: #4f46e5;">Marcar como leído</button>
-                                                            </form>
-                                                        @endif
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 @empty
                                     <p class="text-muted text-center mt-4">No hay consultas registradas en la base de datos.</p>
                                 @endforelse
-
                             </ul>
                         </div>
                     </div>
-
                 </div>
             </div>
-
         </div>
     </div>
+
+    {{-- MODALES (Fuera del bucle de consultas para evitar errores de renderizado) --}}
+    @foreach($consultas as $consulta)
+    <div class="modal fade" id="modalVerConsulta{{ $consulta->id }}" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header text-white" style="background-color: {{ $consulta->estado == 'noLeido' ? '#7828D8' : '#64748b' }};">
+                    <h5 class="modal-title fw-bold">Detalle del Mensaje</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4 bg-light">
+                    <div class="bg-white p-3 rounded border mb-3">
+                        <div class="row">
+                            <div class="col-md-6 mb-2">
+                                <span class="text-muted small d-block">Nombre completo:</span>
+                                <span class="fw-semibold text-dark">{{ $consulta->usuario->nombreCompleto ?? 'Desconocido' }}</span>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <span class="text-muted small d-block">Correo electrónico:</span>
+                                <a href="mailto:{{ $consulta->usuario->correo ?? '' }}" class="fw-semibold text-primary text-decoration-none">{{ $consulta->usuario->correo ?? 'Sin correo' }}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-4 rounded border">
+                        <span class="text-muted small d-block mb-1">Asunto:</span>
+                        <h6 class="fw-bold mb-3 border-bottom pb-2 text-dark">{{ $consulta->asunto }}</h6>
+                        <span class="text-muted small d-block mb-1">Mensaje:</span>
+                        <p class="text-dark" style="white-space: pre-wrap; line-height: 1.6;">{{ $consulta->mensaje }}</p>
+                    </div>
+                </div>
+                <div class="modal-footer bg-white border-top-0 d-flex justify-content-between">
+                    <button type="button" class="btn btn-light fw-semibold border" data-bs-dismiss="modal">Cerrar</button>
+                    <div class="d-flex gap-2">
+                        <a href="mailto:{{ $consulta->usuario->correo ?? '' }}" class="btn btn-outline-primary fw-semibold">Responder por Email</a>
+                        @if($consulta->estado == 'noLeido')
+                            <form action="/admin/consultas/{{ $consulta->id }}/leido" method="POST" class="m-0">
+                                @csrf @method('PATCH')
+                                <button type="submit" class="btn text-white fw-semibold" style="background-color: #4f46e5;">Marcar como leído</button>
+                            </form>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endforeach
 
     @include('plantillas.piedepagina')
 
@@ -145,10 +142,8 @@
         document.getElementById('filtroConsultas').addEventListener('change', function() {
             let seleccion = this.value;
             let consultas = document.querySelectorAll('.consulta-item');
-
             consultas.forEach(function(consulta) {
                 let estadoConsulta = consulta.getAttribute('data-estado');
-
                 if (seleccion === 'todas' || seleccion === estadoConsulta) {
                     consulta.classList.remove('d-none');
                     consulta.classList.add('d-flex');

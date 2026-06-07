@@ -9,99 +9,179 @@
 
     <div class="container-fluid flex-grow-1 py-4 px-4">
         <div class="row h-100">
+            
+            {{-- MENÚ LATERAL ADMIN --}}
             <div class="col-md-3 col-lg-2 mb-4">
                 @include('plantillas.menuAdmin') 
             </div>
 
+            {{-- CONTENIDO PRINCIPAL --}}
             <div class="col-md-9 col-lg-10">
                 <div class="p-4 rounded h-100 bg-white border shadow-sm">
+                    
+                    {{-- ENCABEZADO --}}
                     <div class="mb-4">
-                        <h2 class="fw-bold mb-1">Pedidos</h2>
-                        <p class="text-muted">Gestión y visualización de ventas realizadas</p>
+                        <h2 class="fw-bold mb-1">Gestión de Pedidos</h2>
+                        <p class="text-muted">Control y visualización de las ventas realizadas en la plataforma</p>
                     </div>
 
+                    {{-- ALERTAS --}}
+                    @if(session('success'))
+                        <div class="alert alert-success alert-dismissible fade show">
+                            {{ session('success') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    @endif
+
+                    {{-- BARRA DE BÚSQUEDA Y FILTRO --}}
                     <div class="d-flex gap-3 mb-4 w-50">
-                        <input type="text" class="form-control rounded-pill" placeholder="Buscar por cliente...">
-                        <select id="filtroEstados" class="form-select rounded-pill" style="width: auto;">
-                            <option value="todos">Todos los estados</option>
-                            <option value="pendiente">Pendientes</option>
-                            <option value="pagado">Pagados</option>
-                            <option value="enviado">Enviados</option>
-                            <option value="entregado">Entregados</option>
+                        <input type="text" id="buscadorPedidos" class="form-control rounded-pill" placeholder="Buscar por N° de pedido o cliente..." style="background-color: #F8F9FA; border: 1px solid #dee2e6;">
+                        
+                        <select id="filtroEstados" class="form-select rounded-pill" style="background-color: #F8F9FA; border: 1px solid #dee2e6; width: auto;">
+                            <option value="todos" selected>Todos los estados</option>
+                            <option value="pendientePago">Pendiente de Pago</option>
+                            <option value="pagada">Pagada</option>
+                            <option value="cancelada">Cancelada</option>
                         </select>
                     </div>
 
-                    <table class="table table-borderless align-middle mb-0 border-bottom">
-                        <thead class="border-bottom">
-                            <tr>
-                                <th>Pedido</th><th>Cliente</th><th>Total</th><th>Estado</th><th class="text-end">Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tablaPedidos">
-                            <tr class="fila-pedido" data-estado="pendiente">
-                                <td class="fw-bold">#1023</td><td>Juan Pérez</td><td class="fw-bold">$ 1.999.999</td>
-                                <td>
-                                    <select class="form-select form-select-sm selector-estado fw-semibold text-warning" style="background-color: #fffbeb; border: 1px solid #fde68a; width: 130px; border-radius: 8px;">
-                                        <option value="pendiente" selected>Pendiente</option>
-                                        <option value="pagado">Pagado</option>
-                                        <option value="enviado">Enviado</option>
-                                        <option value="entregado">Entregado</option>
-                                    </select>
-                                </td>
-                                <td class="text-end"><button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal1023">Ver detalle</button></td>
-                            </tr>
-                            <tr class="fila-pedido" data-estado="enviado">
-                                <td class="fw-bold">#1024</td><td>María López</td><td class="fw-bold">$ 399.999</td>
-                                <td>
-                                    <select class="form-select form-select-sm selector-estado fw-semibold text-primary" style="background-color: #eff6ff; border: 1px solid #bfdbfe; width: 130px; border-radius: 8px;">
-                                        <option value="pendiente">Pendiente</option>
-                                        <option value="pagado">Pagado</option>
-                                        <option value="enviado" selected>Enviado</option>
-                                        <option value="entregado">Entregado</option>
-                                    </select>
-                                </td>
-                                <td class="text-end"><button class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#modal1024">Ver detalle</button></td>
-                            </tr>
-                            <tr class="fila-pedido" data-estado="entregado">
-                                <td class="fw-bold">#1025</td><td>Carlos Ruiz</td><td class="fw-bold">$ 729.999</td>
-                                <td>
-                                    <select class="form-select form-select-sm selector-estado fw-semibold text-success" style="background-color: #f0fdf4; border: 1px solid #bbf7d0; width: 130px; border-radius: 8px;">
-                                        <option value="pendiente">Pendiente</option>
-                                        <option value="pagado">Pagado</option>
-                                        <option value="enviado">Enviado</option>
-                                        <option value="entregado" selected>Entregado</option>
-                                    </select>
-                                </td>
-                                <td class="text-end"><button class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#modal1025">Ver detalle</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    {{-- TABLA DE PEDIDOS --}}
+                    <div class="table-responsive">
+                        <table class="table table-borderless align-middle mb-0 border-bottom">
+                            <thead class="border-bottom text-muted">
+                                <tr>
+                                    <th class="fw-normal pb-3">Pedido</th>
+                                    <th class="fw-normal pb-3">Cliente</th>
+                                    <th class="fw-normal pb-3">Total</th>
+                                    <th class="fw-normal pb-3 text-center">Estado</th>
+                                    <th class="fw-normal pb-3 text-center">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @forelse($pedidos as $pedido)
+                                    <tr class="border-bottom fila-pedido" data-estado="{{ $pedido->estado }}">
+                                        <td class="fw-bold text-dark">#{{ $pedido->id }}</td>
+                                        <td class="fw-semibold text-secondary">{{ $pedido->usuario->nombreCompleto ?? 'Usuario Eliminado' }}</td>
+                                        <td class="fw-bold" style="color: #7828D8;">$ {{ number_format($pedido->total, 0, ',', '.') }}</td>
+                                        <td class="text-center">
+                                            {{-- Colores dinámicos para los estados --}}
+                                            @if($pedido->estado == 'pagada')
+                                                <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-2">Pagada</span>
+                                            @elseif($pedido->estado == 'pendientePago')
+                                                <span class="badge bg-warning bg-opacity-10 text-warning rounded-pill px-3 py-2">Pendiente</span>
+                                            @else
+                                                <span class="badge bg-danger bg-opacity-10 text-danger rounded-pill px-3 py-2">Cancelada</span>
+                                            @endif
+                                        </td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm text-white rounded-pill px-3 fw-semibold" 
+                                                    style="background-color: #7828D8;" 
+                                                    data-bs-toggle="modal" 
+                                                    data-bs-target="#modalItems{{ $pedido->id }}">
+                                                Ver detalle
+                                            </button>
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="5" class="text-center py-5 text-muted">
+                                            No hay pedidos registrados en el sistema.
+                                        </td>
+                                    </tr>
+                                @endforelse
+                            </tbody>
+                        </table>
+                    </div>
+
                 </div>
             </div>
+
         </div>
     </div>
 
     @include('plantillas.piedepagina')
 
-    <div class="modal fade" id="modal1023" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header text-white" style="background-color: #7828D8;"><h5 class="modal-title">Detalle del Pedido #1023</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div><div class="modal-body p-4"><div class="row mb-4"><div class="col-6"><h6>Datos del Cliente</h6><p>Nombre: Juan Pérez<br>Email: juan.perez@email.com</p></div><div class="col-6"><h6>Datos de Envío</h6><p>San Martín 1550<br>Corrientes Capital</p></div></div><table class="table border"><thead><tr><th>Producto</th><th>Cant.</th><th>Subtotal</th></tr></thead><tbody><tr><td>Lenovo IdeaPad 3</td><td>1</td><td>$ 1.999.999</td></tr></tbody></table></div><div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button><button class="btn text-white" style="background-color: #7828D8;">Factura PDF</button></div></div></div></div>
+    {{-- ========================================== --}}
+    {{-- ZONA DE MODALES (FUERA DE LA TABLA)        --}}
+    {{-- ========================================== --}}
     
-    <div class="modal fade" id="modal1024" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header text-white" style="background-color: #7828D8;"><h5 class="modal-title">Detalle del Pedido #1024</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div><div class="modal-body p-4"><div class="row mb-4"><div class="col-6"><h6>Datos del Cliente</h6><p>Nombre: María López<br>Email: maria.lopez@email.com</p></div><div class="col-6"><h6>Datos de Envío</h6><p>Junín 1200<br>Corrientes Capital</p></div></div><table class="table border"><thead><tr><th>Producto</th><th>Cant.</th><th>Subtotal</th></tr></thead><tbody><tr><td>Samsung Galaxy S23</td><td>1</td><td>$ 399.999</td></tr></tbody></table></div><div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button><button class="btn text-white" style="background-color: #7828D8;">Factura PDF</button></div></div></div></div>
-    
-    <div class="modal fade" id="modal1025" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header text-white" style="background-color: #7828D8;"><h5 class="modal-title">Detalle del Pedido #1025</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div><div class="modal-body p-4"><div class="row mb-4"><div class="col-6"><h6>Datos del Cliente</h6><p>Nombre: Carlos Ruiz<br>Email: carlos.ruiz@email.com</p></div><div class="col-6"><h6>Datos de Envío</h6><p>9 de Julio 850<br>Corrientes Capital</p></div></div><table class="table border"><thead><tr><th>Producto</th><th>Cant.</th><th>Subtotal</th></tr></thead><tbody><tr><td>Drean Next 8kg</td><td>1</td><td>$ 729.999</td></tr></tbody></table></div><div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button><button class="btn text-white" style="background-color: #7828D8;">Factura PDF</button></div></div></div></div>
+    @foreach($pedidos as $pedido)
+        <div class="modal fade" id="modalItems{{ $pedido->id }}" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content border-0 shadow-lg" style="border-radius: 12px;">
+                    <div class="modal-header text-white" style="background-color: #7828D8; border-top-left-radius: 12px; border-top-right-radius: 12px;">
+                        <h5 class="modal-title fw-bold">Detalle del Pedido #{{ $pedido->id }}</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    
+                    <div class="modal-body p-4 bg-light">
+                        <div class="bg-white p-0 rounded border overflow-hidden">
+                            <table class="table border-0 mb-0">
+                                <thead class="table-light text-muted small">
+                                    <tr>
+                                        <th class="ps-4 py-3 fw-semibold">Producto</th>
+                                        <th class="text-center py-3 fw-semibold">Cant.</th>
+                                        <th class="text-end py-3 fw-semibold">Precio Unit.</th>
+                                        <th class="text-end pe-4 py-3 fw-semibold">Subtotal</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($pedido->items as $item)
+                                        <tr class="border-bottom">
+                                            <td class="ps-4 py-3 fw-semibold text-dark">{{ $item->producto->nombre ?? 'Producto Eliminado' }}</td>
+                                            <td class="text-center py-3">{{ $item->cantidad }}</td>
+                                            <td class="text-end py-3 text-secondary">$ {{ number_format($item->precioUnitario, 0, ',', '.') }}</td>
+                                            <td class="text-end pe-4 py-3 fw-bold text-dark">
+                                                $ {{ number_format($item->cantidad * $item->precioUnitario, 0, ',', '.') }}
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
 
+                    <div class="modal-footer bg-white border-top-0 py-3 px-4">
+                        <h5 class="me-auto fw-bold mb-0">Total: <span style="color: #7828D8;">$ {{ number_format($pedido->total, 0, ',', '.') }}</span></h5>
+                        <button type="button" class="btn btn-light fw-semibold border" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
+
+    {{-- SCRIPTS --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    {{-- SCRIPT PARA FILTRO Y BUSCADOR --}}
     <script>
-        document.getElementById('filtroEstados').addEventListener('change', function() {
-            let val = this.value;
-            document.querySelectorAll('.fila-pedido').forEach(p => p.style.display = (val === 'todos' || p.getAttribute('data-estado') === val) ? 'table-row' : 'none');
-        });
-        document.querySelectorAll('.selector-estado').forEach(sel => {
-            sel.addEventListener('change', function() {
-                this.classList.remove('text-warning', 'text-primary', 'text-success');
-                let colors = { 'pendiente': 'text-warning', 'pagado': 'text-info', 'enviado': 'text-primary', 'entregado': 'text-success' };
-                this.classList.add(colors[this.value] || 'text-dark');
-                this.closest('tr').setAttribute('data-estado', this.value);
-            });
+        document.addEventListener('DOMContentLoaded', function() {
+            const filtroEstados = document.getElementById('filtroEstados');
+            const buscadorPedidos = document.getElementById('buscadorPedidos');
+            const filas = document.querySelectorAll('.fila-pedido');
+
+            function filtrarTabla() {
+                const estadoSeleccionado = filtroEstados.value;
+                const textoBuscado = buscadorPedidos.value.toLowerCase();
+
+                filas.forEach(fila => {
+                    const estadoFila = fila.getAttribute('data-estado');
+                    const textoFila = fila.innerText.toLowerCase();
+
+                    const coincideEstado = (estadoSeleccionado === 'todos' || estadoFila === estadoSeleccionado);
+                    const coincideTexto = textoFila.includes(textoBuscado);
+
+                    if (coincideEstado && coincideTexto) {
+                        fila.style.display = ''; // Mostrar fila
+                    } else {
+                        fila.style.display = 'none'; // Ocultar fila
+                    }
+                });
+            }
+
+            // Escuchar cambios en ambos inputs para aplicar el filtro al instante
+            filtroEstados.addEventListener('change', filtrarTabla);
+            buscadorPedidos.addEventListener('input', filtrarTabla);
         });
     </script>
 </body>

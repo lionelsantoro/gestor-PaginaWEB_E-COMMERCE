@@ -8,6 +8,7 @@ use App\Http\Controllers\CarritoController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\ConsultaController;
+use App\Http\Controllers\PedidoController;
 
 // ==========================================
 // RUTAS PÚBLICAS (INICIO Y CONTACTO)
@@ -136,3 +137,12 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/admin/consultas', [ConsultaController::class, 'index']);
 Route::patch('/admin/consultas/{id}/leido', [ConsultaController::class, 'marcarLeido']);
 Route::delete('/admin/consultas/{id}/eliminar', [ConsultaController::class, 'destroy']);
+
+Route::middleware(['auth'])->group(function () {
+    // Rutas Admin
+    Route::get('/admin/pedidos', [PedidoController::class, 'index']);
+    Route::patch('/admin/pedidos/{id}/estado', [PedidoController::class, 'actualizarEstado']);
+    
+    // Rutas Carrito
+    Route::post('/carrito/pagar', [CarritoController::class, 'confirmarPago']);
+});

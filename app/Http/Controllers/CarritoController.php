@@ -7,6 +7,7 @@ use App\Models\Pedido;
 use App\Models\PedidoItem;
 use App\Models\Producto;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB; // IMPORTANTE: Agregamos DB para transacciones
 
 class CarritoController extends Controller
 {
@@ -28,7 +29,6 @@ class CarritoController extends Controller
 
         $producto = Producto::findOrFail($idProducto);
         
-        // Calculamos el stock real disponible para la venta (respetando el stock_bajo)
         $stockDisponible = $producto->stock - $producto->stock_bajo;
 
         if ($stockDisponible <= 0) {
@@ -46,7 +46,7 @@ class CarritoController extends Controller
 
         if ($item) {
             if ($item->cantidad + 1 > $stockDisponible) {
-                return response()->json(['status' => 'error', 'message' => 'No puedes agregar más unidades. Límite de stock alcanzado.']);
+                return response()->json(['status' => 'error', 'message' => 'Límite de stock alcanzado.']);
             }
             $item->cantidad += 1;
             $item->save();
@@ -94,65 +94,63 @@ class CarritoController extends Controller
         $this->recalcularTotal($idPedido);
         return redirect()->back()->with('success', 'Producto eliminado del carrito.');
     }
-
+    
     public function confirmarPago(Request $request)
     {
-        $request->validate([
-            'direccion' => 'required|string|max:255'
-        ]);
+        $request->validate(['direccion' => 'required|string|max:255']);
 
-        $pedido = Pedido::where('ID_Usuario', Auth::id())
-                        ->where('estado', 'creada')
-                        ->firstOrFail();
+        // Usamos una transacción para que si algo falla, no se descuente stock a medias
+        return DB::transaction(function () use ($request) {
+            $pedido = Pedido::where('ID_Usuario', Auth::id())
+                            ->where('estado', 'creada')
+                            ->with('items.producto')
+                            ->firstOrFail();
 
-        // 1. PRIMERA PASADA: Validar que todos los items cumplen la regla del stock_bajo
-        foreach ($pedido->items as $item) {
-            $producto = $item->producto;
-            $stockDisponible = $producto->stock - $producto->stock_bajo;
+            $totalFinal = 0;
 
-            // Si el stock cae a un número igual o menor al stock_bajo, frenamos la compra
-            if ($stockDisponible <= 0 || $item->cantidad > $stockDisponible) {
-                if ($request->expectsJson()) {
-                    return response()->json([
-                        'status' => 'error', 
-                        'message' => "El producto '{$producto->nombre}' alcanzó su límite de reserva. Por favor, disminuye la cantidad o elimínalo del carrito."
-                    ]);
+            // 1. VALIDACIÓN INTEGRAL Y CÁLCULO
+            foreach ($pedido->items as $item) {
+                $producto = $item->producto;
+                $stockDisponible = $producto->stock - $producto->stock_bajo;
+
+                if ($stockDisponible <= 0 || $item->cantidad > $stockDisponible) {
+                    if ($request->expectsJson()) {
+                        return response()->json([
+                            'status' => 'error', 
+                            'message' => "El producto '{$producto->nombre}' ya no tiene stock suficiente."
+                        ]);
+                    }
+                    return back()->with('error', "Stock insuficiente para '{$producto->nombre}'.");
                 }
-                return redirect()->back()->with('error', "Falta de stock para '{$producto->nombre}'.");
+                
+                // Acumulamos el total real según los precios actuales
+                $totalFinal += ($item->cantidad * $item->precioUnitario);
             }
-        }
 
-        $totalCalculado = 0;
+            // 2. APLICAR DESCUENTO DE STOCK
+            foreach ($pedido->items as $item) {
+                $item->producto->decrement('stock', $item->cantidad);
+            }
 
-        // 2. SEGUNDA PASADA: Como todo está correcto, descontamos de la base de datos
-        foreach ($pedido->items as $item) {
-            $producto = $item->producto;
-            
-            $producto->stock -= $item->cantidad;
-            $producto->save();
-            
-            $totalCalculado += ($item->cantidad * $item->precioUnitario);
-        }
+            // 3. FINALIZAR PEDIDO
+            $pedido->update([
+                'total'     => $totalFinal,
+                'direccion' => $request->direccion,
+                'estado'    => 'pagada'
+            ]);
 
-        // 3. Finalizamos el pedido
-        $pedido->estado    = 'pagada';
-        $pedido->direccion = $request->direccion;
-        $pedido->total     = $totalCalculado;
-        $pedido->save();
-
-        if ($request->expectsJson()) {
-            return response()->json(['status' => 'success']);
-        }
-
-        return redirect('/historialcompra')->with('success', '¡Compra confirmada con éxito!');
+            if ($request->expectsJson()) {
+                return response()->json(['status' => 'success']);
+            }
+            return redirect('/historialcompra')->with('success', '¡Compra confirmada!');
+        });
     }
 
-    private function recalcularTotal($pedidoId)
+    private function recalcularTotal($pedido)
     {
-        $pedido = Pedido::find($pedidoId instanceof Pedido ? $pedidoId->id : $pedidoId);
+        $pedido = $pedido instanceof Pedido ? $pedido : Pedido::find($pedido);
         if ($pedido) {
-            $total = $pedido->items->sum(fn($item) => $item->cantidad * $item->precioUnitario);
-            $pedido->total = $total;
+            $pedido->total = $pedido->items->sum(fn($item) => $item->cantidad * $item->precioUnitario);
             $pedido->save();
         }
     }
