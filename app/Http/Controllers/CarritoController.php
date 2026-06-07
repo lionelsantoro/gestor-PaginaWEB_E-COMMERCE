@@ -27,9 +27,12 @@ class CarritoController extends Controller
         }
 
         $producto = Producto::findOrFail($idProducto);
+        
+        // Calculamos el stock real disponible para la venta (respetando el stock_bajo)
+        $stockDisponible = $producto->stock - $producto->stock_bajo;
 
-        if ($producto->stock <= 0) {
-            return response()->json(['status' => 'error', 'message' => 'No hay stock disponible.']);
+        if ($stockDisponible <= 0) {
+            return response()->json(['status' => 'error', 'message' => 'No hay stock disponible (Reserva mínima alcanzada).']);
         }
 
         $pedido = Pedido::firstOrCreate(
@@ -42,8 +45,8 @@ class CarritoController extends Controller
                           ->first();
 
         if ($item) {
-            if ($item->cantidad + 1 > $producto->stock) {
-                return response()->json(['status' => 'error', 'message' => 'No hay más stock disponible.']);
+            if ($item->cantidad + 1 > $stockDisponible) {
+                return response()->json(['status' => 'error', 'message' => 'No puedes agregar más unidades. Límite de stock alcanzado.']);
             }
             $item->cantidad += 1;
             $item->save();
@@ -64,9 +67,11 @@ class CarritoController extends Controller
     {
         $item     = PedidoItem::findOrFail($idItem);
         $producto = $item->producto;
+        
+        $stockDisponible = $producto->stock - $producto->stock_bajo;
 
-        if ($request->cantidad > $producto->stock) {
-            return redirect()->back()->with('error', 'No hay suficiente stock.');
+        if ($request->cantidad > $stockDisponible) {
+            return redirect()->back()->with('error', 'Superaste el límite de stock disponible.');
         }
 
         if ($request->cantidad < 1) {
@@ -92,27 +97,54 @@ class CarritoController extends Controller
 
     public function confirmarPago(Request $request)
     {
+        $request->validate([
+            'direccion' => 'required|string|max:255'
+        ]);
+
         $pedido = Pedido::where('ID_Usuario', Auth::id())
                         ->where('estado', 'creada')
                         ->firstOrFail();
 
+        // 1. PRIMERA PASADA: Validar que todos los items cumplen la regla del stock_bajo
         foreach ($pedido->items as $item) {
             $producto = $item->producto;
-            $producto->stock -= $item->cantidad;
-            $producto->save();
+            $stockDisponible = $producto->stock - $producto->stock_bajo;
+
+            // Si el stock cae a un número igual o menor al stock_bajo, frenamos la compra
+            if ($stockDisponible <= 0 || $item->cantidad > $stockDisponible) {
+                if ($request->expectsJson()) {
+                    return response()->json([
+                        'status' => 'error', 
+                        'message' => "El producto '{$producto->nombre}' alcanzó su límite de reserva. Por favor, disminuye la cantidad o elimínalo del carrito."
+                    ]);
+                }
+                return redirect()->back()->with('error', "Falta de stock para '{$producto->nombre}'.");
+            }
         }
 
+        $totalCalculado = 0;
+
+        // 2. SEGUNDA PASADA: Como todo está correcto, descontamos de la base de datos
+        foreach ($pedido->items as $item) {
+            $producto = $item->producto;
+            
+            $producto->stock -= $item->cantidad;
+            $producto->save();
+            
+            $totalCalculado += ($item->cantidad * $item->precioUnitario);
+        }
+
+        // 3. Finalizamos el pedido
         $pedido->estado    = 'pagada';
         $pedido->direccion = $request->direccion;
+        $pedido->total     = $totalCalculado;
         $pedido->save();
 
-        // Si la petición viene del fetch (AJAX) → devuelve JSON para el modal
         if ($request->expectsJson()) {
             return response()->json(['status' => 'success']);
         }
 
-        // Fallback por si el JS falla → redirige normalmente
-        return redirect('/catalogo')->with('success', '¡Compra confirmada con éxito!');
+        return redirect('/historialcompra')->with('success', '¡Compra confirmada con éxito!');
     }
 
     private function recalcularTotal($pedidoId)
