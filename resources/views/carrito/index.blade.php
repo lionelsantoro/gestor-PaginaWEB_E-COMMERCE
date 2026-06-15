@@ -53,9 +53,8 @@
                     <tbody>
                         @foreach($pedido->items as $item)
                         @php
-                            // Calculamos el stock disponible en la vista restando la reserva
-                            $stockDisponible = $item->producto->stock - $item->producto->stock_bajo;
-                            $stockDisponible = $stockDisponible > 0 ? $stockDisponible : 0;
+                            // Se muestra todo el stock disponible
+                            $stockDisponible = $item->producto->stock;
                         @endphp
                         <tr>
                             <td class="ps-4">
@@ -151,14 +150,12 @@
                 <div class="modal-body p-4">
                     <form id="formPago" action="/carrito/pagar" method="POST" class="row g-3">
                         @csrf
-                        {{-- Dirección --}}
                         <div class="col-12">
                             <h6 class="fw-bold text-muted text-uppercase mb-2" style="font-size: 0.75rem;">Datos de entrega</h6>
                             <label for="direccion" class="form-label fw-semibold"><i class="bi bi-geo-alt me-1"></i>Dirección de entrega</label>
                             <input type="text" name="direccion" id="direccion" class="form-control" placeholder="Ej: Av. Corrientes 1234, Corrientes" required>
                         </div>
 
-                        {{-- Datos de pago --}}
                         <div class="col-12 mt-4">
                             <h6 class="fw-bold text-muted text-uppercase mb-2" style="font-size: 0.75rem;">Datos de pago</h6>
                         </div>
@@ -257,8 +254,9 @@
                     <p class="text-muted mb-0">Nos contactaremos para coordinar la entrega a tu domicilio.</p>
                 </div>
                 <div class="modal-footer border-0 justify-content-center pb-4">
-                    <button type="button" id="btnIrAlCatalogo" class="btn text-white fw-bold px-5 py-2" style="background: linear-gradient(135deg, #7828D8, #a855f7); border-radius: 10px; border: none;">
-                        <i class="bi bi-shop me-2"></i>Ir al catálogo
+                    {{-- REDIRECCIÓN ACTUALIZADA A LA PÁGINA DE INICIO (/) --}}
+                    <button type="button" id="btnIrAlInicio" class="btn text-white fw-bold px-5 py-2" style="background: linear-gradient(135deg, #7828D8, #a855f7); border-radius: 10px; border: none;">
+                        <i class="bi bi-house me-2"></i>Ir al inicio
                     </button>
                 </div>
             </div>
@@ -270,14 +268,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script> 
 
-
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             
-            // Tooltips
             document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
 
-            // Modal eliminar
             const modalEliminarBS = new bootstrap.Modal(document.getElementById('modalEliminar'));
             document.querySelectorAll('.btn-eliminar').forEach(function (btn) {
                 btn.addEventListener('click', function () {
@@ -287,14 +282,12 @@
                 });
             });
 
-            // Modal stock
             const modalStockBS = new bootstrap.Modal(document.getElementById('modalStock'));
             function mostrarModalStock(texto) {
                 document.getElementById('modalStockTexto').textContent = texto;
                 modalStockBS.show();
             }
 
-            // Validaciones visuales de la cantidad de stock
             document.querySelectorAll('.form-actualizar-cantidad').forEach(function (form) {
                 form.addEventListener('submit', function (e) {
                     const stock    = parseInt(this.dataset.stock);
@@ -325,13 +318,13 @@
                 });
             });
 
-            // Interceptar submit de PAGO
             const formPago = document.getElementById('formPago');
             if (formPago) {
                 const modalExitoBS = new bootstrap.Modal(document.getElementById('modalCompraExitosa'));
                 
-                document.getElementById('btnIrAlCatalogo').addEventListener('click', function () {
-                    window.location.href = '/catalogo';
+                // EL BOTÓN DEL MODAL AHORA TE LLEVA A /
+                document.getElementById('btnIrAlInicio').addEventListener('click', function () {
+                    window.location.href = '/';
                 });
 
                 formPago.addEventListener('submit', function (e) {
@@ -347,7 +340,6 @@
                         headers: {
                             'Accept': 'application/json',
                             'X-Requested-With': 'XMLHttpRequest',
-                            // Corrección final del error del token CSRF en la vista del carrito
                             'X-CSRF-TOKEN': '{{ csrf_token() }}'
                         },
                         body: formData
@@ -359,7 +351,6 @@
                             modalExitoBS.show();
                         } else if (data.status === 'error') {
                             bootstrap.Modal.getInstance(document.getElementById('modalPago')).hide();
-                            // Mostramos el error usando el modal naranja de stock
                             mostrarModalStock(data.message);
                         }
                     })
@@ -370,7 +361,6 @@
                     });
                 });
 
-                // Formateo visual de la tarjeta
                 document.getElementById('nroTarjeta').addEventListener('input', function () {
                     let val = this.value.replace(/\D/g, '').substring(0, 16);
                     this.value = val.match(/.{1,4}/g)?.join(' ') || val;
