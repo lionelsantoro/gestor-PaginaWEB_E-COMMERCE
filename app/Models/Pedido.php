@@ -16,6 +16,7 @@ class Pedido extends Model
         'ID_Usuario',
         'total',
         'estado',
+        'envio',
         'direccion',
     ];
 

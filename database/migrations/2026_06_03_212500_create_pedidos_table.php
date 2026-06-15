@@ -14,7 +14,7 @@ return new class extends Migration
             $table->decimal('total', 12, 2)->default(0);
             $table->enum('estado', ['pendientePago', 'pagada', 'cancelada'])->default('pendientePago');
             $table->string('direccion', 255)->nullable();
-            
+            $table->enum('envio', ['enviado', 'no enviado', 'listo para retirar'])->default('no enviado');
             $table->timestamps();
             $table->softDeletes();
 

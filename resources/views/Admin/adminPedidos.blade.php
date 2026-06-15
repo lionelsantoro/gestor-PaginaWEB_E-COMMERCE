@@ -33,6 +33,14 @@
                         </div>
                     @endif
 
+                    {{-- Alerta de error agregada --}}
+                    @if(session('error'))
+                        <div class="alert alert-danger alert-dismissible fade show">
+                            {{ session('error') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    @endif
+
                     {{-- BARRA DE BÚSQUEDA Y FILTRO --}}
                     <div class="d-flex gap-3 mb-4 w-50">
                         <input type="text" id="buscadorPedidos" class="form-control rounded-pill" placeholder="Buscar por N° de pedido o cliente..." style="background-color: #F8F9FA; border: 1px solid #dee2e6;">
@@ -54,6 +62,7 @@
                                     <th class="fw-normal pb-3">Cliente</th>
                                     <th class="fw-normal pb-3">Total</th>
                                     <th class="fw-normal pb-3 text-center">Estado</th>
+                                    <th class="fw-normal pb-3 text-center">Envío</th> {{-- Columna nueva --}}
                                     <th class="fw-normal pb-3 text-center">Acciones</th>
                                 </tr>
                             </thead>
@@ -64,7 +73,6 @@
                                         <td class="fw-semibold text-secondary">{{ $pedido->usuario->nombreCompleto ?? 'Usuario Eliminado' }}</td>
                                         <td class="fw-bold" style="color: #7828D8;">$ {{ number_format($pedido->total, 0, ',', '.') }}</td>
                                         <td class="text-center">
-                                            {{-- Colores dinámicos para los estados --}}
                                             @if($pedido->estado == 'pagada')
                                                 <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-2">Pagada</span>
                                             @elseif($pedido->estado == 'pendientePago')
@@ -73,6 +81,18 @@
                                                 <span class="badge bg-danger bg-opacity-10 text-danger rounded-pill px-3 py-2">Cancelada</span>
                                             @endif
                                         </td>
+                                        
+                                        {{-- Visualización dinámica del estado del envío --}}
+                                        <td class="text-center">
+                                            @if($pedido->envio == 'enviado')
+                                                <span class="badge bg-info bg-opacity-10 text-info rounded-pill px-3 py-2">Enviado</span>
+                                            @elseif($pedido->envio == 'listo para retirar')
+                                                <span class="badge bg-primary bg-opacity-10 text-primary rounded-pill px-3 py-2">Listo para retirar</span>
+                                            @else
+                                                <span class="badge bg-secondary bg-opacity-10 text-secondary rounded-pill px-3 py-2">No enviado</span>
+                                            @endif
+                                        </td>
+
                                         <td class="text-center">
                                             <button class="btn btn-sm text-white rounded-pill px-3 fw-semibold" 
                                                     style="background-color: #7828D8;" 
@@ -84,7 +104,7 @@
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="5" class="text-center py-5 text-muted">
+                                        <td colspan="6" class="text-center py-5 text-muted">
                                             No hay pedidos registrados en el sistema.
                                         </td>
                                     </tr>
@@ -115,6 +135,32 @@
                     </div>
                     
                     <div class="modal-body p-4 bg-light">
+                        
+                        {{-- SECCIÓN EDITAR ENVÍO (AGREGADA) --}}
+                        <div class="card mb-3 border-0 shadow-sm rounded-3">
+                            <div class="card-body bg-white p-3">
+                                <form action="{{ route('admin.pedidos.actualizarEnvio', $pedido->id) }}" method="POST" class="d-flex align-items-center justify-content-between gap-3">
+                                    @csrf
+                                    <div>
+                                        <label class="fw-bold mb-0 text-dark small d-block">Estado del Envío</label>
+                                        @if($pedido->estado !== 'pagada')
+                                            <small class="text-danger">* Solo modificable si el pedido está Pagado</small>
+                                        @endif
+                                    </div>
+                                    <div class="d-flex gap-2 align-items-center">
+                                        <select name="envio" class="form-select form-select-sm rounded-pill" style="width: 200px;" {{ $pedido->estado !== 'pagada' ? 'disabled' : '' }}>
+                                            <option value="no enviado" {{ $pedido->envio == 'no enviado' ? 'selected' : '' }}>No enviado</option>
+                                            <option value="enviado" {{ $pedido->envio == 'enviado' ? 'selected' : '' }}>Enviado</option>
+                                            <option value="listo para retirar" {{ $pedido->envio == 'listo para retirar' ? 'selected' : '' }}>Listo para retirar</option>
+                                        </select>
+                                        <button type="submit" class="btn btn-sm btn-dark rounded-pill px-3" {{ $pedido->estado !== 'pagada' ? 'disabled' : '' }}>
+                                            Actualizar
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
                         <div class="bg-white p-0 rounded border overflow-hidden">
                             <table class="table border-0 mb-0">
                                 <thead class="table-light text-muted small">
@@ -172,14 +218,13 @@
                     const coincideTexto = textoFila.includes(textoBuscado);
 
                     if (coincideEstado && coincideTexto) {
-                        fila.style.display = ''; // Mostrar fila
+                        fila.style.display = ''; 
                     } else {
-                        fila.style.display = 'none'; // Ocultar fila
+                        fila.style.display = 'none'; 
                     }
                 });
             }
 
-            // Escuchar cambios en ambos inputs para aplicar el filtro al instante
             filtroEstados.addEventListener('change', filtrarTabla);
             buscadorPedidos.addEventListener('input', filtrarTabla);
         });
