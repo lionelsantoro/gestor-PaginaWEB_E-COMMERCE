@@ -107,7 +107,7 @@ class CarritoController extends Controller
             $pedido->update(['estado' => 'cancelada']);
         }
 
-        return redirect('/',)->back()->with('success', 'El carrito ha sido vaciado.');
+        return redirect()->back()->with('success', 'El carrito ha sido vaciado.');
     }
     
     public function confirmarPago(Request $request)
