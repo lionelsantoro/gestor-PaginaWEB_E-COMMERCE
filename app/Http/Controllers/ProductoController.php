@@ -34,12 +34,13 @@ class ProductoController extends Controller
     {
         Producto::create([
             'nombre' => $request->nombre,
+            'descripcion' => $request->descripcion,
             'ID_categoria' => $request->ID_categoria,
             'stock' => $request->stock,
-            'stock_bajo' => $request->stock_bajo, // <-- Agregado para la alerta de stock
+            'stock_bajo' => $request->stock_bajo,
             'precio' => $request->precio,
+            'url_image' => $request->url_image,
             'activo' => true
-            // Si en tu form agregas descripción o imagen, los pones aquí
         ]);
 
         return back()->with('success', 'Producto creado exitosamente.');
@@ -52,10 +53,12 @@ class ProductoController extends Controller
         
         $producto->update([
             'nombre' => $request->nombre,
+            'descripcion' => $request->descripcion,
             'ID_categoria' => $request->ID_categoria,
             'stock' => $request->stock,
-            'stock_bajo' => $request->stock_bajo, // <-- Agregado para poder editar el límite
+            'stock_bajo' => $request->stock_bajo,
             'precio' => $request->precio,
+            'url_image' => $request->url_image,
         ]);
 
         return back()->with('success', 'Producto actualizado.');
@@ -65,7 +68,7 @@ class ProductoController extends Controller
     public function bajaLogica($id)
     {
         $producto = Producto::findOrFail($id);
-        $producto->activo = false; // Aquí aplicamos tu lógica
+        $producto->activo = false; 
         $producto->save();
 
         return back()->with('success', 'Producto eliminado (dado de baja).');

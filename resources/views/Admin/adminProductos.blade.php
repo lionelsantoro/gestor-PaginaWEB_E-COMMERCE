@@ -49,7 +49,6 @@
                     {{-- BARRA DE BÚSQUEDA Y BOTÓN CREAR --}}
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         
-                        {{-- FORMULARIO DE BÚSQUEDA Y FILTRO --}}
                         <form action="/admin/productos" method="GET" class="d-flex gap-3 w-50 m-0">
                             <div class="input-group">
                                 <input type="text" name="buscar" value="{{ request('buscar') }}" class="form-control rounded-start-pill" placeholder="Buscar producto..." style="background-color: #F8F9FA; border: 1px solid #dee2e6;">
@@ -78,6 +77,7 @@
                                     <th class="text-muted fw-normal pb-3">Producto</th>
                                     <th class="text-muted fw-normal pb-3">Categoría</th>
                                     <th class="text-muted fw-normal pb-3 text-center">Stock</th>
+                                    <th class="text-muted fw-normal pb-3 text-center">Stock Bajo</th>
                                     <th class="text-muted fw-normal pb-3">Precio</th>
                                     <th class="text-muted fw-normal pb-3 text-end">Acciones</th>
                                 </tr>
@@ -85,15 +85,20 @@
                             <tbody>
                                 @foreach($productos as $producto)
                                 <tr class="border-bottom">
+                                    {{-- COLUMNA DE IMAGEN CORREGIDA --}}
                                     <td class="pt-3 pb-3">
-                                        <div class="rounded d-flex align-items-center justify-content-center fw-bold" style="width: 45px; height: 45px; background-color: #F8EDDF; color: #b4835a;">
-                                            {{ substr($producto->nombre, 0, 2) }}
-                                        </div>
+                                        @if($producto->url_image)
+                                            <img src="{{ $producto->url_image }}" alt="Foto de {{ $producto->nombre }}" class="rounded shadow-sm" style="width: 45px; height: 45px; object-fit: cover; border: 1px solid #dee2e6;">
+                                        @else
+                                            <div class="rounded d-flex align-items-center justify-content-center fw-bold" style="width: 45px; height: 45px; background-color: #F8EDDF; color: #b4835a;">
+                                                {{ substr($producto->nombre, 0, 2) }}
+                                            </div>
+                                        @endif
                                     </td>
+                                    
                                     <td class="fw-semibold text-dark">{{ $producto->nombre }}</td>
                                     <td class="text-muted">{{ $producto->categoria->nombre ?? 'N/A' }}</td>
                                     
-                                    {{-- LÓGICA DE ALERTA DE STOCK BAJO APLICADA AQUÍ --}}
                                     <td class="text-center">
                                         @if($producto->stock <= $producto->stock_bajo)
                                             <span class="text-danger fw-bold" title="Stock bajo (Mínimo requerido: {{ $producto->stock_bajo }})">
@@ -104,6 +109,10 @@
                                                 {{ $producto->stock }}
                                             </span>
                                         @endif
+                                    </td>
+
+                                    <td class="text-center text-muted fw-semibold">
+                                        {{ $producto->stock_bajo }}
                                     </td>
                                     
                                     <td>$ {{ number_format($producto->precio, 0, ',', '.') }}</td>
@@ -119,56 +128,6 @@
                                         </div>
                                     </td>
                                 </tr>
-
-                                {{-- MODAL DE EDICIÓN PARA ESTE PRODUCTO ESPECÍFICO --}}
-                                <div class="modal fade" id="modalEditarProducto{{ $producto->id }}" tabindex="-1">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content border-0 shadow">
-                                            <div class="modal-header bg-light border-0">
-                                                <h5 class="modal-title fw-bold" style="color: #4f46e5;">Editar Producto</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                            </div>
-                                            <form action="/admin/productos/{{ $producto->id }}" method="POST">
-                                                @csrf
-                                                @method('PUT')
-                                                <div class="modal-body p-4">
-                                                    <div class="mb-3">
-                                                        <label class="form-label fw-semibold">Nombre del producto</label>
-                                                        <input type="text" name="nombre" class="form-control rounded" value="{{ $producto->nombre }}" required>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label class="form-label fw-semibold">Categoría</label>
-                                                        <select name="ID_categoria" class="form-select rounded" required>
-                                                            <option value="1" {{ $producto->ID_categoria == 1 ? 'selected' : '' }}>Teléfonos</option>
-                                                            <option value="2" {{ $producto->ID_categoria == 2 ? 'selected' : '' }}>Computadoras</option>
-                                                            <option value="3" {{ $producto->ID_categoria == 3 ? 'selected' : '' }}>Lavarropas</option>
-                                                            <option value="4" {{ $producto->ID_categoria == 4 ? 'selected' : '' }}>Heladeras</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-6 mb-3">
-                                                            <label class="form-label fw-semibold">Stock Actual</label>
-                                                            <input type="number" name="stock" class="form-control rounded" value="{{ $producto->stock }}" required min="0">
-                                                        </div>
-                                                        {{-- Añadido campo Stock Bajo al editar para mayor control --}}
-                                                        <div class="col-6 mb-3">
-                                                            <label class="form-label fw-semibold">Alerta Stock Bajo</label>
-                                                            <input type="number" name="stock_bajo" class="form-control rounded" value="{{ $producto->stock_bajo }}" required min="0">
-                                                        </div>
-                                                        <div class="col-12 mb-3">
-                                                            <label class="form-label fw-semibold">Precio ($)</label>
-                                                            <input type="number" step="0.01" name="precio" class="form-control rounded" value="{{ $producto->precio }}" required min="0">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="modal-footer bg-light border-top-0">
-                                                    <button type="button" class="btn btn-light fw-semibold border" data-bs-dismiss="modal">Cancelar</button>
-                                                    <button type="submit" class="btn text-white fw-semibold" style="background-color: #4f46e5;">Actualizar</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
                                 @endforeach
                             </tbody>
                         </table>
@@ -178,38 +137,100 @@
         </div>
     </div>
 
+    {{-- MODALES DE EDICIÓN (Colocados FUERA de la tabla para que funcione el botón Actualizar) --}}
+    @foreach($productos as $producto)
+    <div class="modal fade" id="modalEditarProducto{{ $producto->id }}" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header bg-light border-0">
+                    <h5 class="modal-title fw-bold" style="color: #4f46e5;">Editar Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <form action="/admin/productos/{{ $producto->id }}" method="POST" class="form-editar">
+                    @csrf
+                    @method('PUT')
+                    <div class="modal-body p-4">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Nombre del producto</label>
+                            <input type="text" name="nombre" class="form-control rounded" value="{{ $producto->nombre }}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Dirección de la imagen (URL)</label>
+                            <input type="text" name="url_image" class="form-control rounded" value="{{ $producto->url_image }}" placeholder="Ej: /Imagenes/foto.jpg">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Categoría</label>
+                            <select name="ID_categoria" class="form-select rounded" required>
+                                <option value="1" {{ $producto->ID_categoria == 1 ? 'selected' : '' }}>Teléfonos</option>
+                                <option value="2" {{ $producto->ID_categoria == 2 ? 'selected' : '' }}>Computadoras</option>
+                                <option value="3" {{ $producto->ID_categoria == 3 ? 'selected' : '' }}>Lavarropas</option>
+                                <option value="4" {{ $producto->ID_categoria == 4 ? 'selected' : '' }}>Heladeras</option>
+                            </select>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 mb-3">
+                                <label class="form-label fw-semibold">Stock Actual</label>
+                                <input type="number" name="stock" class="form-control rounded" value="{{ $producto->stock }}" required min="0">
+                            </div>
+                            <div class="col-6 mb-3">
+                                <label class="form-label fw-semibold">Alerta Stock Bajo</label>
+                                <input type="number" name="stock_bajo" class="form-control rounded" value="{{ $producto->stock_bajo }}" required min="0">
+                            </div>
+                            <div class="col-12 mb-3">
+                                <label class="form-label fw-semibold">Precio ($)</label>
+                                <input type="number" step="0.01" name="precio" class="form-control rounded" value="{{ $producto->precio }}" required min="0">
+                            </div>
+                            
+                            <div class="col-12 mb-3">
+                                <label class="form-label fw-semibold">Descripción</label>
+                                <textarea class="form-control rounded desc-visual" rows="4">{{ strip_tags(str_replace(['<br>', '<br/>', '<br >'], "\n", $producto->descripcion)) }}</textarea>
+                                <input type="hidden" name="descripcion" class="desc-oculta">
+                                <small class="text-muted">Escribe cada característica en una línea separada usando el formato "Clave: Valor".</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer bg-light border-top-0">
+                        <button type="button" class="btn btn-light fw-semibold border" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn text-white fw-semibold" style="background-color: #4f46e5;">Actualizar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    @endforeach
+
     @include('plantillas.piedepagina')
 
+    {{-- MODAL CREAR PRODUCTO --}}
     <div class="modal fade" id="modalCrearProducto" tabindex="-1">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content border-0 shadow">
                 <div class="modal-header text-white" style="background-color: #7828D8;">
                     <h5 class="modal-title fw-bold">Nuevo Producto</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>
-                <form action="/admin/productos" method="POST">
+                
+                <form action="/admin/productos" method="POST" id="formCrearProducto">
                     @csrf
+                    
+                    <input type="hidden" name="descripcion" id="descripcionFinal">
+
                     <div class="modal-body p-4">
                         <div class="mb-3">
                             <label class="form-label fw-semibold">Nombre del producto</label>
                             <input type="text" name="nombre" class="form-control rounded" placeholder="Ej: Smart TV Samsung 50''" required>
                         </div>
+                        
                         <div class="mb-3">
-                            <label class="form-label fw-semibold">Categoría</label>
-                            <select name="ID_categoria" class="form-select rounded" required>
-                                <option value="" selected disabled>Seleccionar categoría...</option>
-                                <option value="1">Teléfonos</option>
-                                <option value="2">Computadoras</option>
-                                <option value="3">Lavarropas</option>
-                                <option value="4">Heladeras</option>
-                            </select>
+                            <label class="form-label fw-semibold">Dirección de la imagen (URL)</label>
+                            <input type="text" name="url_image" class="form-control rounded" placeholder="Ej: /Imagenes Celulares/foto.jpg o https://...">
                         </div>
+
                         <div class="row">
                             <div class="col-4 mb-3">
                                 <label class="form-label fw-semibold">Stock</label>
                                 <input type="number" name="stock" class="form-control rounded" placeholder="0" required min="0">
                             </div>
-                            {{-- Añadido campo Stock Bajo al crear --}}
                             <div class="col-4 mb-3">
                                 <label class="form-label fw-semibold">Stock Bajo</label>
                                 <input type="number" name="stock_bajo" class="form-control rounded" placeholder="5" value="5" required min="0">
@@ -219,6 +240,91 @@
                                 <input type="number" step="0.01" name="precio" class="form-control rounded" placeholder="0.00" required min="0">
                             </div>
                         </div>
+
+                        <hr class="my-4">
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Categoría</label>
+                            <select name="ID_categoria" id="categoriaSelect" class="form-select rounded" required>
+                                <option value="" selected disabled>Seleccionar categoría...</option>
+                                <option value="1">Teléfonos</option>
+                                <option value="2">Computadoras</option>
+                                <option value="3">Lavarropas</option>
+                                <option value="4">Heladeras</option>
+                            </select>
+                        </div>
+
+                        <div id="contenedorAtributos" class="p-3 bg-light border rounded mb-3">
+                            <p class="text-muted mb-0" id="mensajeVacio">Seleccione una categoría para agregar especificaciones...</p>
+
+                            {{-- 1: Teléfonos --}}
+                            <div id="dinamicos-1" class="d-none dinamico-group row g-3">
+                                <div class="col-md-4">
+                                    <label class="form-label fw-semibold text-secondary">RAM</label>
+                                    <input type="text" class="form-control input-dinamico" data-label="RAM" placeholder="Ej: 12 GB">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label fw-semibold text-secondary">Almacenamiento</label>
+                                    <input type="text" class="form-control input-dinamico" data-label="Almacenamiento" placeholder="Ej: 512 GB">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label fw-semibold text-secondary">Batería</label>
+                                    <input type="text" class="form-control input-dinamico" data-label="Batería" placeholder="Ej: 5000 mAh">
+                                </div>
+                            </div>
+
+                            {{-- 2: Computadoras --}}
+                            <div id="dinamicos-2" class="d-none dinamico-group row g-3">
+                                <div class="col-md-4">
+                                    <label class="form-label fw-semibold text-secondary">Procesador</label>
+                                    <input type="text" class="form-control input-dinamico" data-label="Procesador" placeholder="Ej: Intel Core i9-14900HX">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label fw-semibold text-secondary">RAM</label>
+                                    <input type="text" class="form-control input-dinamico" data-label="RAM" placeholder="Ej: 32 GB DDR5">
+                                </div>
+                                <div class="col-4">
+                                    <label class="form-label fw-semibold text-secondary">Almacenamiento</label>
+                                    <input type="text" class="form-control input-dinamico" data-label="Almacenamiento" placeholder="Ej: 2 TB SSD">
+                                </div>
+                            </div>
+
+                            {{-- 3: Lavarropas --}}
+                            <div id="dinamicos-3" class="d-none dinamico-group row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold text-secondary">Capacidad de lavado</label>
+                                    <input type="text" class="form-control input-dinamico" data-label="Capacidad de lavado" placeholder="Ej: 8 kg">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold text-secondary">Programas de lavado</label>
+                                    <input type="number" class="form-control input-dinamico" data-label="Programas de lavado" placeholder="Ej: 14">
+                                </div>
+                            </div>
+
+                            {{-- 4: Heladeras --}}
+                            <div id="dinamicos-4" class="d-none dinamico-group row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold text-secondary">Capacidad</label>
+                                    <input type="text" class="form-control input-dinamico" data-label="Capacidad" placeholder="Ej: 382 Litros">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold text-secondary">No Frost</label>
+                                    <select class="form-select input-dinamico" data-label="No Frost">
+                                        <option value="Sí">Sí</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            {{-- ATRIBUTOS COMUNES A TODAS LAS CATEGORÍAS --}}
+                            <div id="dinamicos-comunes" class="d-none row g-3 mt-1 border-top pt-2">
+                                <div class="col-12">
+                                    <label class="form-label fw-semibold text-secondary">Envío</label>
+                                    <input type="text" class="form-control input-comun" data-label="Envío" placeholder="Ej: Gratis o Costo" value="Gratis">
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="modal-footer bg-light border-top-0">
                         <button type="button" class="btn btn-light fw-semibold border" data-bs-dismiss="modal">Cancelar</button>
@@ -230,5 +336,94 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- LÓGICA PARA EL MODAL DE CREAR ---
+            const selectCategoria = document.getElementById('categoriaSelect');
+            const mensajeVacio = document.getElementById('mensajeVacio');
+            const dinamicoGroups = document.querySelectorAll('.dinamico-group');
+            const dinamicosComunes = document.getElementById('dinamicos-comunes');
+            const formCrearProducto = document.getElementById('formCrearProducto');
+            const descripcionFinal = document.getElementById('descripcionFinal');
+
+            if(selectCategoria) {
+                selectCategoria.addEventListener('change', function() {
+                    const categoriaId = this.value;
+                    mensajeVacio.classList.add('d-none');
+                    dinamicoGroups.forEach(grupo => grupo.classList.add('d-none'));
+
+                    if (categoriaId) {
+                        const grupoActivo = document.getElementById('dinamicos-' + categoriaId);
+                        if (grupoActivo) grupoActivo.classList.remove('d-none');
+                        dinamicosComunes.classList.remove('d-none');
+                    } else {
+                        mensajeVacio.classList.remove('d-none');
+                        dinamicosComunes.classList.add('d-none');
+                    }
+                });
+            }
+
+            if(formCrearProducto) {
+                formCrearProducto.addEventListener('submit', function(e) {
+                    e.preventDefault(); 
+                    
+                    const categoriaId = selectCategoria.value;
+                    let descripcionArmada = '';
+
+                    if (categoriaId) {
+                        const grupoActivo = document.getElementById('dinamicos-' + categoriaId);
+                        const inputsActivos = grupoActivo.querySelectorAll('.input-dinamico');
+                        
+                        inputsActivos.forEach(input => {
+                            const valor = input.value.trim();
+                            if (valor !== '') {
+                                const etiqueta = input.getAttribute('data-label');
+                                descripcionArmada += `<strong>${etiqueta}:</strong> ${valor}<br>`;
+                            }
+                        });
+
+                        const inputsComunes = document.querySelectorAll('.input-comun');
+                        inputsComunes.forEach(input => {
+                            const valor = input.value.trim();
+                            if (valor !== '') {
+                                const etiqueta = input.getAttribute('data-label');
+                                descripcionArmada += `<strong>${etiqueta}:</strong> ${valor}<br>`;
+                            }
+                        });
+                    }
+
+                    descripcionFinal.value = descripcionArmada;
+                    HTMLFormElement.prototype.submit.call(this);
+                });
+            }
+
+            // --- LÓGICA PARA LOS MODALES DE EDICIÓN ---
+            const formsEditar = document.querySelectorAll('.form-editar');
+            
+            formsEditar.forEach(form => {
+                // Al hacer submit interceptamos solo para llenar el input oculto y dejamos que continúe.
+                form.addEventListener('submit', function() {
+                    const visualText = this.querySelector('.desc-visual').value;
+                    const hiddenInput = this.querySelector('.desc-oculta');
+                    
+                    if(visualText && hiddenInput) {
+                        const lineas = visualText.split('\n');
+                        const htmlProcesado = lineas.map(linea => {
+                            const separadorIndex = linea.indexOf(':');
+                            if (separadorIndex !== -1) {
+                                const clave = linea.substring(0, separadorIndex + 1);
+                                const valor = linea.substring(separadorIndex + 1);
+                                return `<strong>${clave}</strong>${valor}`;
+                            }
+                            return linea; 
+                        }).filter(linea => linea.trim() !== '').join('<br>');
+                        
+                        hiddenInput.value = htmlProcesado;
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
