@@ -124,7 +124,7 @@
                 </table>
             </div>
 
-            {{-- BOTONES INFERIORES CON VACIAR CARRITO AGREGADO --}}
+            {{-- BOTONES INFERIORES --}}
             <div class="d-flex justify-content-between align-items-center mt-4">
                 <div class="d-flex gap-2">
                     <a href="/catalogo" class="btn btn-outline-secondary fw-bold px-4 py-2" style="border-radius: 8px;">
@@ -134,7 +134,7 @@
                         <i class="bi bi-trash-fill me-2"></i>Vaciar carrito
                     </button>
                 </div>
-                
+
                 <button type="button" class="btn text-white fw-bold px-5 py-3" data-bs-toggle="modal" data-bs-target="#modalPago" style="background: linear-gradient(135deg, #28a745, #20c997); border-radius: 10px; font-size: 1.1rem; border: none; box-shadow: 0 4px 15px rgba(40,167,69,0.3);">
                     Continuar con la compra <i class="bi bi-arrow-right ms-2"></i>
                 </button>
@@ -144,7 +144,7 @@
     </div>
 
     {{-- MODALES A CONTINUACIÓN --}}
-    
+
     {{-- ══════════════════ MODAL: VACIAR CARRITO ══════════════════ --}}
     <div class="modal fade" id="modalVaciarCarrito" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -192,26 +192,39 @@
                         <div class="col-12 mt-4">
                             <h6 class="fw-bold text-muted text-uppercase mb-2" style="font-size: 0.75rem;">Datos de pago</h6>
                         </div>
+
+                        <div class="col-12">
+                            <label for="tipo_modalidad" class="form-label fw-semibold">Tipo de tarjeta</label>
+                            <select id="tipo_modalidad" name="tipo_modalidad" class="form-select" autocomplete="new-password" required>
+                                <option value="" selected disabled>Seleccioná una opción...</option>
+                                <option value="credito">Tarjeta de Crédito</option>
+                                <option value="debito">Tarjeta de Débito</option>
+                            </select>
+                        </div>
+
                         <div class="col-12">
                             <label for="nroTarjeta" class="form-label fw-semibold">Número de tarjeta</label>
                             <div class="input-group">
                                 <span class="input-group-text" style="border-right: 0;"><i class="bi bi-credit-card" id="iconoTarjeta"></i></span>
-                                <input type="text" id="nroTarjeta" class="form-control" placeholder="0000 0000 0000 0000" maxlength="19" style="border-left: 0; letter-spacing: 2px;" required>
+                                <input type="text" id="nroTarjeta" class="form-control" placeholder="0000 0000 0000 0000" maxlength="19" style="border-left: 0; letter-spacing: 2px;" autocomplete="new-password" required>
                             </div>
                         </div>
+
                         <div class="col-12">
                             <label for="titular" class="form-label fw-semibold">Nombre del titular</label>
-                            <input type="text" id="titular" class="form-control text-uppercase" placeholder="TAL COMO FIGURA EN LA TARJETA" required>
+                            <input type="text" id="titular" class="form-control text-uppercase" placeholder="TAL COMO FIGURA EN LA TARJETA" autocomplete="new-password" required>
                         </div>
+
                         <div class="col-md-6">
                             <label for="vencimiento" class="form-label fw-semibold">Vencimiento</label>
-                            <input type="text" id="vencimiento" class="form-control" placeholder="MM/AA" maxlength="5" required>
+                            <input type="text" id="vencimiento" class="form-control" placeholder="MM/AA" maxlength="5" autocomplete="new-password" required>
                         </div>
+
                         <div class="col-md-6">
                             <label for="cvv" class="form-label fw-semibold">
                                 CVV <i class="bi bi-question-circle text-muted ms-1" data-bs-toggle="tooltip" title="Los 3 dígitos del dorso de tu tarjeta"></i>
                             </label>
-                            <input type="password" id="cvv" class="form-control" placeholder="•••" maxlength="4" required>
+                            <input type="text" id="cvv" class="form-control" placeholder="•••" maxlength="4" autocomplete="new-password" style="-webkit-text-security: disc;" required>
                         </div>
 
                         <div class="col-12 mt-4">
@@ -252,14 +265,14 @@
         </div>
     </div>
 
-    {{-- ══════════════════ MODAL: STOCK ══════════════════ --}}
+    {{-- ══════════════════ MODAL: STOCK / ERRORES ══════════════════ --}}
     <div class="modal fade" id="modalStock" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content border-0 shadow-lg" style="border-radius: 16px; overflow: hidden;">
                 <div class="py-4 text-center text-white"
                      style="background: linear-gradient(135deg, #fd7e14, #e55a00);">
                     <i class="bi bi-exclamation-triangle-fill" style="font-size: 2.8rem;"></i>
-                    <h5 class="fw-bold mt-2 mb-0">Stock insuficiente</h5>
+                    <h5 class="fw-bold mt-2 mb-0" id="modalStockTitulo">Stock insuficiente</h5>
                 </div>
                 <div class="modal-body text-center px-4 py-4">
                     <p id="modalStockTexto" class="text-muted mb-0"></p>
@@ -298,13 +311,15 @@
     @include('plantillas.piedepagina')
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script> 
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            
+
+            // ── Tooltips ──────────────────────────────────────────────────
             document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
 
+            // ── Modal: eliminar producto ──────────────────────────────────
             const modalEliminarBS = new bootstrap.Modal(document.getElementById('modalEliminar'));
             document.querySelectorAll('.btn-eliminar').forEach(function (btn) {
                 btn.addEventListener('click', function () {
@@ -314,12 +329,16 @@
                 });
             });
 
+            // ── Modal reutilizable: stock y errores de formulario ─────────
+            // El título cambia según el contexto (stock vs. validación de pago)
             const modalStockBS = new bootstrap.Modal(document.getElementById('modalStock'));
-            function mostrarModalStock(texto) {
-                document.getElementById('modalStockTexto').textContent = texto;
+            function mostrarModalStock(texto, titulo = 'Stock insuficiente') {
+                document.getElementById('modalStockTitulo').textContent = titulo;
+                document.getElementById('modalStockTexto').textContent  = texto;
                 modalStockBS.show();
             }
 
+            // ── Validación de cantidad al actualizar ──────────────────────
             document.querySelectorAll('.form-actualizar-cantidad').forEach(function (form) {
                 form.addEventListener('submit', function (e) {
                     const stock    = parseInt(this.dataset.stock);
@@ -346,20 +365,100 @@
                     const stock = parseInt(this.closest('.form-actualizar-cantidad').dataset.stock);
                     let val     = parseInt(this.value);
                     if (isNaN(val) || val < 1) { this.value = 1;     return; }
-                    if (val > stock)           { this.value = stock; return; }
+                    if (val > stock)            { this.value = stock; return; }
                 });
             });
 
+            // ── Formulario de pago ────────────────────────────────────────
             const formPago = document.getElementById('formPago');
             if (formPago) {
                 const modalExitoBS = new bootstrap.Modal(document.getElementById('modalCompraExitosa'));
-                
+
                 document.getElementById('btnIrAlInicio').addEventListener('click', function () {
                     window.location.href = '/';
                 });
 
+                // Formateo en tiempo real: número de tarjeta (solo dígitos, grupos de 4)
+                document.getElementById('nroTarjeta').addEventListener('input', function () {
+                    let val = this.value.replace(/\D/g, '').substring(0, 16);
+                    this.value = val.match(/.{1,4}/g)?.join(' ') || val;
+                });
+
+                // Formateo en tiempo real: vencimiento (MM/AA)
+                document.getElementById('vencimiento').addEventListener('input', function () {
+                    let val = this.value.replace(/\D/g, '').substring(0, 4);
+                    if (val.length >= 3) val = val.substring(0, 2) + '/' + val.substring(2);
+                    this.value = val;
+                });
+
+                // Formateo en tiempo real: CVV (solo dígitos)
+                document.getElementById('cvv').addEventListener('input', function () {
+                    this.value = this.value.replace(/\D/g, '').substring(0, 4);
+                });
+
+                // Formateo en tiempo real: titular (sin números)
+                document.getElementById('titular').addEventListener('input', function () {
+                    this.value = this.value.replace(/[0-9]/g, '');
+                });
+
+                // ── Submit con validaciones ───────────────────────────────
                 formPago.addEventListener('submit', function (e) {
                     e.preventDefault();
+
+                    // Leer valores
+                    const direccion     = document.getElementById('direccion').value.trim();
+                    const tipoModalidad = document.getElementById('tipo_modalidad').value;
+                    const nroRaw        = document.getElementById('nroTarjeta').value.replace(/\s/g, '');
+                    const titular       = document.getElementById('titular').value.trim();
+                    const vencimiento   = document.getElementById('vencimiento').value.trim();
+                    const cvv           = document.getElementById('cvv').value.trim();
+
+                    // 1. Todos los campos completos
+                    if (!direccion || !tipoModalidad || !nroRaw || !titular || !vencimiento || !cvv) {
+                        mostrarModalStock('Por favor completá todos los campos antes de continuar.', 'Datos incorrectos');
+                        return;
+                    }
+
+                    // 4. Número de tarjeta: exactamente 16 dígitos
+                    if (!/^\d{16}$/.test(nroRaw)) {
+                        mostrarModalStock('El número de tarjeta debe contener exactamente 16 dígitos.', 'Datos incorrectos');
+                        return;
+                    }
+
+                    // 5. Titular: sin números
+                    if (/\d/.test(titular)) {
+                        mostrarModalStock('El nombre del titular no puede contener números.', 'Datos incorrectos');
+                        return;
+                    }
+
+                    // 6. Vencimiento: formato MM/AA y posterior al mes actual
+                    if (!/^\d{2}\/\d{2}$/.test(vencimiento)) {
+                        mostrarModalStock('El vencimiento debe tener el formato MM/AA.', 'Datos incorrectos');
+                        return;
+                    }
+                    const [mesStr, anioStr] = vencimiento.split('/');
+                    const mes        = parseInt(mesStr, 10);
+                    const anio       = parseInt(anioStr, 10);
+                    const ahora      = new Date();
+                    const mesActual  = ahora.getMonth() + 1;      // 1–12
+                    const anioActual = ahora.getFullYear() % 100; // últimos 2 dígitos
+
+                    if (mes < 1 || mes > 12) {
+                        mostrarModalStock('El mes de vencimiento es inválido.', 'Datos incorrectos');
+                        return;
+                    }
+                    if (anio * 12 + mes <= anioActual * 12 + mesActual) {
+                        mostrarModalStock('La fecha de vencimiento debe ser posterior al mes actual.', 'Datos incorrectos');
+                        return;
+                    }
+
+                    // 7. CVV: solo dígitos, 3 o 4 caracteres
+                    if (!/^\d{3,4}$/.test(cvv)) {
+                        mostrarModalStock('El CVV debe tener 3 o 4 dígitos.', 'Datos incorrectos');
+                        return;
+                    }
+
+                    // ── Todo OK: procesar pago ────────────────────────────
                     const btnConfirmar = document.getElementById('btnConfirmar');
                     btnConfirmar.disabled = true;
                     btnConfirmar.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Procesando pago...';
@@ -392,20 +491,9 @@
                     });
                 });
 
-                document.getElementById('nroTarjeta').addEventListener('input', function () {
-                    let val = this.value.replace(/\D/g, '').substring(0, 16);
-                    this.value = val.match(/.{1,4}/g)?.join(' ') || val;
-                });
-                document.getElementById('vencimiento').addEventListener('input', function () {
-                    let val = this.value.replace(/\D/g, '').substring(0, 4);
-                    if (val.length >= 3) val = val.substring(0, 2) + '/' + val.substring(2);
-                    this.value = val;
-                });
-                document.getElementById('cvv').addEventListener('input', function () {
-                    this.value = this.value.replace(/\D/g, '').substring(0, 4);
-                });
-            }
-        });
+            } // fin if(formPago)
+
+        }); // fin DOMContentLoaded
     </script>
 </body>
 </html>
