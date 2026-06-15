@@ -50,14 +50,14 @@
             </ul>
 
             {{-- SECCIÓN DE USUARIO Y CARRITO --}}
-            <ul class="navbar-nav mb-2 mb-lg-0 align-items-center ms-lg-3">
+            <ul class="navbar-nav mb-2 mb-lg-0 align-items-start align-items-lg-center ms-lg-3">
 
                 {{-- SI EL USUARIO NO INICIÓ SESIÓN --}}
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link fw-semibold" href="/login">Iniciar Sesión</a>
+                        <a class="nav-link px-3 fw-semibold" href="/login">Iniciar Sesión</a>
                     </li>
-                    <li class="nav-item ms-2">
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0 ps-3 ps-lg-0">
                         <a class="btn fondo-rosado text-white fw-bold px-4" href="/registro"
                             style="border-radius: 8px;">Registrarse</a>
                     </li>
@@ -66,8 +66,8 @@
 
                     {{-- 1. Si es Administrador: Ve el panel admin, NO ve el carrito --}}
                     @if(Auth::user()->rol === 'admin')
-                        <li class="nav-item ms-2">
-                            <a class="nav-link px-3 fw-bold text-white bg-dark" href="/admin/productos" style="border-radius: 8px;">
+                        <li class="nav-item ms-lg-2 mt-2 mt-lg-0 ps-3 ps-lg-0">
+                            <a class="nav-link px-3 fw-bold text-white bg-dark d-inline-block" href="/admin/productos" style="border-radius: 8px;">
                                 <i class="bi bi-shield-lock-fill me-1"></i> Panel de Administración
                             </a>
                         </li>
@@ -75,8 +75,8 @@
 
                     {{-- 2. Si es Cliente: Ve el carrito, NO ve el panel admin --}}
                     @if(Auth::user()->rol === 'cliente')
-                        <li class="nav-item ms-2">
-                            <a class="nav-link px-3 fw-bold text-white d-flex align-items-center fondo-rosado"
+                        <li class="nav-item ms-lg-2 mt-2 mt-lg-0 ps-3 ps-lg-0">
+                            <a class="nav-link px-3 fw-bold text-white d-inline-flex align-items-center fondo-rosado"
                                 href="/carrito" style="border-radius: 8px;">
                                 <i class="bi bi-cart3 me-1"></i> Mi Carrito
                                 @php
@@ -92,12 +92,12 @@
                     @endif
 
                     {{-- 3. Botón de Cerrar Sesión y Opciones para ambos roles --}}
-                    <li class="nav-item dropdown ms-3">
-                        <a class="nav-link dropdown-toggle fw-bold fondo-rosado" href="#" role="button"
+                    <li class="nav-item dropdown ms-lg-3 mt-2 mt-lg-0 ps-3 ps-lg-0">
+                        <a class="nav-link dropdown-toggle px-3 fw-bold fondo-rosado d-inline-block" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 8px;">
                             <i class="bi bi-person-circle me-1"></i> {{ Auth::user()->nombreCompleto }}
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end border-0 shadow-sm">
+                        <ul class="dropdown-menu dropdown-menu-end border-0 shadow-sm mt-2">
 
                             {{-- Mostrar historial solo si es cliente --}}
                             @if(Auth::user()->rol === 'cliente')
