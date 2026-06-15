@@ -30,7 +30,7 @@
                     @endif
 
                     <div class="d-flex gap-3 mb-4 w-50">
-                        <input type="text" class="form-control rounded-pill" placeholder="Buscar por nombre o asunto..." style="background-color: #F8F9FA; border: 1px solid #dee2e6;">
+                        <input type="text" id="buscadorConsultas" class="form-control rounded-pill" placeholder="Buscar por nombre o asunto..." style="background-color: #F8F9FA; border: 1px solid #dee2e6;">
                         
                         <select id="filtroConsultas" class="form-select rounded-pill" style="background-color: #F8F9FA; border: 1px solid #dee2e6; width: auto;">
                             <option value="todas" selected>Todas las consultas</option>
@@ -57,7 +57,7 @@
                                                     <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-2 badge-estado">Leído</span>
                                                 @endif
                                             </div>
-                                            <p class="mb-0 text-muted small"><strong>Asunto:</strong> {{ $consulta->asunto }}</p>
+                                            <p class="mb-0 text-muted small asunto-consulta"><strong>Asunto:</strong> {{ $consulta->asunto }}</p>
                                         </div>
                                         <div class="d-flex gap-2">
                                             <button class="btn btn-sm text-white rounded px-3 fw-semibold" style="background-color: {{ $consulta->estado == 'noLeido' ? '#7828D8' : '#94a3b8' }};" data-bs-toggle="modal" data-bs-target="#modalVerConsulta{{ $consulta->id }}">Ver mensaje</button>
@@ -80,6 +80,9 @@
                                 @empty
                                     <p class="text-muted text-center mt-4">No hay consultas registradas en la base de datos.</p>
                                 @endforelse
+
+                                {{-- Mensaje cuando el filtro no encuentra resultados --}}
+                                <p id="sinResultados" class="text-muted text-center mt-4 d-none">No se encontraron consultas con ese criterio.</p>
                             </ul>
                         </div>
                     </div>
@@ -139,20 +142,38 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        document.getElementById('filtroConsultas').addEventListener('change', function() {
-            let seleccion = this.value;
-            let consultas = document.querySelectorAll('.consulta-item');
-            consultas.forEach(function(consulta) {
-                let estadoConsulta = consulta.getAttribute('data-estado');
-                if (seleccion === 'todas' || seleccion === estadoConsulta) {
-                    consulta.classList.remove('d-none');
-                    consulta.classList.add('d-flex');
+        // ── Función central de filtrado: combina búsqueda + dropdown ──────
+        function filtrarConsultas() {
+            const textoBusqueda = document.getElementById('buscadorConsultas').value.toLowerCase().trim();
+            const estadoFiltro  = document.getElementById('filtroConsultas').value;
+            const items         = document.querySelectorAll('.consulta-item');
+            let   visibles      = 0;
+
+            items.forEach(function (item) {
+                const nombre = item.querySelector('.nombre-remitente').textContent.toLowerCase();
+                const asunto = item.querySelector('.asunto-consulta').textContent.toLowerCase();
+                const estado = item.getAttribute('data-estado');
+
+                const coincideTexto  = !textoBusqueda || nombre.includes(textoBusqueda) || asunto.includes(textoBusqueda);
+                const coincideEstado = estadoFiltro === 'todas' || estadoFiltro === estado;
+
+                if (coincideTexto && coincideEstado) {
+                    item.classList.remove('d-none');
+                    item.classList.add('d-flex');
+                    visibles++;
                 } else {
-                    consulta.classList.remove('d-flex');
-                    consulta.classList.add('d-none');
+                    item.classList.remove('d-flex');
+                    item.classList.add('d-none');
                 }
             });
-        });
+
+            // Mostrar mensaje si no hay resultados
+            document.getElementById('sinResultados').classList.toggle('d-none', visibles > 0);
+        }
+
+        // ── Listeners ─────────────────────────────────────────────────────
+        document.getElementById('buscadorConsultas').addEventListener('input',  filtrarConsultas);
+        document.getElementById('filtroConsultas').addEventListener('change', filtrarConsultas);
     </script>
 </body>
 </html>
