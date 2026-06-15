@@ -11,7 +11,7 @@
 
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             
-            {{-- ENLACES PRINCIPALES (El ms-auto empuja todo el bloque a la derecha) --}}
+            {{-- ENLACES PRINCIPALES --}}
             <ul class="navbar-nav ms-auto" style="font-size: 1.1rem;">
 
                 <li class="nav-item">
@@ -49,7 +49,7 @@
                 @endif
             </ul>
 
-            {{-- SECCIÓN DE USUARIO Y CARRITO (Quitamos el ms-auto y agregamos ms-lg-3 para un pequeño margen) --}}
+            {{-- SECCIÓN DE USUARIO Y CARRITO --}}
             <ul class="navbar-nav mb-2 mb-lg-0 align-items-center ms-lg-3">
 
                 {{-- SI EL USUARIO NO INICIÓ SESIÓN --}}
@@ -90,7 +90,7 @@
                         </li>
                     @endif
 
-                    {{-- 3. Botón de Cerrar Sesión para ambos roles --}}
+                    {{-- 3. Botón de Cerrar Sesión y Opciones para ambos roles --}}
                     <li class="nav-item dropdown ms-3">
                         <a class="nav-link dropdown-toggle fw-bold fondo-rosado" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 8px;">
@@ -110,6 +110,16 @@
                                 </li>
                             @endif
 
+                            {{-- Mostrar Datos Personales PARA TODOS (sin la restricción de admin) --}}
+                            <li>
+                                <a class="dropdown-item fw-semibold" href="#" data-bs-toggle="modal" data-bs-target="#modalDatosPersonales">
+                                    <i class="bi bi-person-vcard me-2"></i> Datos personales
+                                </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
                             <li>
                                 <form action="/logout" method="POST" class="m-0 p-0">
                                     @csrf
@@ -126,3 +136,40 @@
         </div>
     </div>
 </nav>
+
+{{-- MODAL DATOS PERSONALES (Se renderiza para cualquier usuario que haya iniciado sesión) --}}
+@auth
+    <div class="modal fade" id="modalDatosPersonales" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header text-white" style="background-color: #7828D8;">
+                    <h5 class="modal-title fw-bold">Mis Datos Personales</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                {{-- Apuntamos al update del controlador usando el ID del usuario logueado --}}
+                <form action="/admin/usuarios/{{ Auth::user()->id }}" method="POST">
+                    @csrf
+                    @method('PUT')
+                    <div class="modal-body p-4">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold text-dark">Nombre completo</label>
+                            <input type="text" name="nombreCompleto" class="form-control rounded" value="{{ Auth::user()->nombreCompleto }}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold text-dark">Correo electrónico</label>
+                            <input type="email" name="correo" class="form-control rounded" value="{{ Auth::user()->correo }}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold text-dark">Nueva Contraseña (Opcional)</label>
+                            <input type="password" name="contrasena" class="form-control rounded" placeholder="Dejar en blanco para no cambiarla">
+                        </div>
+                    </div>
+                    <div class="modal-footer bg-light border-top-0">
+                        <button type="button" class="btn btn-light fw-semibold border" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn text-white fw-semibold" style="background-color: #7828D8;">Actualizar Datos</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+@endauth

@@ -13,7 +13,7 @@ return new class extends Migration
             $table->string('nombreCompleto', 150);
             $table->string('correo', 150)->unique();
             $table->string('contrasena', 255);
-         $table->enum('rol', ['cliente', 'admin'])->default('cliente');
+            $table->enum('rol', ['cliente', 'admin'])->default('cliente');
             $table->boolean('active')->default(true);
             
             $table->timestamps();

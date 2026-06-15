@@ -93,13 +93,12 @@
                                                 <small class="text-muted">{{ $admin->correo }}</small>
                                             </div>
                                             
-                                            {{-- Si es el usuario actual, mostramos "Tú", si no, los botones de acción --}}
+                                            {{-- Si es el usuario actual, mostramos "Tú", si no, el botón de eliminar --}}
                                             @if(Auth::id() == $admin->id)
                                                 <span class="badge bg-secondary bg-opacity-25 text-dark rounded-pill px-3 py-2">Tú</span>
                                             @else
                                                 <div class="d-flex gap-2">
-                                                    <button class="btn btn-sm rounded px-3 fw-semibold" style="background-color: #e0e7ff; color: #4f46e5; border: none;" data-bs-toggle="modal" data-bs-target="#modalEditarAdmin{{ $admin->id }}">Editar</button>
-                                                    
+                                                    {{-- BOTÓN DE ELIMINAR --}}
                                                     <form action="/admin/usuarios/{{ $admin->id }}/baja" method="POST" class="m-0" onsubmit="return confirm('¿Seguro que deseas dar de baja este administrador?');">
                                                         @csrf
                                                         @method('PATCH')
@@ -108,42 +107,6 @@
                                                 </div>
                                             @endif
                                         </li>
-
-                                        {{-- MODAL EDITAR Administrador (Solo se crea para los que no son el usuario actual) --}}
-                                        @if(Auth::id() != $admin->id)
-                                        <div class="modal fade" id="modalEditarAdmin{{ $admin->id }}" tabindex="-1">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content border-0 shadow">
-                                                    <div class="modal-header bg-light border-0">
-                                                        <h5 class="modal-title fw-bold" style="color: #4A4A4A;">Editar Administrador</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                                    </div>
-                                                    <form action="/admin/usuarios/{{ $admin->id }}" method="POST">
-                                                        @csrf
-                                                        @method('PUT')
-                                                        <div class="modal-body p-4">
-                                                            <div class="mb-3">
-                                                                <label class="form-label fw-semibold">Nombre completo</label>
-                                                                <input type="text" name="nombreCompleto" class="form-control rounded" value="{{ $admin->nombreCompleto }}" required>
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <label class="form-label fw-semibold">Correo electrónico</label>
-                                                                <input type="email" name="correo" class="form-control rounded" value="{{ $admin->correo }}" required>
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <label class="form-label fw-semibold">Contraseña (Opcional)</label>
-                                                                <input type="password" name="contrasena" class="form-control rounded" placeholder="Dejar en blanco para no cambiarla">
-                                                            </div>
-                                                        </div>
-                                                        <div class="modal-footer bg-light border-top-0">
-                                                            <button type="button" class="btn btn-light fw-semibold border" data-bs-dismiss="modal">Cancelar</button>
-                                                            <button type="submit" class="btn text-white fw-semibold" style="background-color: #4f46e5;">Actualizar Datos</button>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        @endif
                                     @empty
                                         <li class="list-group-item bg-transparent border-0 text-muted px-0">No se encontraron administradores.</li>
                                     @endforelse
