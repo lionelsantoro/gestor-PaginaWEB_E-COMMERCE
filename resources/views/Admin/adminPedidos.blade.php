@@ -208,14 +208,20 @@
 
             function filtrarTabla() {
                 const estadoSeleccionado = filtroEstados.value;
-                const textoBuscado = buscadorPedidos.value.toLowerCase();
+                // Agregamos .trim() para limpiar espacios al principio o final accidentalmente
+                const textoBuscado = buscadorPedidos.value.toLowerCase().trim(); 
 
                 filas.forEach(fila => {
                     const estadoFila = fila.getAttribute('data-estado');
-                    const textoFila = fila.innerText.toLowerCase();
+                    
+                    // Extraemos ESPECÍFICAMENTE el texto de la columna 1 (Pedido) y columna 2 (Cliente)
+                    const idPedido = fila.querySelector('td:nth-child(1)').innerText.toLowerCase();
+                    const nombreCliente = fila.querySelector('td:nth-child(2)').innerText.toLowerCase();
 
                     const coincideEstado = (estadoSeleccionado === 'todos' || estadoFila === estadoSeleccionado);
-                    const coincideTexto = textoFila.includes(textoBuscado);
+                    
+                    // Validamos si el texto buscado coincide con el ID o con el nombre
+                    const coincideTexto = idPedido.includes(textoBuscado) || nombreCliente.includes(textoBuscado);
 
                     if (coincideEstado && coincideTexto) {
                         fila.style.display = ''; 
