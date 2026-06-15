@@ -41,6 +41,7 @@ Route::post('/carrito/vaciar', [App\Http\Controllers\CarritoController::class, '
 
 Route::post('/informacion-de-contacto', [ContactoController::class, 'procesar']);
 
+Route::post('/admin/pedidos/{id}/actualizar-envio', [PedidoController::class, 'actualizarEnvio'])->name('admin.pedidos.actualizarEnvio');
 
 // ==========================================
 // RUTA DINÁMICA DEL CATÁLOGO

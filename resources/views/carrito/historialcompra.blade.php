@@ -31,6 +31,7 @@
                             <th class="py-3">Fecha</th>
                             <th class="py-3 text-center">Estado</th>
                             <th class="py-3">Dirección de entrega</th>
+                            <th class="py-3 text-center">Estado de Envío</th> {{-- NUEVA COLUMNA --}}
                             <th class="py-3 text-center">Total</th>
                             <th class="py-3 text-center">Productos</th>
                         </tr>
@@ -53,12 +54,27 @@
                                 @endif
                             </td>
                             
-                            {{-- MODIFICACIÓN AQUÍ: --}}
+                            {{-- CORRECCIÓN DE DIRECCIÓN APLICADA --}}
                             <td>
-                                @if($pedido->estado == 'pendientePago')
-                                    {{-- No mostramos NADA --}}
+                                @if($pedido->estado == 'cancelada')
+                                    <span class="text-muted">-</span>
                                 @else
-                                    {{ $pedido->direccion ?? 'Retiro en sucursal' }}
+                                    {{ $pedido->direccion ?? '' }}
+                                @endif
+                            </td>
+
+                            {{-- NUEVO DATO: ESTADO DE ENVÍO --}}
+                            <td class="text-center">
+                                @if($pedido->estado == 'cancelada')
+                                    <span class="text-muted fw-bold">-</span>
+                                @else
+                                    @if($pedido->envio == 'enviado')
+                                        <span class="badge bg-info text-dark px-2 py-1"><i class="bi bi-truck me-1"></i> Enviado</span>
+                                    @elseif($pedido->envio == 'listo para retirar')
+                                        <span class="badge bg-primary px-2 py-1"><i class="bi bi-box-seam me-1"></i> Listo para retirar</span>
+                                    @else
+                                        <span class="badge bg-secondary px-2 py-1"><i class="bi bi-hourglass-split me-1"></i> Procesando</span>
+                                    @endif
                                 @endif
                             </td>
                             
@@ -103,7 +119,7 @@
                                 <tbody>
                                     @foreach($pedido->items as $item)
                                     <tr>
-                                        <td>{{ $item->producto->nombre }}</td>
+                                        <td>{{ $item->producto->nombre ?? 'Producto no disponible' }}</td>
                                         <td class="text-center">{{ $item->cantidad }}</td>
                                         <td class="text-end">$ {{ number_format($item->cantidad * $item->precioUnitario, 0, ',', '.') }}</td>
                                     </tr>
