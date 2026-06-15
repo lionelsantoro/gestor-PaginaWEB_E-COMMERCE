@@ -53,7 +53,6 @@
                     <tbody>
                         @foreach($pedido->items as $item)
                         @php
-                            // Se muestra todo el stock disponible
                             $stockDisponible = $item->producto->stock;
                         @endphp
                         <tr>
@@ -125,17 +124,51 @@
                 </table>
             </div>
 
-            {{-- BOTONES INFERIORES --}}
+            {{-- BOTONES INFERIORES CON VACIAR CARRITO AGREGADO --}}
             <div class="d-flex justify-content-between align-items-center mt-4">
-                <a href="/catalogo" class="btn btn-outline-secondary fw-bold px-4 py-2" style="border-radius: 8px;">
-                    <i class="bi bi-arrow-left me-2"></i>Seguir comprando
-                </a>
+                <div class="d-flex gap-2">
+                    <a href="/catalogo" class="btn btn-outline-secondary fw-bold px-4 py-2" style="border-radius: 8px;">
+                        <i class="bi bi-arrow-left me-2"></i>Seguir comprando
+                    </a>
+                    <button type="button" class="btn btn-outline-danger fw-bold px-4 py-2" data-bs-toggle="modal" data-bs-target="#modalVaciarCarrito" style="border-radius: 8px;">
+                        <i class="bi bi-trash-fill me-2"></i>Vaciar carrito
+                    </button>
+                </div>
+                
                 <button type="button" class="btn text-white fw-bold px-5 py-3" data-bs-toggle="modal" data-bs-target="#modalPago" style="background: linear-gradient(135deg, #28a745, #20c997); border-radius: 10px; font-size: 1.1rem; border: none; box-shadow: 0 4px 15px rgba(40,167,69,0.3);">
                     Continuar con la compra <i class="bi bi-arrow-right ms-2"></i>
                 </button>
             </div>
 
         @endif
+    </div>
+
+    {{-- MODALES A CONTINUACIÓN --}}
+    
+    {{-- ══════════════════ MODAL: VACIAR CARRITO ══════════════════ --}}
+    <div class="modal fade" id="modalVaciarCarrito" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: 16px; overflow: hidden;">
+                <div class="py-4 text-center text-white" style="background: linear-gradient(135deg, #dc3545, #c82333);">
+                    <i class="bi bi-cart-x-fill" style="font-size: 2.8rem;"></i>
+                    <h5 class="fw-bold mt-2 mb-0">¿Vaciar el carrito?</h5>
+                </div>
+                <div class="modal-body text-center px-4 py-4">
+                    <p class="text-muted mb-0">Estás por cancelar este carrito y vaciar todos sus productos. Esta acción no se puede deshacer.</p>
+                </div>
+                <div class="modal-footer border-0 px-4 pb-4 gap-2 justify-content-center">
+                    <button type="button" class="btn btn-outline-secondary fw-semibold px-4" data-bs-dismiss="modal">
+                        <i class="bi bi-x-lg me-1"></i>Cancelar
+                    </button>
+                    <form action="/carrito/vaciar" method="POST" class="m-0">
+                        @csrf
+                        <button type="submit" class="btn text-white fw-bold px-4" style="background: linear-gradient(135deg, #dc3545, #c82333); border-radius: 8px;">
+                            <i class="bi bi-trash3 me-1"></i>Sí, vaciar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
     {{-- ══════════════════ MODAL: FORMULARIO DE PAGO ══════════════════ --}}
@@ -193,7 +226,7 @@
     </div>
     @endif
 
-    {{-- ══════════════════ MODAL: ELIMINAR ══════════════════ --}}
+    {{-- ══════════════════ MODAL: ELIMINAR UN PRODUCTO ══════════════════ --}}
     <div class="modal fade" id="modalEliminar" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content border-0 shadow-lg" style="border-radius: 16px; overflow: hidden;">
@@ -254,7 +287,6 @@
                     <p class="text-muted mb-0">Nos contactaremos para coordinar la entrega a tu domicilio.</p>
                 </div>
                 <div class="modal-footer border-0 justify-content-center pb-4">
-                    {{-- REDIRECCIÓN ACTUALIZADA A LA PÁGINA DE INICIO (/) --}}
                     <button type="button" id="btnIrAlInicio" class="btn text-white fw-bold px-5 py-2" style="background: linear-gradient(135deg, #7828D8, #a855f7); border-radius: 10px; border: none;">
                         <i class="bi bi-house me-2"></i>Ir al inicio
                     </button>
@@ -322,7 +354,6 @@
             if (formPago) {
                 const modalExitoBS = new bootstrap.Modal(document.getElementById('modalCompraExitosa'));
                 
-                // EL BOTÓN DEL MODAL AHORA TE LLEVA A /
                 document.getElementById('btnIrAlInicio').addEventListener('click', function () {
                     window.location.href = '/';
                 });

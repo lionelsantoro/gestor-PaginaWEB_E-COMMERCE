@@ -12,7 +12,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('ID_Usuario');
             $table->decimal('total', 12, 2)->default(0);
-            $table->enum('estado', ['creada', 'pendientePago', 'pagada', 'cancelada'])->default('creada');
+            $table->enum('estado', ['pendientePago', 'pagada', 'cancelada'])->default('pendientePago');
             $table->string('direccion', 255)->nullable();
             
             $table->timestamps();

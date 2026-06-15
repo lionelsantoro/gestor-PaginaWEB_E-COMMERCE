@@ -9,9 +9,9 @@ class PedidoController extends Controller
 {
     public function index()
     {
-        // Traemos pedidos excluyendo los carritos activos ('creada')
+        // Excluimos los carritos activos ('pendientePago') para que el admin no los vea
         $pedidos = Pedido::with(['usuario', 'items.producto'])
-                    ->where('estado', '!=', 'creada')
+                    ->where('estado', '!=', 'pendientePago') // Modificado
                     ->orderBy('created_at', 'desc')
                     ->get();
 

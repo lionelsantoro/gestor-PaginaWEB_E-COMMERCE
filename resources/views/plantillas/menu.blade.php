@@ -80,7 +80,8 @@
                                 href="/carrito" style="border-radius: 8px;">
                                 <i class="bi bi-cart3 me-1"></i> Mi Carrito
                                 @php
-                                    $carritoActivo = \App\Models\Pedido::where('ID_Usuario', Auth::id())->where('estado', 'creada')->first();
+                                    // Se actualizó el estado a 'pendientePago'
+                                    $carritoActivo = \App\Models\Pedido::where('ID_Usuario', Auth::id())->where('estado', 'pendientePago')->first();
                                     $cantidadItems = $carritoActivo ? $carritoActivo->items->sum('cantidad') : 0;
                                 @endphp
                                 @if($cantidadItems > 0)

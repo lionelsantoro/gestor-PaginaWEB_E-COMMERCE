@@ -52,7 +52,16 @@
                                     <span class="badge bg-secondary px-2 py-1">{{ ucfirst($pedido->estado) }}</span>
                                 @endif
                             </td>
-                            <td>{{ $pedido->direccion ?? 'Retiro en sucursal' }}</td>
+                            
+                            {{-- MODIFICACIÓN AQUÍ: --}}
+                            <td>
+                                @if($pedido->estado == 'pendientePago')
+                                    {{-- No mostramos NADA --}}
+                                @else
+                                    {{ $pedido->direccion ?? 'Retiro en sucursal' }}
+                                @endif
+                            </td>
+                            
                             <td class="text-center fw-bold" style="color: #7828D8;">
                                 ${{ number_format($pedido->total, 0, ',', '.') }}
                             </td>
@@ -126,7 +135,6 @@
 
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
 
 </body>
 </html>

@@ -11,7 +11,8 @@
     @php
         $cantidadesCarrito = [];
         if(Auth::check()){
-            $carritoActivo = \App\Models\Pedido::where('ID_Usuario', Auth::id())->where('estado', 'creada')->with('items')->first();
+            // Se actualizó el estado a 'pendientePago' en lugar de 'creada'
+            $carritoActivo = \App\Models\Pedido::where('ID_Usuario', Auth::id())->where('estado', 'pendientePago')->with('items')->first();
             if($carritoActivo){
                 foreach($carritoActivo->items as $item) {
                     $cantidadesCarrito[$item->ID_Producto] = $item->cantidad;

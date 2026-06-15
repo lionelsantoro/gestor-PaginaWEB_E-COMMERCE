@@ -14,7 +14,7 @@ class CarritoController extends Controller
     public function index()
     {
         $pedido = Pedido::where('ID_Usuario', Auth::id())
-                        ->where('estado', 'creada')
+                        ->where('estado', 'pendientePago') // Modificado
                         ->with('items.producto')
                         ->first();
 
@@ -35,8 +35,9 @@ class CarritoController extends Controller
             return response()->json(['status' => 'error', 'message' => 'No hay stock disponible.']);
         }
 
+        // Se crea como 'pendientePago' según tu nueva migración
         $pedido = Pedido::firstOrCreate(
-            ['ID_Usuario' => Auth::id(), 'estado' => 'creada'],
+            ['ID_Usuario' => Auth::id(), 'estado' => 'pendientePago'],
             ['total' => 0]
         );
 
@@ -94,6 +95,20 @@ class CarritoController extends Controller
         $this->recalcularTotal($idPedido);
         return redirect()->back()->with('success', 'Producto eliminado del carrito.');
     }
+
+    // NUEVA FUNCIÓN PARA VACIAR EL CARRITO COMPLETAMENTE
+    public function vaciarCarrito(Request $request)
+    {
+        $pedido = Pedido::where('ID_Usuario', Auth::id())
+                        ->where('estado', 'pendientePago')
+                        ->first();
+
+        if ($pedido) {
+            $pedido->update(['estado' => 'cancelada']);
+        }
+
+        return redirect('/',)->back()->with('success', 'El carrito ha sido vaciado.');
+    }
     
     public function confirmarPago(Request $request)
     {
@@ -101,7 +116,7 @@ class CarritoController extends Controller
 
         return DB::transaction(function () use ($request) {
             $pedido = Pedido::where('ID_Usuario', Auth::id())
-                            ->where('estado', 'creada')
+                            ->where('estado', 'pendientePago') // Modificado
                             ->with('items.producto')
                             ->firstOrFail();
 
@@ -109,7 +124,6 @@ class CarritoController extends Controller
 
             foreach ($pedido->items as $item) {
                 $producto = $item->producto;
-                
                 $stockDisponible = $producto->stock;
 
                 if ($stockDisponible <= 0 || $item->cantidad > $stockDisponible) {
@@ -138,7 +152,6 @@ class CarritoController extends Controller
             if ($request->expectsJson()) {
                 return response()->json(['status' => 'success']);
             }
-            // REDIRECCIÓN A LA PÁGINA DE INICIO ACTUALIZADA
             return redirect('/')->with('success', '¡Compra confirmada!');
         });
     }

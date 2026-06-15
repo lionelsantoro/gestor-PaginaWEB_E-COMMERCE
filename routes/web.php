@@ -37,6 +37,8 @@ Route::get('/historialcompra', function () {
     return view('carrito.historialcompra');
 });
 
+Route::post('/carrito/vaciar', [App\Http\Controllers\CarritoController::class, 'vaciarCarrito'])->middleware('auth');
+
 Route::post('/informacion-de-contacto', [ContactoController::class, 'procesar']);
 
 
