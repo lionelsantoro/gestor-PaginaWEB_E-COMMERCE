@@ -27,5 +27,21 @@ class UsuarioSeeder extends Seeder
             'rol' => 'cliente',
             'active' => true
         ]);
+
+         Usuario::create([
+            'nombreCompleto' => 'Martin',
+            'correo' => 'Martin@gmail.com',
+            'contrasena' => Hash::make('cliente1234'),
+            'rol' => 'cliente',
+            'active' => true
+        ]);
+
+        Usuario::create([
+            'nombreCompleto' => 'juana',
+            'correo' => 'juana@gmail.com',
+            'contrasena' => Hash::make('cliente12345'),
+            'rol' => 'cliente',
+            'active' => true
+        ]);
     }
 }
