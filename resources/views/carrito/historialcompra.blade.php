@@ -58,7 +58,7 @@
                                 @if($pedido->estado == 'pendientePago')
                                     {{-- No mostramos NADA --}}
                                 @else
-                                    {{ $pedido->direccion ?? 'Retiro en sucursal' }}
+                                    {{ $pedido->direccion ?? '' }}
                                 @endif
                             </td>
                             
