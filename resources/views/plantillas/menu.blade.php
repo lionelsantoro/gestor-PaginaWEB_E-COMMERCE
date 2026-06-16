@@ -62,9 +62,8 @@
                             style="border-radius: 8px;">Registrarse</a>
                     </li>
                 @else
-                    {{-- SI EL USUARIO SÍ INICIÓ SESIÓN --}}
 
-                    {{-- 1. Si es Administrador: Ve el panel admin, NO ve el carrito --}}
+                    {{-- SI EL USUARIO ES ADMIN --}}
                     @if(Auth::user()->rol === 'admin')
                         <li class="nav-item ms-lg-2 mt-2 mt-lg-0 ps-3 ps-lg-0">
                             <a class="nav-link px-3 fw-bold text-white bg-dark d-inline-block" href="/admin/productos" style="border-radius: 8px;">
@@ -73,14 +72,13 @@
                         </li>
                     @endif
 
-                    {{-- 2. Si es Cliente: Ve el carrito, NO ve el panel admin --}}
+                    {{-- SI EL USUARIO ES CLIENTE --}}
                     @if(Auth::user()->rol === 'cliente')
                         <li class="nav-item ms-lg-2 mt-2 mt-lg-0 ps-3 ps-lg-0">
                             <a class="nav-link px-3 fw-bold text-white d-inline-flex align-items-center fondo-rosado"
                                 href="/carrito" style="border-radius: 8px;">
                                 <i class="bi bi-cart3 me-1"></i> Mi Carrito
                                 @php
-                                    // Se actualizó el estado a 'pendientePago'
                                     $carritoActivo = \App\Models\Pedido::where('ID_Usuario', Auth::id())->where('estado', 'pendientePago')->first();
                                     $cantidadItems = $carritoActivo ? $carritoActivo->items->sum('cantidad') : 0;
                                 @endphp
@@ -138,7 +136,7 @@
     </div>
 </nav>
 
-{{-- MODAL DATOS PERSONALES (Se renderiza para cualquier usuario que haya iniciado sesión) --}}
+{{-- MODAL DATOS PERSONALES --}}
 @auth
     <div class="modal fade" id="modalDatosPersonales" tabindex="-1">
         <div class="modal-dialog">
