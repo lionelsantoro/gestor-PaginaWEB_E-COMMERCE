@@ -61,7 +61,7 @@ class UsuarioController extends Controller
 
         $usuario->save();
 
-        return back()->with('success', 'Administrador actualizado.');
+        return back()->with('success_perfil', 'Administrador actualizado.');
     }
 
     // BAJA LÓGICA

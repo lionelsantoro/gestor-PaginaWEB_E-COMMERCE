@@ -172,3 +172,10 @@
         </div>
     </div>
 @endauth
+{{-- ALERTA DE DATOS ACTUALIZADOS --}}
+@if(session('success_perfil'))
+    <div class="alert alert-success alert-dismissible fade show position-fixed bottom-0 end-0 m-4 shadow" style="z-index: 10500; background-color: #d1e7dd; border-color: #badbcc; color: #0f5132;" role="alert">
+        <i class="bi bi-check-circle-fill me-2"></i> <strong>¡Listo!</strong> {{ session('success_perfil') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+    </div>
+@endif

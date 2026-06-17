@@ -156,7 +156,7 @@
         </div>
     </div>
 
-    @if(session('success'))
+    @if(session('success_contacto'))
     <div class="fondo-desenfocado">
         <div class="toast show shadow-lg border-0" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header bg-white">

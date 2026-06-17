@@ -25,6 +25,6 @@ class ContactoController extends Controller
         ]);
 
         // 3. Devolvemos a la vista con el mensaje de éxito para que salte el Toast
-        return back()->with('success', 'Mensaje enviado.');
+        return back()->with('success_contacto', 'Mensaje enviado.');
     }
 }
