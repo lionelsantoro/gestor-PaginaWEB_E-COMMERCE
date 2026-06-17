@@ -21,7 +21,7 @@ class CatalogoController extends Controller
             $query->where('ID_categoria', $request->categoria);
         }
 
-        // 4. Paginar de a 15 y mantener la variable en la URL
+        // 4. Paginar de a 15 
         $productos = $query->paginate(15)->appends($request->query());
 
         // 5. Retornar la vista
