@@ -10,7 +10,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            
+
             {{-- ENLACES PRINCIPALES --}}
             <ul class="navbar-nav ms-auto" style="font-size: 1.1rem;">
 
@@ -66,7 +66,8 @@
                     {{-- SI EL USUARIO ES ADMIN --}}
                     @if(Auth::user()->rol === 'admin')
                         <li class="nav-item ms-lg-2 mt-2 mt-lg-0 ps-3 ps-lg-0">
-                            <a class="nav-link px-3 fw-bold text-white bg-dark d-inline-block" href="/admin/productos" style="border-radius: 8px;">
+                            <a class="nav-link px-3 fw-bold text-white bg-dark d-inline-block" href="/admin/productos"
+                                style="border-radius: 8px;">
                                 <i class="bi bi-shield-lock-fill me-1"></i> Panel de Administración
                             </a>
                         </li>
@@ -111,7 +112,8 @@
 
                             {{-- Mostrar Datos Personales PARA TODOS (sin la restricción de admin) --}}
                             <li>
-                                <a class="dropdown-item fw-semibold" href="#" data-bs-toggle="modal" data-bs-target="#modalDatosPersonales">
+                                <a class="dropdown-item fw-semibold" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#modalDatosPersonales">
                                     <i class="bi bi-person-vcard me-2"></i> Datos personales
                                 </a>
                             </li>
@@ -152,20 +154,25 @@
                     <div class="modal-body p-4">
                         <div class="mb-3">
                             <label class="form-label fw-semibold text-dark">Nombre completo</label>
-                            <input type="text" name="nombreCompleto" class="form-control rounded" value="{{ Auth::user()->nombreCompleto }}" required>
+                            <input type="text" name="nombreCompleto" class="form-control rounded"
+                                value="{{ Auth::user()->nombreCompleto }}" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label fw-semibold text-dark">Correo electrónico</label>
-                            <input type="email" name="correo" class="form-control rounded" value="{{ Auth::user()->correo }}" required>
+                            <input type="email" name="correo" class="form-control rounded"
+                                value="{{ Auth::user()->correo }}" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label fw-semibold text-dark">Nueva Contraseña (Opcional)</label>
-                            <input type="password" name="contrasena" class="form-control rounded" placeholder="Dejar en blanco para no cambiarla">
+                            <input type="password" name="contrasena" class="form-control rounded"
+                                placeholder="Dejar en blanco para no cambiarla">
                         </div>
                     </div>
                     <div class="modal-footer bg-light border-top-0">
-                        <button type="button" class="btn btn-light fw-semibold border" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn text-white fw-semibold" style="background-color: #7828D8;">Actualizar Datos</button>
+                        <button type="button" class="btn btn-light fw-semibold border"
+                            data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn text-white fw-semibold"
+                            style="background-color: #7828D8;">Actualizar Datos</button>
                     </div>
                 </form>
             </div>
@@ -174,7 +181,8 @@
 @endauth
 {{-- ALERTA DE DATOS ACTUALIZADOS --}}
 @if(session('success_perfil'))
-    <div class="alert alert-success alert-dismissible fade show position-fixed bottom-0 end-0 m-4 shadow" style="z-index: 10500; background-color: #d1e7dd; border-color: #badbcc; color: #0f5132;" role="alert">
+    <div class="alert alert-success alert-dismissible fade show position-fixed bottom-0 end-0 m-4 shadow"
+        style="z-index: 10500; background-color: #d1e7dd; border-color: #badbcc; color: #0f5132;" role="alert">
         <i class="bi bi-check-circle-fill me-2"></i> <strong>¡Listo!</strong> {{ session('success_perfil') }}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
     </div>

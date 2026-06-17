@@ -159,9 +159,17 @@ class CarritoController extends Controller
     private function recalcularTotal($pedido)
     {
         $pedido = $pedido instanceof Pedido ? $pedido : Pedido::find($pedido);
+        
         if ($pedido) {
-            $pedido->total = $pedido->items->sum(fn($item) => $item->cantidad * $item->precioUnitario);
-            $pedido->save();
+            // Verificamos si el carrito se quedó sin productos
+            if ($pedido->items()->count() === 0) {
+                // Si no hay productos, eliminamos el pedido para que no quede en $0
+                $pedido->delete(); 
+            } else {
+                // Si aún quedan productos, recalculamos el total normalmente
+                $pedido->total = $pedido->items->sum(fn($item) => $item->cantidad * $item->precioUnitario);
+                $pedido->save();
+            }
         }
     }
 }
